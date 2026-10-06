@@ -4,281 +4,258 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#08090c">
-<meta name="description" content="Sai Akhil Malladi — Aerospace Engineering portfolio with systems, orbital mechanics, GNC visualization, research and digital engineering projects.">
-<title>Sai Akhil Malladi — Aerospace Engineering</title>
+<meta name="description" content="Sai Akhil Malladi — Aerospace Engineering, systems, orbital mechanics, GNC visualization, technical research and digital engineering.">
+<title>Sai Akhil Malladi — Engineering Universe</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
---bg:#08090c;--panel:#101217;--panel2:#0c0f13;--ink:#f1eee6;--muted:#9fa6ad;--line:#29313b;
---cyan:#4ff0e2;--violet:#9f8cff;--pink:#ff4fa3;--orange:#ffad5b;--blue:#69a8ff;
---sans:Montserrat,Arial,sans-serif;--mono:"Space Mono",monospace;--rail:250px;--max:1500px
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.58 var(--sans);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 15% 12%,rgba(79,240,226,.06),transparent 21%),radial-gradient(circle at 88% 26%,rgba(159,140,255,.07),transparent 24%),radial-gradient(circle at 65% 90%,rgba(255,79,163,.04),transparent 22%);pointer-events:none}
-body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.24;pointer-events:none;background-image:linear-gradient(rgba(79,240,226,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(79,240,226,.05) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 86%)}
-a{text-decoration:none;color:inherit}
-.topbar{height:42px;background:#06080b;border-bottom:1px solid #222a32;color:#dfe6eb;padding:0 22px;display:flex;justify-content:space-between;align-items:center;font:8px var(--mono);letter-spacing:.09em;text-transform:uppercase}
-.topbar span:first-child:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(79,240,226,.65);margin-right:8px}
-.layout{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);min-height:calc(100vh - 42px)}
-.sidebar{position:sticky;top:0;height:calc(100vh - 42px);overflow:auto;background:#0b0e12;border-right:1px solid #202832;padding:24px 17px;box-shadow:inset -1px 0 0 rgba(79,240,226,.07)}
-.identity{padding-bottom:18px;border-bottom:1px solid #222b34}
-.kicker{font:8px var(--mono);color:var(--cyan);letter-spacing:.09em;text-transform:uppercase}
-.identity h1{font-size:20px;line-height:1.01;letter-spacing:-.055em;margin:8px 0 0;color:var(--ink)}
-.meta{border:1px solid #26313b;background:#0e1319;margin:21px 0;box-shadow:0 0 0 1px rgba(255,255,255,.01)}
-.meta-row{display:flex;justify-content:space-between;gap:10px;padding:8px 8px;border-bottom:1px solid #202a33;font:8px var(--mono)}
-.meta-row:last-child{border-bottom:0}.meta-row span:first-child{color:#74808b}.meta-row span:last-child{text-align:right;color:#c8d0d7}
-.toc-title{font:8px var(--mono);color:#72808b;text-transform:uppercase;margin-bottom:9px}
-.toc a{display:flex;align-items:center;gap:8px;padding:8px 7px;border-left:2px solid transparent;color:#a9b3bd;font-size:10px;transition:.18s ease}
-.toc a:before{content:"";width:4px;height:4px;border-radius:50%;background:#3a4650;transition:.18s ease}
-.toc a:hover{background:#111920;border-left-color:var(--cyan);color:#f0f3f5;transform:translateX(2px)}
-.toc a:hover:before{background:var(--cyan);box-shadow:0 0 8px rgba(79,240,226,.6)}
-.note-rail{margin-top:24px;border-top:1px solid #252e37;padding-top:14px;color:#7c8994;font:8px/1.5 var(--mono)}
-.main{width:min(var(--max),100%);padding:28px 42px 70px;margin:auto}
-.crumb{font:8px var(--mono);color:#78858f;margin-bottom:12px;letter-spacing:.05em;text-transform:uppercase}
-.panel{background:linear-gradient(145deg,#12171e,#0e1217);border:1px solid #28323c}
-.hero{display:grid;grid-template-columns:1.35fr .65fr;min-height:445px;position:relative;overflow:hidden;box-shadow:0 22px 70px rgba(0,0,0,.28)}
-.hero:after{content:"AEROSPACE / SYSTEMS / GNC";position:absolute;right:-1px;top:0;padding:8px 11px;background:#0a0e13;border-left:1px solid #29333d;border-bottom:1px solid #29333d;color:#6f7d88;font:7px var(--mono);letter-spacing:.1em}
-.hero-main{padding:54px 48px;border-right:1px solid #29323c;background:radial-gradient(circle at 82% 20%,rgba(159,140,255,.12),transparent 24%),radial-gradient(circle at 12% 88%,rgba(79,240,226,.07),transparent 26%),linear-gradient(150deg,#151b23,#0e1217)}
-.hero h2{font-size:clamp(46px,6.1vw,92px);line-height:.88;letter-spacing:-.075em;margin:16px 0 20px;text-shadow:0 0 24px rgba(255,255,255,.025)}
-.hero p{max-width:820px;font-size:15px;color:#cbd3da!important;margin:0}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:21px}
-.chip{border:1px solid #34414c!important;background:#111820!important;padding:6px 8px;font:8px var(--mono);color:#b7c0c8!important;text-transform:uppercase;position:relative;overflow:hidden}
-.chip:after{content:"";position:absolute;left:-100%;top:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);transition:.45s}.chip:hover:after{left:150%}
-.chip:nth-child(4n+1){box-shadow:inset 2px 0 0 var(--cyan)}.chip:nth-child(4n+2){box-shadow:inset 2px 0 0 var(--violet)}.chip:nth-child(4n+3){box-shadow:inset 2px 0 0 var(--pink)}.chip:nth-child(4n){box-shadow:inset 2px 0 0 var(--orange)}
-.hero-side{padding:22px;background:#0b0f14;display:grid;gap:14px;align-content:center}
-.stat{border:1px solid #2a3540!important;background:#11171e!important;padding:14px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
-.stat small{display:block;font:8px var(--mono);color:#798692!important;text-transform:uppercase;margin-bottom:6px}.stat strong{display:block;font-size:23px;letter-spacing:-.045em;line-height:1.03;color:#f4f1ea}.stat p{margin:7px 0 0;font-size:10px;color:#9eaab5!important}
-.signal{height:78px!important;border:1px solid #2a3741!important;background:linear-gradient(90deg,rgba(79,240,226,.07) 1px,transparent 1px),linear-gradient(rgba(79,240,226,.06) 1px,transparent 1px)!important;background-size:19px 19px!important;position:relative;overflow:hidden}
-.signal:after{content:"";position:absolute;left:-14%;right:-14%;top:50%;height:2px;background:linear-gradient(90deg,transparent 0 8%,var(--cyan) 9% 12%,transparent 13% 24%,var(--violet) 25% 29%,transparent 30% 42%,var(--pink) 43% 47%,transparent 48% 65%,var(--cyan) 66% 70%,transparent 71% 87%,var(--orange) 88% 92%,transparent);animation:sweep 2.6s linear infinite}@keyframes sweep{from{transform:translateX(-5%)}to{transform:translateX(5%)}}
-section{scroll-margin-top:18px;margin-top:33px}
-.section-head{position:relative;display:flex;justify-content:space-between;align-items:end;gap:18px;border-bottom:1px solid #2b3540;padding:0 0 11px;margin-bottom:14px}
-.section-head:before{content:"";position:absolute;left:0;bottom:-2px;height:3px;width:42px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink))}
-.section-head h3{font-size:15px;color:var(--ink);margin:0;letter-spacing:-.028em}
-.code{font:8px var(--mono);color:#7f8b96;letter-spacing:.05em;text-transform:uppercase}
-.note,.callout{border-left:3px solid var(--cyan)!important;background:#10202b!important;padding:11px 13px;margin-bottom:12px;font-size:11px;color:#cbd4db!important}
-.grid{display:grid;gap:11px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.card{background:linear-gradient(145deg,#12171e,#0e1318)!important;border:1px solid #29343f!important;transition:.2s ease;position:relative;overflow:hidden}
-.card:before{content:"";position:absolute;top:0;left:0;width:38px;height:2px;background:var(--cyan);opacity:.65}
-.card:nth-child(3n+2):before{background:var(--violet)}.card:nth-child(3n):before{background:var(--pink)}
-.card:hover{transform:translateY(-2px);border-color:#42515f!important;box-shadow:0 14px 35px rgba(0,0,0,.22)}
-.card-head{display:flex;justify-content:space-between;gap:10px;align-items:start;background:#171d24!important;border-bottom:1px solid #2b3540!important;padding:10px 11px}
-.card-head b{font-size:10px;color:#edf0f2}.card-body{padding:13px}.card-body p{font-size:11px;color:#bac5cf!important;margin:0}
-table{width:100%;border-collapse:collapse;border:1px solid #2b3640;background:#10151b!important}th,td{padding:10px 11px;text-align:left;vertical-align:top;border-bottom:1px solid #242e37!important}th{background:#171d24!important;font:8px var(--mono);color:#85919c!important;text-transform:uppercase}td{font-size:11px;color:#c6ced5!important}td b{color:#f0ede6}tr:last-child td{border-bottom:0}
-.timeline{position:relative;padding-left:25px}.timeline:before{content:"";position:absolute;left:5px;top:4px;bottom:4px;width:1px;background:#2b3540}.event{position:relative;padding-bottom:20px}.event:before{content:"";position:absolute;left:-24px;top:5px;width:8px;height:8px;background:#10151b;border:2px solid var(--cyan)}.event:nth-child(2):before{border-color:var(--violet)}.event h4{margin:0;font-size:12px;color:#f2eee7}.event p{margin:5px 0 0;font-size:11px;color:#bdc8d0!important}.when{font:8px var(--mono);color:#87939e!important}
-.orbital{display:grid;grid-template-columns:1.05fr .95fr;background:#090d12!important;box-shadow:0 22px 65px rgba(0,0,0,.3)}
-.orbital-main{padding:17px;background:#080c11}
-.orbit-view{height:360px;background:#070a0f!important;border:1px solid #283844!important;position:relative;overflow:hidden;background-image:radial-gradient(circle at 50% 50%,rgba(79,240,226,.09),transparent 30%),linear-gradient(90deg,rgba(79,240,226,.055) 1px,transparent 1px),linear-gradient(rgba(79,240,226,.045) 1px,transparent 1px)!important;background-size:auto,29px 29px!important}
-.orbit-view:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 0 49%,rgba(255,255,255,.025) 50%,transparent 51%);pointer-events:none}
-.earth{position:absolute;width:154px;height:154px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle at 33% 30%,#b09fff 0 4%,#58516d 17%,#263047 43%,#111a26 72%,#070a0f 84%);box-shadow:0 0 0 1px rgba(159,140,255,.65),0 0 50px rgba(159,140,255,.16),inset -15px -18px 28px rgba(0,0,0,.35)}
-.glow-core{position:absolute;width:22px;height:22px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--cyan);filter:blur(7px);opacity:.85}
-.reticle{position:absolute;width:78px;height:78px;border:1px solid rgba(79,240,226,.72);left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;box-shadow:0 0 22px rgba(79,240,226,.10)}
-.reticle:before,.reticle:after{content:"";position:absolute;background:rgba(79,240,226,.72)}.reticle:before{width:106px;height:1px;left:-15px;top:38px}.reticle:after{width:1px;height:106px;left:38px;top:-15px}
-.orbit{position:absolute;left:50%;top:50%;border:1px solid;border-radius:50%;transform:translate(-50%,-50%)}.orbit-a{width:365px;height:112px;border-color:#5aa7ff;transform:translate(-50%,-50%) rotate(-14deg);box-shadow:0 0 16px rgba(90,167,255,.10)}.orbit-b{width:435px;height:166px;border-color:#45eddd;transform:translate(-50%,-50%) rotate(17deg)}.orbit-c{width:305px;height:218px;border-color:#a78bfa;transform:translate(-50%,-50%) rotate(65deg);opacity:.75}
-.node{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--pink);box-shadow:0 0 13px rgba(255,79,163,.7)}.node-1{left:17%;top:28%}.node-2{left:78%;top:68%}.node-3{left:68%;top:14%;background:var(--orange);box-shadow:0 0 13px rgba(255,173,91,.65)}
-.sat{position:absolute;left:73%;top:25%;width:9px;height:9px;border-radius:50%;background:#f8fbff;box-shadow:0 0 0 4px rgba(90,167,255,.12),0 0 17px rgba(90,167,255,.75)}
-.telemetry{position:absolute;left:14px;top:42px;color:#70818f;font:7px var(--mono);letter-spacing:.09em}.read{position:absolute;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;color:#ecf1f5;font:8px var(--mono);text-transform:uppercase;z-index:4}.read.bottom{top:auto;bottom:12px;color:#95a4b1}.orbit-id{position:absolute;left:17%;top:23%;color:var(--pink);font:7px var(--mono)}.orbit-id.o2{left:79%;top:69%;color:var(--cyan)}.orbit-id.o3{left:69%;top:12%;color:var(--orange)}
-.scanline{position:absolute;left:0;right:0;top:-5%;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.18;animation:scan 5s linear infinite;z-index:2}@keyframes scan{from{transform:translateY(0)}to{transform:translateY(370px)}}
-.orbital-side{padding:21px;border-left:1px solid #2a3440;background:#0d1218!important}.orbital-side h4{font-size:29px;line-height:1.02;letter-spacing:-.052em;margin:6px 0 12px;color:#f3efe8}.orbital-side p{font-size:11px;color:#bdc7cf!important;margin:0}
-.facts{display:grid;gap:8px;margin-top:14px}.fact{border:1px solid #2d3b47;background:#111821!important;padding:10px;transition:.18s}.fact:hover{border-color:rgba(79,240,226,.6);transform:translateX(2px)}.fact b{display:block;font-size:10px;color:#eef0f1}.fact span{font:8px var(--mono);color:#91a0ac!important}.launch{display:inline-block;margin-top:14px;border:1px solid var(--cyan)!important;padding:8px 10px;color:var(--cyan)!important;background:#0b1519;font:8px var(--mono);box-shadow:0 0 18px rgba(79,240,226,.06)}
-.modules{display:grid;grid-template-columns:235px 1fr;min-height:365px;background:#0d1217!important}.module-nav{background:#0a0e13!important;border-right:1px solid #28343e}.module-nav button{display:block;width:100%;border:0;border-bottom:1px solid #202a34;background:transparent;padding:10px 11px;text-align:left;font:8px var(--mono);color:#8e9aa6;cursor:pointer;transition:.16s}.module-nav button:hover{background:#101821;color:#cbd5dc}.module-nav button.active{background:#122b39;color:var(--cyan);border-left:3px solid var(--cyan);padding-left:8px;box-shadow:inset -2px 0 0 rgba(79,240,226,.08)}.module-view{padding:19px 20px}.module{display:none}.module.active{display:block}.module h4{font-size:24px;line-height:1.09;letter-spacing:-.05em;margin:6px 0 11px;color:#f2eee6}.module p{max-width:880px;font-size:11px;color:#bec8cf!important}.spec{display:grid;grid-template-columns:150px 1fr;border-top:1px solid #27323c;margin-top:14px}.spec div{padding:8px 0;border-bottom:1px solid #27323c;font-size:11px;color:#b9c3cb!important}.spec div:nth-child(odd){font:8px var(--mono);color:#84929e!important;text-transform:uppercase}
-.matrix{display:grid;grid-template-columns:1fr auto;border:1px solid #2b3640;background:#10151b!important}.matrix>div{padding:10px 11px;border-bottom:1px solid #252f38}.matrix>div:nth-last-child(-n+2){border-bottom:0}.matrix b{color:#eeeae2}.matrix .value{font:8px var(--mono);color:#7f8d99!important;text-align:right}.dot{display:inline-block;width:7px;height:7px;background:var(--cyan);margin-right:5px;box-shadow:0 0 8px rgba(79,240,226,.4)}
-.lab{display:grid;grid-template-columns:1fr 1fr;gap:11px}.labbox{background:#10151b!important;border:1px solid #2b3640!important;padding:15px}.formula{font:700 22px var(--mono);margin:5px 0 15px;color:#f2efe8}.inputs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.inputs label{font:8px var(--mono);color:#87939e;text-transform:uppercase}.inputs input{width:100%;border:1px solid #30404d;background:#0a0f14;color:#f1eee8;padding:8px;margin-top:4px;outline:none}.inputs input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(79,240,226,.08)}.output{display:flex;justify-content:space-between;align-items:end;border-top:1px solid #25303a;margin-top:12px;padding-top:12px}.output strong{font-size:26px;letter-spacing:-.04em;color:#f3efe7}.links{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.link{border:1px solid #2a3641!important;background:#10151b!important;padding:13px;transition:.18s}.link small{display:block;font:8px var(--mono);color:#7f8b97!important;margin-bottom:5px}.link b{font-size:11px;color:#e9edf0}.link:hover{border-color:var(--cyan)!important;box-shadow:0 0 18px rgba(79,240,226,.07);transform:translateY(-2px)}
-footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #26313b;margin-top:34px;padding-top:14px;color:#7d8994;font:8px var(--mono)}
-/* Resolve legacy inline light-mode text styles from earlier iterations. */
-.card-body p[style],.labbox p[style],.method p[style],.orbital-side p[style]{color:#bdc7cf!important}
-@media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.hero,.orbital,.lab,.g2,.g3{grid-template-columns:1fr}.hero-main{border-right:0;border-bottom:1px solid #29333d}.orbital-side{border-left:0;border-top:1px solid #2a3440}.modules{grid-template-columns:1fr}.module-nav{border-right:0;border-bottom:1px solid #26313b}.links{grid-template-columns:1fr}.main{padding:24px 16px 50px}.note-rail{display:none}}
-@media(max-width:620px){.topbar{padding:0 10px}.main{padding:16px 11px 42px}.hero-main{padding:32px 23px}.hero h2{font-size:44px}.inputs{grid-template-columns:1fr}.spec{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column;gap:3px}.orbit-view{height:300px}.orbit-a{width:320px}.orbit-b{width:365px}.orbit-c{width:265px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+:root{--bg:#08090c;--panel:#0f1319;--panel2:#121821;--ink:#f3efe7;--muted:#98a2ad;--line:#252f39;--cyan:#4ff0e2;--violet:#a88cff;--pink:#ff4fa3;--orange:#ffad5b;--blue:#67a8ff;--green:#7ed5a3;--sans:Montserrat,Arial,sans-serif;--mono:"Space Mono",monospace;--rail:258px;--max:1540px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.58 var(--sans);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-3;background:radial-gradient(circle at 10% 5%,rgba(79,240,226,.07),transparent 22%),radial-gradient(circle at 86% 20%,rgba(168,140,255,.08),transparent 24%),radial-gradient(circle at 55% 90%,rgba(255,79,163,.04),transparent 25%)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background-image:linear-gradient(rgba(79,240,226,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(79,240,226,.04) 1px,transparent 1px);background-size:46px 46px;opacity:.38;mask-image:linear-gradient(to bottom,#000 0,#000 65%,transparent 100%)}
+a{text-decoration:none;color:inherit}button,input{font:inherit}
+.top{height:42px;padding:0 20px;background:#05070a;border-bottom:1px solid #202934;display:flex;align-items:center;justify-content:space-between;font:8px var(--mono);letter-spacing:.09em;color:#ccd4db;text-transform:uppercase}
+.live{color:var(--cyan)}.live:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);margin-right:8px}
+.layout{display:grid;grid-template-columns:var(--rail) 1fr;min-height:calc(100vh - 42px)}
+.rail{position:sticky;top:0;height:calc(100vh - 42px);overflow:auto;background:#0a0d11;border-right:1px solid #202933;padding:22px 16px;box-shadow:inset -1px 0 0 rgba(79,240,226,.08)}
+.identity{padding-bottom:18px;border-bottom:1px solid #202a33}.identity .eyebrow{font:8px var(--mono);color:var(--cyan);text-transform:uppercase;letter-spacing:.1em}.identity h1{font-size:21px;line-height:.98;letter-spacing:-.06em;margin:8px 0 0}.railmeta{margin:20px 0;border:1px solid #27323c;background:#0e1319}.railmeta div{display:flex;justify-content:space-between;gap:10px;padding:8px;border-bottom:1px solid #1f2932;font:8px var(--mono)}.railmeta div:last-child{border-bottom:0}.railmeta span:first-child{color:#71808c}.railmeta span:last-child{color:#c8d0d7;text-align:right}
+.toc-title{font:8px var(--mono);color:#71808c;text-transform:uppercase;margin:0 0 7px}.toc a{display:flex;align-items:center;gap:8px;padding:8px 7px;border-left:2px solid transparent;color:#99a6b1;font-size:10px;transition:.18s}.toc a:before{content:"";width:4px;height:4px;border-radius:50%;background:#34414c}.toc a.active{color:#f3efe7;background:#101920;border-left-color:var(--cyan)}.toc a.active:before{background:var(--cyan);box-shadow:0 0 9px var(--cyan)}.toc a:hover{color:#f3efe7;background:#0f171e}
+.rail-note{margin-top:24px;padding-top:14px;border-top:1px solid #222c35;font:8px/1.55 var(--mono);color:#73818d}
+.main{width:min(var(--max),100%);margin:auto;padding:25px 42px 72px}.crumb{font:8px var(--mono);color:#71808c;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px}
+.hero{position:relative;min-height:650px;border:1px solid #27333e;background:linear-gradient(140deg,#121820 0%,#0c1016 55%,#0b0d12 100%);overflow:hidden;display:grid;grid-template-columns:1.04fr .96fr;box-shadow:0 28px 80px rgba(0,0,0,.26)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(79,240,226,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(79,240,226,.05) 1px,transparent 1px);background-size:38px 38px;opacity:.26}
+.hero-main{position:relative;z-index:2;padding:58px 48px 45px;display:flex;flex-direction:column;justify-content:center}.hero-kicker{font:8px var(--mono);color:var(--cyan);letter-spacing:.12em;text-transform:uppercase}.hero h2{font-size:clamp(48px,7vw,102px);line-height:.84;letter-spacing:-.08em;margin:18px 0 22px}.hero h2 span{display:block}.hero h2 span:nth-child(2){color:#dfe4e8}.hero h2 span:nth-child(3){background:linear-gradient(90deg,var(--cyan),var(--violet) 56%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-intro{max-width:760px;color:#c3ccd4;font-size:15px;margin:0}.hero-stamps{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}.stamp{padding:7px 9px;background:#0f171e;border:1px solid #34414b;color:#aeb8c1;font:8px var(--mono);position:relative}.stamp:first-child{box-shadow:inset 2px 0 var(--cyan)}.stamp:nth-child(2){box-shadow:inset 2px 0 var(--violet)}.stamp:nth-child(3){box-shadow:inset 2px 0 var(--pink)}.stamp:nth-child(4){box-shadow:inset 2px 0 var(--orange)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.btn{border:1px solid #3b4956;background:#0d141b;padding:10px 13px;color:#e7ebee;font:8px var(--mono);text-transform:uppercase;letter-spacing:.05em;transition:.18s}.btn.primary{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 18px rgba(79,240,226,.07)}.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
+.hero-visual{position:relative;min-height:650px;border-left:1px solid #27323d;background:#080c11}.hero-visual canvas{position:absolute;inset:0;width:100%;height:100%}.visual-hud{position:absolute;left:18px;right:18px;top:18px;display:flex;justify-content:space-between;gap:10px;font:7px var(--mono);color:#81909c;z-index:3}.visual-hud span:last-child{color:var(--cyan)}.visual-bottom{position:absolute;left:18px;right:18px;bottom:17px;display:flex;justify-content:space-between;color:#6f7d88;font:7px var(--mono);z-index:3}.cross{position:absolute;left:50%;top:50%;width:180px;height:180px;transform:translate(-50%,-50%);border:1px solid rgba(79,240,226,.18);border-radius:50%;z-index:2}.cross:before,.cross:after{content:"";position:absolute;background:rgba(79,240,226,.18)}.cross:before{left:50%;top:-45px;height:270px;width:1px}.cross:after{top:50%;left:-45px;width:270px;height:1px}
+.section{margin-top:58px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;border-bottom:1px solid #29323c;padding-bottom:10px;margin-bottom:15px;position:relative}.section-head:after{content:"";position:absolute;left:0;bottom:-2px;width:48px;height:3px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink))}.section-head h3{margin:0;font-size:16px;letter-spacing:-.035em}.code{font:8px var(--mono);color:#798793;text-transform:uppercase}.subcopy{max-width:760px;color:#9ba6b0;font-size:11px;margin:0 0 15px}
+.domain-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:11px}.domain-map{position:relative;min-height:380px;border:1px solid #28343f;background:#0b1016;overflow:hidden}.domain-map canvas{position:absolute;inset:0;width:100%;height:100%}.domain-label{position:absolute;left:18px;top:16px;font:8px var(--mono);color:#788793;z-index:2}.domain-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:132px;height:132px;border:1px solid rgba(79,240,226,.55);border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(8,13,18,.88);box-shadow:0 0 35px rgba(79,240,226,.07);z-index:2;cursor:pointer}.domain-core b{font-size:15px;letter-spacing:-.05em}.domain-node{position:absolute;z-index:3;border:1px solid #33414d;background:#0f161d;padding:8px 9px;font:7px var(--mono);color:#b7c1ca;cursor:pointer;transition:.18s}.domain-node:hover,.domain-node.active{border-color:var(--cyan);color:#f4f0e8;box-shadow:0 0 18px rgba(79,240,226,.10)}.dn1{left:13%;top:18%}.dn2{right:12%;top:18%}.dn3{left:11%;bottom:18%}.dn4{right:11%;bottom:18%}.domain-detail{border:1px solid #28343f;background:#0e1319;padding:18px;min-height:380px}.domain-detail .tag{font:8px var(--mono);color:var(--cyan);text-transform:uppercase}.domain-detail h4{font-size:27px;line-height:1.02;letter-spacing:-.055em;margin:8px 0 11px}.domain-detail p{font-size:11px;color:#b9c4cc;margin:0}.detail-list{display:grid;gap:7px;margin-top:16px}.detail-row{border-top:1px solid #27313b;padding-top:8px}.detail-row b{display:block;font-size:10px}.detail-row span{font:8px var(--mono);color:#87949f}
+.project-console{border:1px solid #29343f;background:#0b1016;display:grid;grid-template-columns:245px 1fr;min-height:435px}.project-nav{border-right:1px solid #26313a;background:#090d12}.project-nav button{width:100%;display:block;text-align:left;border:0;border-bottom:1px solid #202b34;background:transparent;color:#87949e;padding:11px 12px;font:8px var(--mono);cursor:pointer;transition:.15s}.project-nav button:hover{background:#111921;color:#d9e0e5}.project-nav button.active{background:#0f2029;color:var(--cyan);border-left:3px solid var(--cyan);padding-left:9px}.project-view{padding:22px}.project{display:none}.project.active{display:block;animation:fadeIn .32s ease}@keyframes fadeIn{from{opacity:.25;transform:translateY(4px)}to{opacity:1;transform:none}}.project .eyebrow{font:8px var(--mono);color:var(--cyan);text-transform:uppercase}.project h4{font-size:29px;line-height:1.04;letter-spacing:-.055em;margin:7px 0 12px}.project p{max-width:900px;color:#bac5ce;font-size:12px}.spec{display:grid;grid-template-columns:150px 1fr;border-top:1px solid #26313a;margin-top:15px}.spec div{padding:8px 0;border-bottom:1px solid #202a33;font-size:10px;color:#c0c9d0}.spec div:nth-child(odd){font:8px var(--mono);color:#788794;text-transform:uppercase}.repo{display:inline-block;margin-top:15px;color:var(--cyan);font:8px var(--mono);border-bottom:1px solid rgba(79,240,226,.35);padding-bottom:2px}
+.credentials{display:grid;grid-template-columns:1fr 1fr;gap:11px}.cred-card{border:1px solid #28343f;background:#10151b;padding:16px;position:relative;overflow:hidden}.cred-card:before{content:"";position:absolute;left:0;top:0;width:28px;height:2px;background:var(--violet)}.cred-card:nth-child(2):before{background:var(--cyan)}.cred-card:nth-child(3):before{background:var(--pink)}.cred-card:nth-child(4):before{background:var(--orange)}.cred-card small{font:8px var(--mono);color:#74828e;text-transform:uppercase}.cred-card h4{margin:6px 0 5px;font-size:17px;letter-spacing:-.03em}.cred-card p{margin:0;color:#aeb9c2;font-size:11px}.timeline{margin-top:12px;border-left:1px solid #2a3540;padding-left:20px}.event{position:relative;padding-bottom:18px}.event:before{content:"";position:absolute;left:-25px;top:5px;width:7px;height:7px;border:2px solid var(--cyan);background:#0e141a}.event:nth-child(2):before{border-color:var(--violet)}.event .when{font:8px var(--mono);color:#74828e}.event h4{margin:4px 0 2px;font-size:12px}.event p{margin:0;color:#b9c4cc;font-size:11px}
+.orbital{display:grid;grid-template-columns:1.08fr .92fr;border:1px solid #2a3742;background:#090d12;overflow:hidden}.orbit-visual{min-height:430px;position:relative;background:#070a0e;border-right:1px solid #26323b}.orbit-visual canvas{position:absolute;inset:0;width:100%;height:100%}.orbit-ui{position:absolute;inset:15px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}.orbit-top,.orbit-bottom{display:flex;justify-content:space-between;font:7px var(--mono);color:#7c8b97}.orbit-top span:last-child{color:var(--cyan)}.orbit-side{padding:23px;background:#0c1117}.orbit-side .eyebrow{font:8px var(--mono);color:var(--cyan)}.orbit-side h4{font-size:31px;line-height:.98;letter-spacing:-.055em;margin:7px 0 11px}.orbit-side>p{font-size:11px;color:#b9c4cd;margin:0}.facts{display:grid;gap:8px;margin-top:15px}.fact{border:1px solid #293641;background:#111820;padding:10px}.fact b{font-size:10px}.fact span{display:block;margin-top:2px;color:#8d9aa5;font:8px var(--mono)}.orbit-link{display:inline-block;margin-top:14px;border:1px solid var(--cyan);color:var(--cyan);padding:9px 10px;font:8px var(--mono);box-shadow:0 0 14px rgba(79,240,226,.06)}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:11px}.matrix-col{border:1px solid #28343f;background:#0f141a}.matrix-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px;border-bottom:1px solid #212b34}.matrix-row:last-child{border-bottom:0}.matrix-row b{font-size:10px}.matrix-row span{font:8px var(--mono);color:#84919d;text-align:right}.matrix-row i{display:block;font-style:normal;color:#aeb9c2;font-size:10px;margin-top:3px}
+.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.lab-card{border:1px solid #29343f;background:#10151b;padding:17px}.equation{font:700 23px var(--mono);color:#f2eee7;margin:4px 0 18px}.inputs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.inputs label{font:8px var(--mono);color:#82909b;text-transform:uppercase}.inputs input{width:100%;margin-top:4px;border:1px solid #30404c;background:#090d12;color:#f3efe7;padding:8px;outline:0}.inputs input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(79,240,226,.08)}.calc-output{display:flex;align-items:end;justify-content:space-between;border-top:1px solid #26313b;margin-top:13px;padding-top:12px}.calc-output strong{font-size:27px;letter-spacing:-.04em}.method-stack{display:grid;gap:8px}.method{display:grid;grid-template-columns:38px 1fr;gap:10px;border:1px solid #28333e;padding:10px;background:#0d1218}.method .num{font:8px var(--mono);color:var(--cyan);padding-top:2px}.method b{font-size:10px}.method span{display:block;color:#8997a2;font:8px var(--mono);margin-top:2px}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.link{border:1px solid #29343f;background:#10151b;padding:13px;transition:.18s}.link small{display:block;font:8px var(--mono);color:#788692;margin-bottom:4px}.link b{font-size:11px}.link:hover{border-color:var(--cyan);box-shadow:0 0 18px rgba(79,240,226,.07);transform:translateY(-2px)}
+footer{display:flex;justify-content:space-between;gap:16px;border-top:1px solid #252f39;margin-top:36px;padding-top:14px;color:#707e89;font:8px var(--mono)}
+@media(max-width:1050px){.layout{grid-template-columns:1fr}.rail{position:relative;height:auto}.rail-note{display:none}.hero,.domain-grid,.orbital,.lab-grid,.credentials{grid-template-columns:1fr}.hero-main{border-bottom:1px solid #29333d}.hero-visual,.orbit-visual{min-height:480px;border-left:0;border-right:0}.project-console{grid-template-columns:1fr}.project-nav{border-right:0;border-bottom:1px solid #29343f}.links{grid-template-columns:1fr}.main{padding:22px 17px 50px}}
+@media(max-width:620px){.top{padding:0 9px}.main{padding:16px 11px 45px}.hero-main{padding:34px 24px}.hero h2{font-size:46px}.hero-visual{min-height:430px}.hero-stamps{gap:5px}.stamp{font-size:7px}.domain-map{min-height:320px}.domain-node{font-size:6px}.dn1{left:5%;top:15%}.dn2{right:5%;top:15%}.dn3{left:5%;bottom:15%}.dn4{right:5%;bottom:15%}.domain-core{width:112px;height:112px}.project-view{padding:16px}.project h4{font-size:24px}.spec{grid-template-columns:1fr}.inputs{grid-template-columns:1fr}.orbit-visual{min-height:360px}.orbit-side{padding:18px}.matrix{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column;gap:3px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header class="topbar"><span>SAM-PORT-001 / AEROSPACE ENGINEERING PORTFOLIO</span><span>STATUS: CURRENT · REV C</span></header>
+<header class="top"><span>SAM-PORT-001 / AEROSPACE ENGINEERING UNIVERSE</span><span class="live">SYSTEM ONLINE · REV D</span></header>
 <div class="layout">
-<aside class="sidebar">
-<div class="identity"><div class="kicker">Personnel / engineering</div><h1>SAI AKHIL<br>MALLADI</h1></div>
-<div class="meta">
-<div class="meta-row"><span>DOCUMENT</span><span>SAM-PORT-001</span></div>
-<div class="meta-row"><span>ISSUE</span><span>01</span></div>
-<div class="meta-row"><span>REVISION</span><span>B</span></div>
-<div class="meta-row"><span>DATE</span><span>2026-10</span></div>
-<div class="meta-row"><span>DISCIPLINE</span><span>AEROSPACE</span></div>
-<div class="meta-row"><span>SUBJECT</span><span>ENGINEERING PROFILE</span></div>
+<aside class="rail">
+<div class="identity"><div class="eyebrow">Personnel / engineering</div><h1>SAI AKHIL<br>MALLADI</h1></div>
+<div class="railmeta">
+<div><span>DOCUMENT</span><span>SAM-PORT-001</span></div><div><span>ISSUE</span><span>01</span></div><div><span>REVISION</span><span>D</span></div><div><span>DISCIPLINE</span><span>AEROSPACE</span></div><div><span>MODE</span><span>INTERACTIVE</span></div>
 </div>
-<div class="toc-title">Contents</div>
+<div class="toc-title">Navigation</div>
 <nav class="toc">
-<a href="#overview">00 / Overview</a>
-<a href="#domains">01 / Engineering domains</a>
-<a href="#education">02 / Education & training</a>
-<a href="#experience">03 / Experience</a>
-<a href="#orbital">04 / GNC / Orbital Lab</a>
-<a href="#projects">05 / Project data modules</a>
-<a href="#capability">06 / Capability</a>
-<a href="#lab">07 / Interactive lab</a>
-<a href="#contact">08 / Contact</a>
+<a href="#overview">00 / Overview</a><a href="#domains">01 / Engineering domains</a><a href="#credentials">02 / Education & training</a><a href="#experience">03 / Experience</a><a href="#orbital">04 / GNC / Orbital Lab</a><a href="#projects">05 / Project modules</a><a href="#capability">06 / Capability</a><a href="#lab">07 / Engineering lab</a><a href="#contact">08 / Contact</a>
 </nav>
-<div class="note-rail">CONTENT CONTROL: FACTUAL CLAIMS ARE LIMITED TO THE AVAILABLE CV / PROJECT MATERIAL.<br><br>VISUAL BASIS: TECHNICAL-PUBLICATION INSPIRED. THIS PAGE DOES NOT CLAIM FORMAL ASD-STE100 OR S1000D COMPLIANCE.</div>
+<div class="rail-note">VISUAL BASIS: TECHNICAL PUBLICATION + SYSTEMS INTERFACE.<br><br>CONTENT RULE: ONLY VERIFIED CV / PROJECT MATERIAL IS PRESENTED AS FACT. THIS INTERFACE DOES NOT CLAIM FORMAL ASD-STE100 OR S1000D COMPLIANCE.</div>
 </aside>
 
 <main class="main">
-<div class="crumb">HOME / PORTFOLIO / ENGINEERING / PERSONNEL PROFILE</div>
+<div class="crumb">HOME / ENGINEERING PORTFOLIO / PERSONNEL PROFILE</div>
 
-<section id="overview" class="panel hero">
+<section id="overview" class="hero">
+<div class="hero-grid"></div>
 <div class="hero-main">
-<div class="kicker">00 / Overview / profile</div>
-<h2>AEROSPACE<br>ENGINEERING<br>& DIGITAL SYSTEMS</h2>
-<p>B.Tech Aerospace Engineering graduate with academic project work and professional exposure across aircraft systems, UAV propulsion, orbital mechanics visualization, composite materials, aviation cybersecurity and AI/ML-oriented digital work.</p>
-<div class="chips"><span class="chip">AEROSPACE</span><span class="chip">SYSTEMS</span><span class="chip">UAV</span><span class="chip">ORBITAL / GNC</span><span class="chip">TECHNICAL RESEARCH</span></div>
+<div class="hero-kicker">00 / OVERVIEW · SYSTEM IDENTITY</div>
+<h2><span>ENGINEERING</span><span>THINKING</span><span>IN MOTION</span></h2>
+<p class="hero-intro">Sai Akhil Malladi — Aerospace Engineering graduate working across aircraft and UAV systems, orbital mechanics visualization, GNC-oriented software development, composite materials research, aviation cybersecurity and AI/ML-oriented digital work.</p>
+<div class="hero-stamps"><span class="stamp">AEROSPACE</span><span class="stamp">SYSTEMS</span><span class="stamp">ORBITAL / GNC</span><span class="stamp">TECHNICAL RESEARCH</span></div>
+<div class="actions"><a class="btn primary" href="#orbital">EXPLORE ORBITAL LAB ↗</a><a class="btn" href="#projects">OPEN PROJECT MODULES</a><a class="btn" href="https://linkedin.com/in/sai-akhil-malladi-437494235" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div>
 </div>
-<div class="hero-side">
-<div class="stat"><small>Current independent project</small><strong>ORBITAL LAB</strong><p>Satellite trajectory and GNC visualization web application. In development.</p></div>
-<div><div class="micro" style="margin-bottom:7px">Information signal</div><div class="signal"></div></div>
-<div class="stat"><small>Source access</small><div style="display:grid;gap:5px;font-size:10px"><a href="https://linkedin.com/in/sai-akhil-malladi-437494235" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/psytronot" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:saiakhilmalladiworks@gmail.com">Professional email ↗</a></div></div>
-</div>
+<div class="hero-visual"><canvas id="heroCanvas" aria-label="Animated engineering system visualization"></canvas><div class="visual-hud"><span>LIVE SYSTEM MAP / PERSONNEL</span><span>4 DOMAINS · 6 MODULES</span></div><div class="cross"></div><div class="visual-bottom"><span>STRUCTURES // PROPULSION // ORBITAL // DIGITAL</span><span>01 / 04</span></div></div>
 </section>
 
-<section id="domains">
+<section id="domains" class="section">
 <div class="section-head"><h3>01 / ENGINEERING DOMAINS</h3><div class="code">SAM-AERO-001</div></div>
-<div class="callout"><b>Purpose.</b> Present the engineering areas represented by documented study and project work. These labels describe exposure or capability, not professional certification.</div>
-<div class="grid g3">
-<article class="card"><div class="card-head"><b>AIRCRAFT & UAV</b><span class="code">DOM-01</span></div><div class="card-body"><p>Aircraft systems, flight mechanics, aircraft dynamics and stability, fixed-wing design studies, UAV systems and propulsion.</p><div class="chips"><span class="chip">AIRCRAFT SYSTEMS</span><span class="chip">UAV</span><span class="chip">PROPULSION</span></div></div></article>
-<article class="card"><div class="card-head"><b>ORBITAL / GNC VISUALIZATION</b><span class="code">DOM-02</span></div><div class="card-body"><p>Orbital mechanics concepts, satellite trajectory visualization, coordinate transformations, ground-track mapping and GNC-focused software exploration.</p><div class="chips"><span class="chip">ORBITAL MECHANICS</span><span class="chip">GNC</span><span class="chip">VISUALIZATION</span></div></div></article>
-<article class="card"><div class="card-head"><b>MATERIALS & STRUCTURES</b><span class="code">DOM-03</span></div><div class="card-body"><p>Nano-filler reinforced composite characterization, mechanical testing, failure-analysis work and engineering documentation.</p><div class="chips"><span class="chip">COMPOSITES</span><span class="chip">TESTING</span><span class="chip">SEM / TEM</span></div></div></article>
+<p class="subcopy">Select a domain. The map responds with the corresponding engineering context. The labels indicate documented study or project exposure, not certification levels.</p>
+<div class="domain-grid">
+<div class="domain-map"><canvas id="domainCanvas" aria-label="Interactive engineering domain constellation"></canvas><div class="domain-label">SYSTEM CONSTELLATION / SELECT NODE</div><div class="domain-core"><div><b>SAI AKHIL</b><br><span class="micro">ENGINEERING CORE</span></div></div><button class="domain-node dn1 active" data-domain="aircraft">AIRCRAFT / UAV</button><button class="domain-node dn2" data-domain="orbital">ORBITAL / GNC</button><button class="domain-node dn3" data-domain="materials">MATERIALS</button><button class="domain-node dn4" data-domain="digital">DIGITAL / AI</button></div>
+<div class="domain-detail" id="domainDetail"><div class="tag">DOMAIN / AIRCRAFT & UAV</div><h4>Aircraft systems<br>and propulsion.</h4><p>Academic and project work covering aircraft systems, flight mechanics, aircraft dynamics and stability, fixed-wing design studies, UAV systems and propulsion.</p><div class="detail-list"><div class="detail-row"><b>Evidence module</b><span>UAV PROPULSION SYSTEM INTEGRATION</span></div><div class="detail-row"><b>Related study</b><span>RC AIRCRAFT WING DESIGN & VALIDATION</span></div><div class="detail-row"><b>Engineering basis</b><span>FLIGHT MECHANICS · PROPULSION · AIRCRAFT SYSTEMS</span></div></div></div>
 </div>
 </section>
 
-<section id="education">
+<section id="credentials" class="section">
 <div class="section-head"><h3>02 / EDUCATION & TRAINING</h3><div class="code">SAM-CRED-001</div></div>
-<table>
-<thead><tr><th>Period</th><th>Qualification / programme</th><th>Institution</th><th>Scope</th></tr></thead>
-<tbody>
-<tr><td>2017–2024</td><td><b>B.Tech in Aerospace Engineering</b></td><td>Hindustan Institute of Technology and Science (HITS), Chennai</td><td>Aircraft systems, propulsion, aerodynamics, flight dynamics, structures, materials and space-related coursework.</td></tr>
-<tr><td>Nov 2024–Apr 2025</td><td><b>Advanced Certification Programme in Space Technologies</b></td><td>Indian Institute of Science (IISc), Bengaluru</td><td>Professional space-technology training.</td></tr>
-<tr><td>2025–2026</td><td><b>Professional Certificate Programme in Generative AI, Machine Learning & Intelligent Automation</b></td><td>IHFC, Technology Innovation Hub of IIT Delhi</td><td>Generative AI, machine learning and intelligent automation training.</td></tr>
-<tr><td>Current</td><td><b>Six Sigma White Belt</b></td><td>Professional development</td><td>Credential listed in source material. No issuer or completion date asserted on this site.</td></tr>
-</tbody>
-</table>
+<div class="credentials">
+<article class="cred-card"><small>EDU / 2017–2024</small><h4>B.Tech in Aerospace Engineering</h4><p>Hindustan Institute of Technology and Science (HITS), Chennai.</p></article>
+<article class="cred-card"><small>CERT / NOV 2024–APR 2025</small><h4>Advanced Certification Programme in Space Technologies</h4><p>Indian Institute of Science (IISc), Bengaluru.</p></article>
+<article class="cred-card"><small>CERT / 2025–2026</small><h4>Generative AI, Machine Learning & Intelligent Automation</h4><p>IHFC, Technology Innovation Hub of IIT Delhi.</p></article>
+<article class="cred-card"><small>CERT / CURRENT</small><h4>Six Sigma White Belt</h4><p>Credential listed in source material. Issuing organisation and completion date are not asserted here.</p></article>
+</div>
 </section>
 
-<section id="experience">
+<section id="experience" class="section">
 <div class="section-head"><h3>03 / EXPERIENCE</h3><div class="code">SAM-EXP-001</div></div>
-<div class="grid g2">
-<article class="card"><div class="card-head"><b>AVIATION CYBERSECURITY / RESEARCH</b><span class="code">EXP-01</span></div><div class="card-body"><div class="when">DEC 2023 — DEC 2024 · HERITAGE CYBERWORLD LLP</div><p style="margin-top:7px">Supported aviation-focused research into aircraft systems, aviation infrastructure and aerospace cybersecurity topics. Organised technical observations and documentation concerning system operation, potential threats and protection concepts. Developed familiarity with threat monitoring, vulnerability assessment, SIEM/SOC concepts and safety, reliability and compliance considerations in aviation.</p></div></article>
-<article class="card"><div class="card-head"><b>ENGINEERING APPRENTICE / ENGINEER 1</b><span class="code">EXP-02</span></div><div class="card-body"><div class="when">JAN 2025 — MAR 2025 · HERITAGE INFRASPACE PVT. LTD.</div><p style="margin-top:7px">Gained on-field civil engineering exposure supporting diaphragm-wall project activities and site execution. Assisted with site coordination, day-to-day activity documentation and communication of work requirements. Worked in a project environment emphasising execution discipline, safety awareness, coordination and accurate records.</p></div></article>
+<div class="timeline">
+<div class="event"><div class="when">DEC 2023 — DEC 2024 · HERITAGE CYBERWORLD LLP</div><h4>Aviation Cybersecurity / Research</h4><p>Supported aviation-focused research into aircraft systems, aviation infrastructure and aerospace cybersecurity topics. Organised technical observations and documentation concerning system operation, potential threats and protection concepts. Developed familiarity with threat monitoring, vulnerability assessment, SIEM/SOC concepts and safety, reliability and compliance considerations in aviation.</p></div>
+<div class="event"><div class="when">JAN 2025 — MAR 2025 · HERITAGE INFRASPACE PVT. LTD.</div><h4>Engineering Apprentice / Engineer 1</h4><p>Gained on-field civil engineering exposure supporting diaphragm-wall project activities and site execution. Assisted with site coordination, day-to-day activity documentation and communication of work requirements.</p></div>
 </div>
 </section>
 
-<section id="orbital">
+<section id="orbital" class="section">
 <div class="section-head"><h3>04 / GNC & ORBITAL LAB</h3><div class="code">SAM-PROJ-ORBITAL-001</div></div>
-<div class="panel orbital">
-<div class="orbital-main">
-<div class="orbit-view">
-<div class="read"><span>ORBITAL LAB · PERSONAL PROJECT</span><span>IN DEVELOPMENT</span></div>
-<div class="scanline"></div><div class="reticle"></div><div class="glow-core"></div><div class="earth"></div>
-<div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
-<div class="node node-1"></div><div class="node node-2"></div><div class="node node-3"></div>
-<div class="sat"></div><div class="telemetry">ALT // VELOCITY // FRAME // GNC</div>
-<div class="orbit-id">01</div><div class="orbit-id o2">02</div><div class="orbit-id o3">03</div>
-<div class="read bottom"><span>PROPAGATION · MAPPING · SPACECRAFT</span><span>VISUALISATION</span></div>
-</div>
-</div>
-<div class="orbital-side">
-<div class="kicker">SATELLITE TRAJECTORY & GNC VISUALIZATION</div>
-<h4>Orbital Lab</h4>
+<div class="orbital">
+<div class="orbit-visual"><canvas id="orbitCanvas" aria-label="Animated orbital mechanics visualization"></canvas><div class="orbit-ui"><div class="orbit-top"><span>ORBITAL LAB · PERSONAL PROJECT</span><span>IN DEVELOPMENT</span></div><div class="orbit-bottom"><span>TRAJECTORY · GROUND TRACK · SPACECRAFT</span><span>VISUAL MODEL</span></div></div></div>
+<div class="orbit-side">
+<div class="eyebrow">SATELLITE TRAJECTORY & GNC VISUALIZATION</div><h4>Orbital Lab</h4>
 <p>Interactive aerospace web application for exploring orbital mechanics, satellite trajectories, spacecraft parameters and GNC concepts through a browser-based engineering interface.</p>
-<div class="facts">
-<div class="fact"><b>Propagation</b><span>Kepler-based propagation and SGP4/TLE work</span></div>
-<div class="fact"><b>Coordinate / mapping</b><span>ECI → ECEF → geodetic transformations and ground-track mapping</span></div>
-<div class="fact"><b>Workspaces</b><span>Missions, spacecraft, orbits, ground tracks, systems and console-style tools</span></div>
-<div class="fact"><b>QA / iteration</b><span>Navigation, user-input behaviour, orbit summaries, timeline controls and visualisation troubleshooting</span></div>
-</div>
-<div class="orbital-meta"><span>OPEN SOURCE / PERSONAL BUILD</span><span>ORBITAL / GNC</span></div>
-<a class="launch" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">OPEN ORBITAL LAB ↗</a>
-<p class="scope-note">Scope control: perturbations, maneuver analysis and GNC/state-estimation are described in the source material as planned or in development. They are not presented here as completed flight-dynamics validation.</p>
+<div class="facts"><div class="fact"><b>Propagation</b><span>Kepler-based propagation and SGP4/TLE work</span></div><div class="fact"><b>Coordinate / mapping</b><span>ECI → ECEF → geodetic transformations and ground-track mapping</span></div><div class="fact"><b>Workspaces</b><span>Missions, spacecraft, orbits, ground tracks, systems and console-style tools</span></div><div class="fact"><b>QA / iteration</b><span>Navigation, user-input behaviour, orbit summaries, timeline controls and visualisation troubleshooting</span></div></div>
+<a class="orbit-link" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">OPEN ORBITAL LAB ↗</a>
+<p style="font-size:9px;color:#87949f;margin-top:11px">Scope control: perturbations, maneuver analysis and GNC/state-estimation are described in the project material as planned or in development. They are not presented here as completed flight-dynamics validation.</p>
 </div>
 </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="section">
 <div class="section-head"><h3>05 / PROJECT DATA MODULES</h3><div class="code">SAM-DM-001</div></div>
-<div class="panel modules">
-<div class="module-nav">
-<button class="active" data-module="m1">P-001 / UAV propulsion</button>
-<button data-module="m2">P-002 / Composite structures</button>
-<button data-module="m3">P-003 / RC wing study</button>
-<button data-module="m4">P-004 / Aircraft lift calculator</button>
-<button data-module="m5">P-005 / AeroApply</button>
-<button data-module="m6">P-006 / Orbital Lab</button>
+<p class="subcopy">A project explorer instead of a static grid. Select a module to inspect what was actually done.</p>
+<div class="project-console">
+<div class="project-nav">
+<button class="active" data-project="p1">P-001 / UAV propulsion</button><button data-project="p2">P-002 / Composite structures</button><button data-project="p3">P-003 / RC wing study</button><button data-project="p4">P-004 / Lift calculator</button><button data-project="p5">P-005 / AeroApply</button><button data-project="p6">P-006 / Orbital Lab</button>
 </div>
-<div class="module-view">
-<div id="m1" class="module active"><div class="kicker">DATA MODULE P-001 · AEROSPACE / PROPULSION</div><h4>UAV Propulsion System Integration & Performance Evaluation</h4><p>Studied UAV propulsion architecture and subsystem integration principles. Developed engineering documentation and performance-evaluation methods. Analysed the relationship between propulsion integration and overall UAV system behaviour.</p><div class="spec"><div>Type</div><div>Engineering project</div><div>Domain</div><div>UAV propulsion / systems integration</div><div>Evidence</div><div>Technical study, documentation and performance evaluation approach</div></div></div>
-<div id="m2" class="module"><div class="kicker">DATA MODULE P-002 · MATERIALS / RESEARCH</div><h4>Material Characterization of Nano-Filler Reinforced Composite Structures</h4><p>Final-year academic project completed Jul 2022 — Mar 2023. Work included technical literature research, project methodology, material-related observations, tensile, flexural, impact and hardness testing, failure analysis and SEM/TEM observations, supported by engineering documentation.</p><div class="spec"><div>Guidance</div><div>Dr. R. Asokan, Dean, Aerospace Department</div><div>Application</div><div>Aerospace-oriented composite structures</div><div>Period</div><div>Jul 2022 — Mar 2023</div></div></div>
-<div id="m3" class="module"><div class="kicker">DATA MODULE P-003 · AIRCRAFT DESIGN</div><h4>RC Aircraft Wing Design & Validation Study</h4><p>Conducted aerodynamic and structural design studies for a fixed-wing RC aircraft. Investigated wing design from aerodynamic and structural perspectives and prepared validation documentation and engineering analyses.</p><div class="spec"><div>Domain</div><div>Fixed-wing aircraft</div><div>Focus</div><div>Design study / aerodynamic and structural evaluation</div><div>Evidence</div><div>Engineering analysis and validation documentation</div></div></div>
-<div id="m4" class="module"><div class="kicker">DATA MODULE P-004 · SOFTWARE / AERODYNAMICS</div><h4>Aircraft Lift Calculator</h4><p>Python-based aircraft lift calculator with dynamic-pressure analysis, validation tests and lift-versus-velocity visualization.</p><div class="spec"><div>Language</div><div>Python</div><div>Model</div><div>L = ½ρV²SCₗ</div><div>Repository</div><div><a style="color:var(--blue)" href="https://github.com/psytronot/aircraft-lift-calculatorv1" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></div>
-<div id="m5" class="module"><div class="kicker">DATA MODULE P-005 · AERODYNAMICS / EDUCATION</div><h4>AeroApply — CL/CD Aerodynamic Calculation Tool</h4><p>Student-focused engineering calculation project designed around coefficient of lift (C<sub>L</sub>) and coefficient of drag (C<sub>D</sub>) calculations. Organises aerodynamic inputs and calculated outputs to help users follow aerodynamic relationships.</p><div class="spec"><div>Type</div><div>Engineering calculation tool</div><div>Purpose</div><div>Educational / student-oriented aerodynamic calculations</div><div>Approach</div><div>Formula-based input / output workflow</div></div></div>
-<div id="m6" class="module"><div class="kicker">DATA MODULE P-006 · ORBITAL MECHANICS / GNC</div><h4>Orbital Lab</h4><p>Interactive aerospace web application for satellite trajectory and GNC visualisation. The project explores orbital mechanics, spacecraft parameters, trajectory and ground-track visualisation, coordinate transformations, and satellite-tracking concepts.</p><div class="spec"><div>Type</div><div>Independent aerospace engineering project</div><div>Domain</div><div>Orbital mechanics / GNC visualisation</div><div>Current state</div><div>In development</div><div>Application</div><div><a style="color:var(--blue)" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">Open Orbital Lab ↗</a></div></div></div>
+<div class="project-view">
+<div id="p1" class="project active"><div class="eyebrow">AEROSPACE / PROPULSION</div><h4>UAV Propulsion System Integration & Performance Evaluation</h4><p>Studied UAV propulsion architecture and subsystem integration principles. Developed engineering documentation and performance-evaluation methods. Analysed the relationship between propulsion integration and overall UAV system behaviour.</p><div class="spec"><div>Type</div><div>Engineering project</div><div>Domain</div><div>UAV propulsion / systems integration</div><div>Evidence</div><div>Technical study, documentation and performance evaluation approach</div></div></div>
+<div id="p2" class="project"><div class="eyebrow">MATERIALS / RESEARCH</div><h4>Material Characterization of Nano-Filler Reinforced Composite Structures</h4><p>Final-year academic project completed Jul 2022 — Mar 2023. Work included technical literature research, project methodology, material-related observations, tensile, flexural, impact and hardness testing, failure analysis and SEM/TEM observations, supported by engineering documentation.</p><div class="spec"><div>Guidance</div><div>Dr. R. Asokan, Dean, Aerospace Department</div><div>Application</div><div>Aerospace-oriented composite structures</div><div>Period</div><div>Jul 2022 — Mar 2023</div></div></div>
+<div id="p3" class="project"><div class="eyebrow">AIRCRAFT DESIGN</div><h4>RC Aircraft Wing Design & Validation Study</h4><p>Conducted aerodynamic and structural design studies for a fixed-wing RC aircraft. Investigated wing design from aerodynamic and structural perspectives and prepared validation documentation and engineering analyses.</p><div class="spec"><div>Domain</div><div>Fixed-wing aircraft</div><div>Focus</div><div>Design study / aerodynamic and structural evaluation</div><div>Evidence</div><div>Engineering analysis and validation documentation</div></div></div>
+<div id="p4" class="project"><div class="eyebrow">SOFTWARE / AERODYNAMICS</div><h4>Aircraft Lift Calculator</h4><p>Python-based aircraft lift calculator with dynamic-pressure analysis, validation tests and lift-versus-velocity visualization.</p><div class="spec"><div>Language</div><div>Python</div><div>Model</div><div>L = ½ρV²SCₗ</div><div>Repository</div><div><a class="repo" href="https://github.com/psytronot/aircraft-lift-calculatorv1" target="_blank" rel="noreferrer">GITHUB ↗</a></div></div></div>
+<div id="p5" class="project"><div class="eyebrow">AERODYNAMICS / EDUCATION</div><h4>AeroApply — CL/CD Aerodynamic Calculation Tool</h4><p>Student-focused engineering calculation project designed around coefficient of lift (C<sub>L</sub>) and coefficient of drag (C<sub>D</sub>) calculations. Organises aerodynamic inputs and calculated outputs to help users follow aerodynamic relationships.</p><div class="spec"><div>Type</div><div>Engineering calculation tool</div><div>Purpose</div><div>Educational / student-oriented aerodynamic calculations</div><div>Approach</div><div>Formula-based input / output workflow</div></div></div>
+<div id="p6" class="project"><div class="eyebrow">ORBITAL MECHANICS / GNC</div><h4>Orbital Lab</h4><p>Interactive aerospace web application for satellite trajectory and GNC visualisation. The project explores orbital mechanics, spacecraft parameters, trajectory and ground-track visualisation, coordinate transformations, and satellite-tracking concepts.</p><div class="spec"><div>Type</div><div>Independent aerospace engineering project</div><div>Current state</div><div>In development</div><div>Application</div><div><a class="repo" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">OPEN APPLICATION ↗</a></div></div></div>
 </div>
 </div>
 </section>
 
-<section id="capability">
+<section id="capability" class="section">
 <div class="section-head"><h3>06 / CAPABILITY MATRIX</h3><div class="code">SAM-CAP-001</div></div>
-<div class="callout"><b>Level definitions.</b> Foundation = academic or structured exposure. Project = demonstrated in a named project. Working = used in practice. Training = formal learning. Exposure = workplace familiarity.</div>
-<div class="grid g2">
 <div class="matrix">
-<div><b>Aerospace engineering</b><br><span class="micro">Aerodynamics · flight mechanics · propulsion · aircraft systems · materials</span></div><div class="value"><span class="dot"></span>FOUNDATION</div>
-<div><b>Systems engineering</b><br><span class="micro">Integration · requirements concepts · V&V · technical documentation</span></div><div class="value"><span class="dot"></span>FOUNDATION</div>
-<div><b>Orbital mechanics / GNC</b><br><span class="micro">Trajectory visualisation · coordinate transforms · SGP4/TLE work</span></div><div class="value"><span class="dot"></span>PROJECT</div>
-<div><b>CAD</b><br><span class="micro">SolidWorks</span></div><div class="value"><span class="dot"></span>WORKING</div>
+<div class="matrix-col">
+<div class="matrix-row"><div><b>Aerospace engineering</b><i>Aerodynamics · flight mechanics · propulsion · aircraft systems · materials</i></div><span>FOUNDATION</span></div>
+<div class="matrix-row"><div><b>Systems engineering</b><i>Integration · requirements concepts · V&V · technical documentation</i></div><span>FOUNDATION</span></div>
+<div class="matrix-row"><div><b>Orbital mechanics / GNC</b><i>Trajectory visualisation · coordinate transforms · SGP4/TLE work</i></div><span>PROJECT</span></div>
+<div class="matrix-row"><div><b>CAD</b><i>SolidWorks</i></div><span>WORKING</span></div>
 </div>
-<div class="matrix">
-<div><b>Programming</b><br><span class="micro">Python fundamentals · MATLAB · JavaScript/React exposure</span></div><div class="value"><span class="dot"></span>FOUNDATION</div>
-<div><b>AI / ML</b><br><span class="micro">Generative AI · machine learning · intelligent automation</span></div><div class="value"><span class="dot"></span>TRAINING</div>
-<div><b>Cybersecurity</b><br><span class="micro">Aviation monitoring · vulnerability-assessment workflows · SIEM/SOC exposure</span></div><div class="value"><span class="dot"></span>EXPOSURE</div>
-<div><b>Technical documentation</b><br><span class="micro">Research notes · engineering reports · procedures · structured analysis</span></div><div class="value"><span class="dot"></span>CORE</div>
+<div class="matrix-col">
+<div class="matrix-row"><div><b>Programming</b><i>Python fundamentals · MATLAB · JavaScript/React exposure</i></div><span>FOUNDATION</span></div>
+<div class="matrix-row"><div><b>AI / ML</b><i>Generative AI · machine learning · intelligent automation</i></div><span>TRAINING</span></div>
+<div class="matrix-row"><div><b>Cybersecurity</b><i>Aviation monitoring · vulnerability-assessment workflows · SIEM/SOC exposure</i></div><span>EXPOSURE</span></div>
+<div class="matrix-row"><div><b>Technical documentation</b><i>Research notes · engineering reports · procedures · structured analysis</i></div><span>CORE</span></div>
 </div>
 </div>
 </section>
 
-<section>
+<section class="section">
 <div class="section-head"><h3>06A / ENGINEERING METHOD</h3><div class="code">SAM-METH-001</div></div>
-<div class="panel" style="padding:14px"><div class="grid g3">
-<div><div class="micro">STEP 01 / DEFINE</div><b>Identify the problem.</b><p style="font-size:10px;color:#9ca7b1">State intended output, inputs and constraints.</p></div>
-<div><div class="micro">STEP 02 / ANALYSE</div><b>Build the evidence.</b><p style="font-size:10px;color:#646f79">Separate assumptions, observations, interfaces and calculations.</p></div>
-<div><div class="micro">STEP 03 / VERIFY</div><b>Close the loop.</b><p style="font-size:10px;color:#646f79">Test, compare, document and identify remaining uncertainty.</p></div>
-</div></div>
+<div class="method-stack">
+<div class="method"><div class="num">01</div><div><b>DEFINE</b><span>Identify the problem, intended output, inputs and constraints.</span></div></div>
+<div class="method"><div class="num">02</div><div><b>ANALYSE</b><span>Separate assumptions, observations, interfaces and calculations.</span></div></div>
+<div class="method"><div class="num">03</div><div><b>VERIFY</b><span>Test, compare, document and identify remaining uncertainty.</span></div></div>
+</div>
 </section>
 
-<section id="lab">
+<section id="lab" class="section">
 <div class="section-head"><h3>07 / INTERACTIVE ENGINEERING LAB</h3><div class="code">SAM-LAB-001</div></div>
-<div class="lab">
-<div class="labbox"><div class="kicker">Lift relation / first-order calculation</div><div class="formula">L = ½ρV²SCₗ</div><div class="inputs">
-<label>ρ air<input id="rho" type="number" min="0" step=".1" value="1.225"></label>
-<label>V velocity<input id="vel" type="number" min="0" step="1" value="35"></label>
-<label>S area<input id="area" type="number" min="0" step=".1" value=".8"></label>
-<label>Cₗ lift coefficient<input id="cl" type="number" min="0" step=".01" value=".7"></label>
-</div><div class="output"><span class="micro">Calculated lift</span><strong id="lift">420.2 N</strong></div></div>
-<div class="labbox"><div class="kicker">Model note</div><p style="font-size:11px;color:#bcc8d2;margin-top:7px">This local calculator demonstrates variable relationships in the standard lift equation. It is a first-order educational visualization. It is not flight-performance validation.</p><div class="spec"><div>Input</div><div>Density · velocity · wing area · Cₗ</div><div>Output</div><div>Lift force</div><div>Update</div><div>Immediate / client-side</div></div></div>
+<div class="lab-grid">
+<div class="lab-card"><div class="kicker">LIFT RELATION / FIRST-ORDER MODEL</div><div class="equation">L = ½ρV²SCₗ</div><div class="inputs"><label>ρ air<input id="rho" type="number" min="0" step=".1" value="1.225"></label><label>V velocity<input id="vel" type="number" min="0" step="1" value="35"></label><label>S area<input id="area" type="number" min="0" step=".1" value=".8"></label><label>Cₗ lift coefficient<input id="cl" type="number" min="0" step=".01" value=".7"></label></div><div class="calc-output"><span class="micro">CALCULATED LIFT</span><strong id="lift">420.2 N</strong></div></div>
+<div class="lab-card"><div class="kicker">MODEL NOTE</div><p style="color:#bdc7cf;font-size:11px;margin-top:7px">A compact visual model showing how density, velocity, wing area and lift coefficient affect calculated lift. It is an educational visualization, not flight-performance validation.</p><div class="method-stack" style="margin-top:16px"><div class="method"><div class="num">INPUT</div><div><b>VARIABLES</b><span>ρ · V · S · Cₗ</span></div></div><div class="method"><div class="num">MODEL</div><div><b>EQUATION</b><span>Standard lift relation</span></div></div><div class="method"><div class="num">OUTPUT</div><div><b>LIFT</b><span>Force in newtons</span></div></div></div></div>
 </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="section">
 <div class="section-head"><h3>08 / CONTACT</h3><div class="code">SAM-CON-001</div></div>
-<div class="links">
-<a class="link" href="mailto:saiakhilmalladiworks@gmail.com"><small>PROFESSIONAL</small><b>saiakhilmalladiworks@gmail.com</b></a>
-<a class="link" href="https://linkedin.com/in/saiakhilmalladi" target="_blank" rel="noreferrer"><small>PROFILE</small><b>LinkedIn ↗</b></a>
-<a class="link" href="https://github.com/psytronot" target="_blank" rel="noreferrer"><small>SOURCE</small><b>GitHub ↗</b></a>
-</div>
+<div class="links"><a class="link" href="mailto:saiakhilmalladiworks@gmail.com"><small>PROFESSIONAL</small><b>saiakhilmalladiworks@gmail.com</b></a><a class="link" href="https://linkedin.com/in/sai-akhil-malladi-437494235" target="_blank" rel="noreferrer"><small>PROFILE</small><b>LinkedIn ↗</b></a><a class="link" href="https://github.com/psytronot" target="_blank" rel="noreferrer"><small>SOURCE</small><b>GitHub ↗</b></a></div>
 </section>
-
-<footer><span>SAM-PORT-001 · ISSUE 01 · REV B</span><span>TECHNICAL-PUBLICATION INSPIRED · CREATIVE MEDIA SEPARATED</span></footer>
+<footer><span>SAM-PORT-001 · ISSUE 01 · REV D</span><span>TECHNICAL SYSTEM / INTERACTIVE ENGINEERING INTERFACE · 2026</span></footer>
 </main>
 </div>
+
 <script>
-(()=>{const ids=['rho','vel','area','cl'];const out=document.getElementById('lift');function calc(){const n=ids.map(id=>Number(document.getElementById(id).value)||0);out.textContent=(.5*n[0]*n[1]*n[1]*n[2]*n[3]).toFixed(1)+' N'}ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();document.querySelectorAll('[data-module]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-module]').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.module').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.module).classList.add('active')}))})();
+(()=> {
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const qs=s=>document.querySelector(s), qsa=s=>[...document.querySelectorAll(s)];
+const safeRaf=window.requestAnimationFrame?window.requestAnimationFrame.bind(window):(fn=>setTimeout(fn,16));
+const dpr=()=>Math.min(window.devicePixelRatio||1,2);
+
+function setupCanvas(id,draw){
+  const c=qs('#'+id);if(!c)return null;
+  const ctx=c.getContext('2d');let w=0,h=0,raf=0,active=true;
+  function resize(){const r=c.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);const d=dpr();c.width=Math.round(w*d);c.height=Math.round(h*d);ctx.setTransform(d,0,0,d,0,0);draw(ctx,w,h,performance.now(),true)}
+  function frame(t){if(!active)return;draw(ctx,w,h,t,false);raf=safeRaf(frame)}
+  resize();window.addEventListener('resize',resize,{passive:true});
+  if(!reduced){raf=safeRaf(frame);document.addEventListener('visibilitychange',()=>{active=!document.hidden;if(active&&!raf)raf=safeRaf(frame)})}
+  return ()=>{active=false;if(raf&&cancelAnimationFrame)cancelAnimationFrame(raf)}
+}
+
+const heroNodes=[
+{x:.50,y:.50,r:9,c:'cyan',label:'CORE'},
+{x:.20,y:.27,r:5,c:'violet',label:'AIR'},
+{x:.79,y:.27,r:5,c:'blue',label:'ORB'},
+{x:.20,y:.75,r:5,c:'pink',label:'MAT'},
+{x:.79,y:.75,r:5,c:'orange',label:'DIG'}
+];
+const colors={cyan:'#4ff0e2',violet:'#a88cff',pink:'#ff4fa3',orange:'#ffad5b',blue:'#67a8ff'};
+setupCanvas('heroCanvas',(ctx,w,h,t)=>{
+  ctx.clearRect(0,0,w,h);
+  const pulse=.5+.5*Math.sin(t*.002);
+  const pts=heroNodes.map(n=>({x:n.x*w,y:n.y*h,r:n.r}));
+  ctx.lineWidth=1;
+  pts.slice(1).forEach((p,i)=>{ctx.strokeStyle=i%2?'rgba(103,168,255,.24)':'rgba(79,240,226,.24)';ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);ctx.lineTo(p.x,p.y);ctx.stroke()});
+  for(let i=1;i<pts.length;i++){const p=pts[i];ctx.strokeStyle=i===3?'rgba(255,79,163,.16)':'rgba(255,255,255,.07)';ctx.beginPath();ctx.arc(p.x,p.y,34+8*Math.sin(t*.001+i),0,Math.PI*2);ctx.stroke()}
+  pts.forEach((p,i)=>{const col=colors[heroNodes[i].c];ctx.fillStyle=col;ctx.shadowColor=col;ctx.shadowBlur=i===0?18:10;ctx.beginPath();ctx.arc(p.x,p.y,i===0?p.r+2+pulse*2:p.r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0});
+  ctx.strokeStyle='rgba(79,240,226,.18)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(pts[0].x,pts[0].y,92+pulse*7,0,Math.PI*2);ctx.stroke();
+});
+
+const domainState={
+aircraft:{tag:'DOMAIN / AIRCRAFT & UAV',title:'Aircraft systems<br>and propulsion.',body:'Academic and project work covering aircraft systems, flight mechanics, aircraft dynamics and stability, fixed-wing design studies, UAV systems and propulsion.',rows:[['Evidence module','UAV PROPULSION SYSTEM INTEGRATION'],['Related study','RC AIRCRAFT WING DESIGN & VALIDATION'],['Engineering basis','FLIGHT MECHANICS · PROPULSION · AIRCRAFT SYSTEMS']]},
+orbital:{tag:'DOMAIN / ORBITAL & GNC',title:'Orbits, trajectories<br>and GNC software.',body:'Independent technical development focused on orbital mechanics, satellite trajectory visualization, coordinate transformations, ground-track mapping and GNC-oriented software exploration.',rows:[['Primary module','ORBITAL LAB'],['Project state','IN DEVELOPMENT'],['Engineering basis','ORBITAL MECHANICS · VISUALISATION · SATELLITE DATA']]},
+materials:{tag:'DOMAIN / MATERIALS & STRUCTURES',title:'Materials<br>under test.',body:'Final-year aerospace materials work focused on nano-filler reinforced composite structures, mechanical testing, failure analysis, characterization and engineering documentation.',rows:[['Evidence module','NANO-FILLER REINFORCED COMPOSITES'],['Methods','TENSILE · FLEXURAL · IMPACT · HARDNESS'],['Characterization','SEM / TEM OBSERVATIONS']]},
+digital:{tag:'DOMAIN / DIGITAL & AI',title:'Engineering<br>through software.',body:'Digital work combines Python fundamentals, data visualization, automation, AI/ML training and browser-based aerospace application development.',rows:[['Project','AIRCRAFT LIFT CALCULATOR'],['Training','GENERATIVE AI · ML · INTELLIGENT AUTOMATION'],['Digital exposure','JAVASCRIPT / REACT · GITHUB · DATA VISUALIZATION']]}
+};
+function renderDomain(key){
+  const d=domainState[key];const detail=qs('#domainDetail');if(!detail)return;
+  detail.innerHTML='<div class="tag">'+d.tag+'</div><h4>'+d.title+'</h4><p>'+d.body+'</p><div class="detail-list">'+d.rows.map(r=>'<div class="detail-row"><b>'+r[0]+'</b><span>'+r[1]+'</span></div>').join('')+'</div>';
+  qsa('.domain-node').forEach(b=>b.classList.toggle('active',b.dataset.domain===key));
+}
+qsa('.domain-node').forEach(b=>b.addEventListener('click',()=>renderDomain(b.dataset.domain)));
+renderDomain('aircraft');
+setupCanvas('domainCanvas',(ctx,w,h,t)=>{
+  ctx.clearRect(0,0,w,h);
+  const core={x:w*.5,y:h*.5};
+  const ns=[{x:w*.17,y:h*.22,c:colors.cyan},{x:w*.82,y:h*.22,c:colors.violet},{x:w*.16,y:h*.78,c:colors.pink},{x:w*.84,y:h*.78,c:colors.orange}];
+  ns.forEach((p,i)=>{ctx.strokeStyle=i%2?'rgba(168,140,255,.24)':'rgba(79,240,226,.24)';ctx.beginPath();ctx.moveTo(core.x,core.y);ctx.lineTo(p.x,p.y);ctx.stroke();ctx.fillStyle=p.c;ctx.shadowColor=p.c;ctx.shadowBlur=12+5*Math.sin(t*.001+i);ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0});
+  ctx.strokeStyle='rgba(79,240,226,.20)';ctx.beginPath();ctx.arc(core.x,core.y,80+6*Math.sin(t*.0015),0,Math.PI*2);ctx.stroke();
+});
+
+setupCanvas('orbitCanvas',(ctx,w,h,t)=>{
+  ctx.clearRect(0,0,w,h);
+  const cx=w*.50,cy=h*.50,rx=Math.min(w*.42,230),ry=Math.min(h*.27,112);
+  const theta=t*.00028;
+  const earthR=Math.min(w,h)*.19;
+  const starSeed=[['cyan',.18,.19],['violet',.82,.25],['pink',.24,.75],['orange',.76,.68],['blue',.62,.15],['cyan',.10,.52]];
+  starSeed.forEach(s=>{ctx.fillStyle=colors[s[0]];ctx.globalAlpha=.35;ctx.beginPath();ctx.arc(w*s[1],h*s[2],1.2,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1});
+  [[rx,ry,-.22,'#67a8ff'],[rx*1.18,ry*1.55,.35,'#4ff0e2'],[rx*.75,ry*1.9,1.02,'#a88cff']].forEach(o=>{ctx.save();ctx.translate(cx,cy);ctx.rotate(o[2]);ctx.strokeStyle=o[3];ctx.globalAlpha=.68;ctx.beginPath();ctx.ellipse(0,0,o[0],o[1],0,0,Math.PI*2);ctx.stroke();ctx.restore()});
+  const g=ctx.createRadialGradient(cx-earthR*.35,cy-earthR*.40,2,cx,cy,earthR);g.addColorStop(0,'#9f8cff');g.addColorStop(.25,'#48506f');g.addColorStop(.62,'#202c3d');g.addColorStop(1,'#080d14');ctx.fillStyle=g;ctx.shadowColor='rgba(159,140,255,.25)';ctx.shadowBlur=35;ctx.beginPath();ctx.arc(cx,cy,earthR,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='rgba(159,140,255,.6)';ctx.stroke();
+  const sx=cx+rx*Math.cos(theta),sy=cy+ry*Math.sin(theta)*.4;ctx.fillStyle='#f6fbff';ctx.shadowColor=colors.cyan;ctx.shadowBlur=16;ctx.beginPath();ctx.arc(sx,sy,4.5,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+  ctx.fillStyle=colors.cyan;ctx.globalAlpha=.8;ctx.font='8px "Space Mono",monospace';ctx.fillText('SAT',sx+9,sy-7);ctx.globalAlpha=1;
+  ctx.strokeStyle='rgba(79,240,226,.25)';ctx.beginPath();ctx.moveTo(cx-12,cy);ctx.lineTo(cx+12,cy);ctx.moveTo(cx,cy-12);ctx.lineTo(cx,cy+12);ctx.stroke();
+});
+
+qsa('[data-project]').forEach(btn=>btn.addEventListener('click',()=>{qsa('[data-project]').forEach(x=>x.classList.remove('active'));qsa('.project').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const target=qs('#'+btn.dataset.project);if(target)target.classList.add('active')}));
+
+function calcLift(){const nums=['rho','vel','area','cl'].map(id=>Math.max(0,Number(qs('#'+id)?.value)||0));const L=.5*nums[0]*nums[1]*nums[1]*nums[2]*nums[3];qs('#lift').textContent=(Number.isFinite(L)?L:0).toFixed(1)+' N'}
+['rho','vel','area','cl'].forEach(id=>qs('#'+id)?.addEventListener('input',calcLift));calcLift();
+
+const links=qsa('.toc a'),sections=links.map(a=>qs(a.getAttribute('href'))).filter(Boolean);
+if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px',threshold:0});sections.forEach(s=>io.observe(s))}
+
+document.querySelectorAll('.hero,.section').forEach((el,i)=>{if(reduced){el.style.opacity='1';return}el.animate([{opacity:.2,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:420,delay:Math.min(i*35,180),fill:'both',easing:'cubic-bezier(.2,.8,.2,1)'})});
+})();
 </script>
 </body>
 </html>
