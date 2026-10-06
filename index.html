@@ -3,121 +3,410 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08090d">
+<meta name="theme-color" content="#090a0e">
 <meta name="description" content="Sai Akhil Malladi | Aerospace Engineering | Systems Thinking | AI/ML | Technical Research">
-<title>Sai Akhil Malladi | Engineering Universe</title>
+<title>Sai Akhil Malladi | Aerospace Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
- --bg:#07090d;--bg2:#0a0f14;--panel:rgba(18,23,31,.56);--panel-strong:rgba(16,21,28,.78);
- --ink:#f5f1e8;--muted:#9da7b2;--line:rgba(180,200,215,.16);--line-strong:rgba(180,200,215,.28);
- --cyan:#4ff0e2;--violet:#a78bfa;--pink:#ff4fa3;--orange:#ffad5b;--blue:#67a8ff;--green:#7ed5a3;
- --sans:Montserrat,Arial,sans-serif;--mono:"Space Mono",monospace;--max:1480px
+  --bg:#090a0e;
+  --surface:#10141a;
+  --surface-2:#0d1117;
+  --text:#f2eee6;
+  --text-soft:#c2cad1;
+  --muted:#818e99;
+  --line:#29333e;
+  --cyan:#4ff0e2;
+  --violet:#a78bfa;
+  --pink:#ff4fa3;
+  --orange:#ffad5b;
+  --blue:#68a8ff;
+  --radius:22px;
+  --sans:Montserrat,Arial,sans-serif;
+  --mono:"Space Mono",monospace;
+  --max:1440px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.6 var(--sans);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-5;background:radial-gradient(circle at 20% 8%,rgba(79,240,226,.075),transparent 22%),radial-gradient(circle at 82% 14%,rgba(167,139,250,.09),transparent 24%),radial-gradient(circle at 72% 78%,rgba(255,79,163,.05),transparent 23%)}
-body:after{content:"";position:fixed;inset:0;z-index:-4;background-image:linear-gradient(rgba(79,240,226,.043) 1px,transparent 1px),linear-gradient(90deg,rgba(79,240,226,.038) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000 0 72%,transparent)}
-a{text-decoration:none;color:inherit}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-3;
+  background:
+    radial-gradient(circle at 18% 0%,rgba(79,240,226,.05),transparent 22%),
+    radial-gradient(circle at 90% 14%,rgba(167,139,250,.06),transparent 24%),
+    radial-gradient(circle at 70% 80%,rgba(255,79,163,.035),transparent 22%);
+}
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-2;
+  opacity:.20;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:linear-gradient(to bottom,#000 0 60%,transparent 100%);
+}
+::selection{background:rgba(79,240,226,.2);color:#fff}
+a{color:inherit;text-decoration:none}
 button,input{font:inherit}
-::selection{background:rgba(79,240,226,.22);color:#fff}
-.topbar{position:sticky;top:0;z-index:80;height:54px;border-bottom:1px solid rgba(180,200,215,.12);background:rgba(7,9,13,.72);backdrop-filter:blur(20px) saturate(1.25);display:flex;justify-content:space-between;align-items:center;padding:0 22px}
-.brand{font:700 9px var(--mono);letter-spacing:.08em}.brand b{color:var(--cyan)}
-.nav{display:flex;gap:17px}.nav a{font:8px var(--mono);color:#7e8b97;letter-spacing:.06em;transition:.18s}.nav a:hover,.nav a.active{color:#f3efe7}
-.container{width:min(var(--max),calc(100% - 42px));margin:auto}
-.eyebrow{font:8px var(--mono);color:var(--cyan);letter-spacing:.11em;text-transform:uppercase}.code{font:8px var(--mono);color:#788692;letter-spacing:.05em;text-transform:uppercase}
-.glass{background:linear-gradient(145deg,rgba(25,32,42,.62),rgba(12,16,22,.48));border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 18px 70px rgba(0,0,0,.22);backdrop-filter:blur(22px) saturate(1.22);-webkit-backdrop-filter:blur(22px) saturate(1.22)}
-.hero{min-height:calc(100vh - 54px);display:grid;grid-template-columns:1.02fr .98fr;position:relative;overflow:hidden;border-bottom:1px solid rgba(180,200,215,.12)}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px 46px 58px;position:relative;z-index:2}
-.hero h1{font-size:clamp(52px,7.4vw,108px);line-height:.82;letter-spacing:-.085em;margin:18px 0 24px}
-.hero h1 span{display:block}.hero h1 .name2{color:#dbe0e4}.hero h1 .accent{background:linear-gradient(90deg,var(--cyan),var(--violet) 52%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lede{max-width:690px;color:#c4cdd5;font-size:15px;margin:0}
-.signature{display:flex;flex-wrap:wrap;gap:7px;margin-top:23px}.sig{padding:7px 9px;border:1px solid #34424e;background:rgba(10,15,21,.58);font:8px var(--mono);color:#c0c8ce}.sig:nth-child(1){box-shadow:inset 2px 0 var(--cyan)}.sig:nth-child(2){box-shadow:inset 2px 0 var(--violet)}.sig:nth-child(3){box-shadow:inset 2px 0 var(--pink)}.sig:nth-child(4){box-shadow:inset 2px 0 var(--orange)}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:27px}.btn{border:1px solid #3a4752;background:rgba(8,12,17,.62);padding:10px 13px;color:#edf0f2;font:8px var(--mono);transition:.18s}.btn.primary{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 24px rgba(79,240,226,.07)}.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
-.hero-stage{position:relative;min-height:calc(100vh - 54px);background:radial-gradient(circle at 48% 48%,rgba(79,240,226,.055),transparent 34%),#05080c;border-left:1px solid rgba(180,200,215,.12);overflow:hidden}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+.top{
+  position:sticky;
+  top:0;
+  z-index:90;
+  height:58px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 24px;
+  background:rgba(9,10,14,.72);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  backdrop-filter:blur(18px) saturate(1.2);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+}
+.brand{font:700 9px var(--mono);letter-spacing:.08em}
+.brand span{color:var(--cyan)}
+.nav{display:flex;gap:20px}
+.nav a{font:8px var(--mono);color:#76838e;letter-spacing:.06em;transition:.2s}
+.nav a:hover,.nav a.active{color:var(--text)}
+.hero{
+  min-height:calc(100vh - 58px);
+  display:grid;
+  grid-template-columns:1.04fr .96fr;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.hero-copy{
+  min-height:calc(100vh - 58px);
+  padding:80px 58px 62px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.eyebrow{font:8px var(--mono);color:var(--cyan);letter-spacing:.12em;text-transform:uppercase}
+.hero h1{
+  margin:18px 0 22px;
+  font-size:clamp(56px,8vw,112px);
+  line-height:.82;
+  letter-spacing:-.09em;
+}
+.hero h1 .light{color:#d8dde1}
+.hero h1 .accent{
+  background:linear-gradient(90deg,var(--cyan),var(--violet) 48%,var(--pink) 92%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero-copy p{max-width:690px;color:#c3cbd2;font-size:15px;margin:0}
+.hero-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.pill{padding:7px 9px;border:1px solid #34414d;background:#0f151c;color:#b7c0c8;font:8px var(--mono)}
+.pill:nth-child(1){box-shadow:inset 2px 0 var(--cyan)}
+.pill:nth-child(2){box-shadow:inset 2px 0 var(--violet)}
+.pill:nth-child(3){box-shadow:inset 2px 0 var(--pink)}
+.pill:nth-child(4){box-shadow:inset 2px 0 var(--orange)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 13px;
+  border:1px solid #3a4753;
+  background:#0c1218;
+  color:#eceff1;
+  font:8px var(--mono);
+  letter-spacing:.05em;
+  transition:.2s;
+}
+.btn.primary{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 20px rgba(79,240,226,.05)}
+.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
+.hero-stage{
+  position:relative;
+  min-height:calc(100vh - 58px);
+  overflow:hidden;
+  background:#06080c;
+  border-left:1px solid rgba(255,255,255,.08);
+}
 .hero-stage canvas{position:absolute;inset:0;width:100%;height:100%}
-.stage-ui{position:absolute;inset:17px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;z-index:2}.stage-row{display:flex;justify-content:space-between;gap:12px;font:7px var(--mono);color:#6f7d89}.stage-row span:last-child{color:var(--cyan)}
-.stage-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:110px;height:110px;border-radius:50%;border:1px solid rgba(79,240,226,.42);box-shadow:0 0 40px rgba(79,240,226,.08),inset 0 0 35px rgba(79,240,226,.05);pointer-events:none;z-index:2}
-.stage-center:before,.stage-center:after{content:"";position:absolute;left:50%;top:50%;background:rgba(79,240,226,.34)}.stage-center:before{width:150px;height:1px;transform:translate(-50%,-50%)}.stage-center:after{width:1px;height:150px;transform:translate(-50%,-50%)}
-.stage-label{position:absolute;right:20px;top:48%;transform:rotate(90deg);transform-origin:right center;font:7px var(--mono);color:#4e606e;letter-spacing:.12em}
-.scroll-cue{position:absolute;left:46px;bottom:28px;display:flex;gap:9px;align-items:center;color:#74828e;font:8px var(--mono);z-index:4}.scroll-cue span{display:block;width:34px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent);animation:pulseLine 1.8s ease-in-out infinite}@keyframes pulseLine{50%{width:52px;opacity:.5}}
-.section{padding:92px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;border-bottom:1px solid var(--line);padding-bottom:10px;position:relative}.section-head:after{content:"";position:absolute;left:0;bottom:-2px;width:52px;height:3px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink))}.section-head h2{margin:0;font-size:17px;letter-spacing:-.035em}.sub{max-width:780px;color:#8f9ca7;font-size:11px;margin:13px 0 0}
-.identity-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:11px;margin-top:16px}.identity-card{padding:19px;min-height:260px}.identity-card h3{font-size:30px;line-height:1.02;letter-spacing:-.05em;margin:7px 0 10px}.identity-card p{color:#bbc6ce;font-size:11px;margin:0}.signals{display:grid;grid-template-columns:1fr 1fr;gap:8px}.signal{padding:14px;border:1px solid var(--line);background:rgba(13,18,24,.52)}.signal b{font-size:10px}.signal span{display:block;color:#8996a0;font:8px var(--mono);margin-top:4px}
-.domains{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}.constellation{position:relative;min-height:390px;overflow:hidden;background:#070b10;border:1px solid var(--line)}.constellation canvas{position:absolute;inset:0;width:100%;height:100%}.constellation .node{position:absolute;z-index:3;border:1px solid #35434f;background:rgba(13,18,24,.76);color:#bfc8cf;padding:9px 10px;font:7px var(--mono);cursor:pointer;transition:.18s;backdrop-filter:blur(9px)}.constellation .node:hover,.constellation .node.active{border-color:var(--cyan);color:#f5f1e8;box-shadow:0 0 22px rgba(79,240,226,.08)}.cn1{left:9%;top:14%}.cn2{right:8%;top:14%}.cn3{left:9%;bottom:13%}.cn4{right:8%;bottom:13%}.constellation-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:118px;height:118px;border:1px solid rgba(79,240,226,.5);border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(7,12,17,.84);box-shadow:0 0 30px rgba(79,240,226,.06);z-index:2}.constellation-core b{font-size:14px}.domain-info{padding:20px;min-height:390px}.domain-info h3{font-size:29px;line-height:1.02;letter-spacing:-.052em;margin:7px 0 12px}.domain-info p{color:#c0c8cf;font-size:11px;margin:0}.detail{display:grid;gap:9px;margin-top:17px}.detail-item{padding-top:9px;border-top:1px solid var(--line)}.detail-item b{display:block;font-size:10px}.detail-item span{display:block;color:#8795a0;font:8px var(--mono);margin-top:3px}
-.credentials{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.cred{padding:16px;min-height:145px;position:relative;transition:.22s}.cred:before{content:"";position:absolute;left:0;top:0;width:34px;height:2px;background:var(--cyan)}.cred:nth-child(2):before{background:var(--violet)}.cred:nth-child(3):before{background:var(--pink)}.cred:nth-child(4):before{background:var(--orange)}.cred:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.23)}.cred small{font:8px var(--mono);color:#7d8a95}.cred h3{font-size:17px;line-height:1.07;margin:7px 0}.cred p{font-size:10px;color:#aab5bf;margin:0}
-.timeline{margin-top:17px;border-left:1px solid #2a3540;padding-left:22px}.event{position:relative;padding-bottom:22px}.event:before{content:"";position:absolute;left:-27px;top:5px;width:8px;height:8px;background:#0d1319;border:2px solid var(--cyan);box-shadow:0 0 10px rgba(79,240,226,.18)}.event:nth-child(2):before{border-color:var(--violet)}.when{font:8px var(--mono);color:#74838e}.event h3{font-size:13px;margin:4px 0 4px}.event p{font-size:11px;color:#bbc5cd;margin:0;max-width:900px}
-.project-console{display:grid;grid-template-columns:235px 1fr;margin-top:16px;min-height:430px;overflow:hidden}.project-nav{background:rgba(7,11,15,.62);border-right:1px solid var(--line)}.project-nav button{width:100%;text-align:left;border:0;border-bottom:1px solid rgba(180,200,215,.09);background:transparent;color:#7f8c97;padding:12px;font:8px var(--mono);cursor:pointer}.project-nav button:hover{background:rgba(79,240,226,.035);color:#e7ecef}.project-nav button.active{background:rgba(79,240,226,.07);color:var(--cyan);border-left:3px solid var(--cyan);padding-left:9px}.project-view{padding:22px 22px;background:linear-gradient(135deg,rgba(19,25,33,.58),rgba(10,14,19,.44))}.project{display:none}.project.active{display:block;animation:projectIn .28s ease}@keyframes projectIn{from{opacity:.1;transform:translateY(5px)}to{opacity:1;transform:none}}.project h3{font-size:30px;line-height:1.02;letter-spacing:-.055em;margin:6px 0 11px}.project>p{max-width:910px;color:#bdc7cf;font-size:11px}.spec{display:grid;grid-template-columns:145px 1fr;border-top:1px solid var(--line);margin-top:15px}.spec div{padding:9px 0;border-bottom:1px solid rgba(180,200,215,.11);font-size:10px;color:#c0c8cf}.spec div:nth-child(odd){font:8px var(--mono);color:#7b8893;text-transform:uppercase}.repo{display:inline-block;color:var(--cyan);border-bottom:1px solid rgba(79,240,226,.4);font:8px var(--mono);padding-bottom:2px;margin-top:13px}
-.orbit-section{display:grid;grid-template-columns:1.08fr .92fr;margin-top:16px;overflow:hidden;background:#070b10}.orbit-visual{min-height:470px;position:relative;border-right:1px solid var(--line)}.orbit-visual canvas{position:absolute;inset:0;width:100%;height:100%}.orbit-ui{position:absolute;inset:15px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}.orbit-row{display:flex;justify-content:space-between;gap:10px;font:7px var(--mono);color:#71808d}.orbit-row span:last-child{color:var(--cyan)}.orbit-side{padding:23px;background:linear-gradient(145deg,rgba(16,22,29,.74),rgba(9,13,18,.6))}.orbit-side h3{font-size:33px;line-height:.97;letter-spacing:-.055em;margin:7px 0 11px}.orbit-side>p{font-size:11px;color:#bec8d0;margin:0}.facts{display:grid;gap:8px;margin-top:16px}.fact{padding:10px;border:1px solid var(--line);background:rgba(15,21,28,.6);transition:.18s}.fact:hover{border-color:rgba(79,240,226,.34);transform:translateX(2px)}.fact b{font-size:10px}.fact span{display:block;color:#8b99a4;font:8px var(--mono);margin-top:2px}.orbit-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.mini{border:1px solid #34424e;background:#0c1218;color:#aeb8c1;padding:8px 9px;font:7px var(--mono);cursor:pointer}.mini.active{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 15px rgba(79,240,226,.07)}
-.capability{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.cap-col{overflow:hidden}.cap{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 12px;border-bottom:1px solid rgba(180,200,215,.1)}.cap:last-child{border-bottom:0}.cap b{font-size:10px}.cap i{display:block;font-style:normal;font-size:9px;color:#8f9ca7;margin-top:3px}.cap span{font:8px var(--mono);color:#7e8b96;text-align:right}
-.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.method{padding:14px}.method .num{font:8px var(--mono);color:var(--cyan)}.method h3{font-size:14px;margin:4px 0}.method p{font-size:10px;color:#919ea9;margin:0}
-.lab{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.lab-card{padding:17px}.formula{font:700 22px var(--mono);margin:4px 0 17px}.inputs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.inputs label{font:8px var(--mono);color:#84919c;text-transform:uppercase}.inputs input{width:100%;margin-top:4px;background:rgba(6,10,14,.75);border:1px solid #31404c;color:#f2eee7;padding:8px;outline:none}.inputs input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(79,240,226,.08)}.result{display:flex;justify-content:space-between;align-items:end;border-top:1px solid var(--line);margin-top:13px;padding-top:12px}.result strong{font-size:29px;letter-spacing:-.045em}.spark{margin-top:15px;border:1px solid var(--line);height:130px;background:#070b10;position:relative}.spark canvas{position:absolute;inset:0;width:100%;height:100%}.lab-note{font-size:10px;color:#8c99a4;margin:11px 0 0}
-.links{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}.link{padding:14px;transition:.18s}.link:hover{transform:translateY(-2px);border-color:rgba(79,240,226,.35)}.link small{font:8px var(--mono);color:#788690}.link b{display:block;font-size:11px;margin-top:5px}
-footer{display:flex;justify-content:space-between;gap:15px;padding:15px 0 40px;border-top:1px solid var(--line);margin-top:46px;color:#6e7b86;font:8px var(--mono)}
-.tilt{transform-style:preserve-3d;will-change:transform}
-#cursor{position:fixed;z-index:100;left:0;top:0;width:12px;height:12px;border:1px solid rgba(79,240,226,.8);border-radius:50%;pointer-events:none;mix-blend-mode:screen;opacity:0;transition:opacity .2s,transform .08s}
-#cursor.active{opacity:1}
-@media(hover:hover) and (pointer:fine){a,button,.cred,.fact,.link{cursor:pointer}}
-@media(max-width:1050px){.hero{grid-template-columns:1fr}.hero-visual{min-height:520px;border-left:0;border-top:1px solid var(--line)}.identity-grid,.domains,.orbit-section,.capability,.lab,.credentials{grid-template-columns:1fr}.project-console{grid-template-columns:1fr}.project-nav{border-right:0;border-bottom:1px solid var(--line)}.links,.method-grid{grid-template-columns:1fr}.hero-copy{padding:60px 30px}.main{padding-inline:0}}
-@media(max-width:620px){.container{width:calc(100% - 22px)}.nav{display:none}.hero-copy{padding:45px 18px}.hero h1{font-size:47px}.hero-visual{min-height:390px}.section{padding:65px 0}.identity-card{min-height:0}.signals{grid-template-columns:1fr}.constellation{min-height:320px}.node{font-size:6px!important;padding:7px!important}.cn1{left:4%;top:12%}.cn2{right:4%;top:12%}.cn3{left:4%;bottom:12%}.cn4{right:4%;bottom:12%}.constellation-core{width:104px;height:104px}.project-view{padding:17px}.project h3{font-size:25px}.spec{grid-template-columns:1fr}.inputs{grid-template-columns:1fr}.orbit-visual{min-height:350px}.links{grid-template-columns:1fr}.topbar{padding:0 10px}.stage-label{display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}.scroll-cue{display:none}}
+.stage-top,.stage-bottom{
+  position:absolute;
+  left:18px;right:18px;
+  display:flex;justify-content:space-between;
+  z-index:4;
+  font:7px var(--mono);
+  color:#6f7e89;
+}
+.stage-top{top:18px}.stage-bottom{bottom:18px}
+.stage-top span:last-child{color:var(--cyan)}
+.stage-label{
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:rotate(90deg) translateX(50%);
+  transform-origin:right top;
+  color:#455462;
+  font:7px var(--mono);
+  letter-spacing:.12em;
+}
+.stage-rings{
+  position:absolute;
+  width:260px;height:260px;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(79,240,226,.16);
+  border-radius:50%;
+  box-shadow:0 0 40px rgba(79,240,226,.04);
+  pointer-events:none;
+}
+.stage-rings:before,.stage-rings:after{
+  content:"";
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(167,139,250,.14);
+  border-radius:50%;
+}
+.stage-rings:before{width:340px;height:150px;transform:translate(-50%,-50%) rotate(-17deg)}
+.stage-rings:after{width:190px;height:315px;transform:translate(-50%,-50%) rotate(58deg)}
+.scroll-note{
+  position:absolute;
+  left:0;
+  bottom:25px;
+  transform:translateY(100%);
+  display:flex;
+  gap:9px;
+  align-items:center;
+  color:#6e7d88;
+  font:8px var(--mono);
+}
+.scroll-note span{width:34px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{50%{width:50px;opacity:.5}}
+.section{padding:96px 0}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+.section-head:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:54px;
+  height:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));
+}
+.section-head h2{margin:0;font-size:18px;letter-spacing:-.04em}
+.code{font:8px var(--mono);color:#768591;letter-spacing:.05em}
+.intro{max-width:760px;color:#98a5af;font-size:11px;margin:13px 0 0}
+.personality{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:12px;
+  margin-top:16px;
+}
+.statement{
+  padding:24px;
+  min-height:280px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,#111821,#0c1117);
+}
+.statement h3{font-size:34px;line-height:1.0;letter-spacing:-.06em;margin:7px 0 12px}
+.statement p{margin:0;max-width:740px;color:#bfc8cf;font-size:12px}
+.traits{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.trait{
+  padding:15px;
+  border:1px solid var(--line);
+  background:#0d1319;
+  min-height:135px;
+  transition:.2s;
+}
+.trait:hover{transform:translateY(-3px);border-color:rgba(79,240,226,.35)}
+.trait:nth-child(1){box-shadow:inset 0 2px var(--cyan)}
+.trait:nth-child(2){box-shadow:inset 0 2px var(--violet)}
+.trait:nth-child(3){box-shadow:inset 0 2px var(--pink)}
+.trait:nth-child(4){box-shadow:inset 0 2px var(--orange)}
+.trait b{font-size:11px}.trait span{display:block;color:#8e9aa4;font:8px var(--mono);margin-top:6px}
+.constellation-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.constellation{
+  min-height:390px;
+  position:relative;
+  overflow:hidden;
+  background:#070b10;
+  border:1px solid var(--line);
+}
+.constellation canvas{position:absolute;inset:0;width:100%;height:100%}
+.constellation .node{
+  position:absolute;
+  z-index:3;
+  padding:9px 10px;
+  border:1px solid #34434f;
+  background:rgba(11,16,22,.84);
+  color:#b8c2ca;
+  font:7px var(--mono);
+  backdrop-filter:blur(8px);
+  cursor:pointer;
+  transition:.18s;
+}
+.constellation .node:hover,.constellation .node.active{border-color:var(--cyan);color:#f3efe7;box-shadow:0 0 18px rgba(79,240,226,.07)}
+.node.a{left:8%;top:14%}.node.b{right:7%;top:14%}.node.c{left:8%;bottom:14%}.node.d{right:7%;bottom:14%}
+.core{
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:120px;height:120px;
+  border-radius:50%;
+  border:1px solid rgba(79,240,226,.55);
+  background:rgba(7,12,17,.9);
+  display:grid;place-items:center;
+  text-align:center;
+  z-index:2;
+  box-shadow:0 0 40px rgba(79,240,226,.06);
+}
+.core b{font-size:14px}
+.domain-card{padding:21px;min-height:390px}
+.domain-card h3{font-size:29px;line-height:1.03;letter-spacing:-.055em;margin:7px 0 12px}
+.domain-card p{font-size:11px;color:#bdc7ce;margin:0}
+.detail-list{display:grid;gap:9px;margin-top:18px}
+.detail{padding-top:9px;border-top:1px solid var(--line)}
+.detail b{display:block;font-size:10px}.detail span{display:block;color:#85939f;font:8px var(--mono);margin-top:3px}
+.credentials{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.cred{
+  padding:17px;
+  min-height:156px;
+  position:relative;
+  transition:.2s;
+}
+.cred:before{content:"";position:absolute;left:0;top:0;width:34px;height:2px;background:var(--cyan)}
+.cred:nth-child(2):before{background:var(--violet)}.cred:nth-child(3):before{background:var(--pink)}.cred:nth-child(4):before{background:var(--orange)}
+.cred:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.23)}
+.cred small{font:8px var(--mono);color:#7f8c97}.cred h3{font-size:17px;line-height:1.08;margin:7px 0}.cred p{font-size:10px;color:#adb7c0;margin:0}
+.timeline{margin-top:17px;border-left:1px solid #2a3540;padding-left:22px}
+.event{position:relative;padding-bottom:22px}
+.event:before{content:"";position:absolute;left:-27px;top:4px;width:8px;height:8px;background:#0d1318;border:2px solid var(--cyan)}
+.event:nth-child(2):before{border-color:var(--violet)}
+.when{font:8px var(--mono);color:#75838e}.event h3{font-size:13px;margin:4px 0}.event p{font-size:11px;color:#bac4cc;max-width:900px;margin:0}
+.project-console{display:grid;grid-template-columns:232px 1fr;min-height:430px;margin-top:16px;overflow:hidden}
+.project-nav{background:#080c11;border-right:1px solid var(--line)}
+.project-nav button{display:block;width:100%;border:0;border-bottom:1px solid rgba(180,200,215,.1);background:transparent;color:#7f8d98;padding:12px;text-align:left;font:8px var(--mono);cursor:pointer;transition:.16s}
+.project-nav button:hover{background:#10171f;color:#dae0e4}
+.project-nav button.active{background:#10232b;color:var(--cyan);border-left:3px solid var(--cyan);padding-left:9px}
+.project-view{padding:22px;background:linear-gradient(145deg,#10161d,#0b1016)}
+.project{display:none}.project.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.project h3{font-size:30px;line-height:1.02;letter-spacing:-.055em;margin:7px 0 11px}.project>p{color:#bdc7cf;font-size:11px;max-width:900px}
+.spec{display:grid;grid-template-columns:145px 1fr;border-top:1px solid var(--line);margin-top:15px}
+.spec div{padding:9px 0;border-bottom:1px solid rgba(180,200,215,.1);font-size:10px;color:#c0c8cf}.spec div:nth-child(odd){font:8px var(--mono);color:#7a8894;text-transform:uppercase}
+.repo{display:inline-block;color:var(--cyan);font:8px var(--mono);border-bottom:1px solid rgba(79,240,226,.3);margin-top:12px;padding-bottom:2px}
+.orbit{
+  display:grid;
+  grid-template-columns:1.07fr .93fr;
+  margin-top:16px;
+  border:1px solid #2a3540;
+  overflow:hidden;
+  background:#070b10;
+}
+.orbit-view{position:relative;min-height:470px;border-right:1px solid #27323c;background:#05090e}
+.orbit-view canvas{position:absolute;inset:0;width:100%;height:100%}
+.orbit-view .hud{position:absolute;left:15px;right:15px;top:14px;display:flex;justify-content:space-between;font:7px var(--mono);color:#73828e;z-index:3}
+.orbit-view .hud span:last-child{color:var(--cyan)}
+.orbit-view .bottom{position:absolute;left:15px;right:15px;bottom:14px;display:flex;justify-content:space-between;font:7px var(--mono);color:#73828e;z-index:3}
+.orbit-copy{padding:22px;background:linear-gradient(145deg,#11171e,#0b1117)}
+.orbit-copy h3{font-size:34px;line-height:.96;letter-spacing:-.06em;margin:7px 0 11px}
+.orbit-copy>p{font-size:11px;color:#c0c9d0;margin:0}
+.fact-grid{display:grid;gap:8px;margin-top:16px}.fact{padding:10px;border:1px solid var(--line);background:#0f151c}.fact b{font-size:10px}.fact span{display:block;color:#8d9aa4;font:8px var(--mono);margin-top:3px}
+.orbit-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.mini{padding:8px 9px;border:1px solid #34424d;background:#0a1016;color:#abb5bd;font:7px var(--mono);cursor:pointer}.mini.active{border-color:var(--cyan);color:var(--cyan)}
+.capability{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.cap-col{overflow:hidden}.cap{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px;border-bottom:1px solid rgba(180,200,215,.1)}.cap:last-child{border-bottom:0}.cap b{font-size:10px}.cap i{display:block;font-style:normal;color:#8c99a3;font-size:9px;margin-top:3px}.cap span{font:8px var(--mono);color:#7a8995;text-align:right}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:11px}.method{padding:14px}.method .n{font:8px var(--mono);color:var(--cyan)}.method h3{font-size:14px;margin:4px 0}.method p{font-size:10px;color:#929fa9;margin:0}
+.lab{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.lab-card{padding:17px}.formula{font:700 22px var(--mono);margin:5px 0 17px}.inputs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.inputs label{font:8px var(--mono);color:#84929d;text-transform:uppercase}.inputs input{width:100%;margin-top:4px;background:#090d12;color:#f2eee7;border:1px solid #30404c;padding:8px;outline:0}.inputs input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(79,240,226,.08)}.result{display:flex;justify-content:space-between;align-items:end;border-top:1px solid var(--line);margin-top:13px;padding-top:12px}.result strong{font-size:29px}
+.spark{height:126px;border:1px solid var(--line);background:#070b10;margin-top:15px;position:relative}.spark canvas{position:absolute;inset:0;width:100%;height:100%}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.link{padding:14px}.link small{display:block;font:8px var(--mono);color:#788690}.link b{display:block;font-size:11px;margin-top:4px}
+footer{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding:15px 0 40px;margin-top:35px;color:#6d7b86;font:8px var(--mono)}
+.glass{background:linear-gradient(145deg,rgba(20,27,35,.68),rgba(9,13,18,.54));backdrop-filter:blur(18px) saturate(1.16);-webkit-backdrop-filter:blur(18px) saturate(1.16);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 20px 65px rgba(0,0,0,.18)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:1050px){
+ .hero{grid-template-columns:1fr}.hero-copy{min-height:0;padding:70px 0 55px}.hero-visual{min-height:530px;border-left:0;border-top:1px solid rgba(255,255,255,.08)}
+ .personality,.domains,.orbit,.capability,.lab,.credentials{grid-template-columns:1fr}.orbit-view{border-right:0;border-bottom:1px solid var(--line)}
+ .project-console{grid-template-columns:1fr}.project-nav{border-right:0;border-bottom:1px solid var(--line)}
+ .links,.method-grid{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+ .wrap{width:calc(100% - 24px)}.nav{display:none}.top{padding:0 11px}.hero-copy{padding:52px 0 45px}.hero h1{font-size:48px}.hero-visual{min-height:390px}
+ .section{padding:66px 0}.section-head{align-items:flex-start;flex-direction:column;gap:3px}.traits{grid-template-columns:1fr}.constellation{min-height:305px}.domain-card{min-height:305px}
+ .node{font-size:6px!important;padding:7px 8px!important}.node.a{left:4%}.node.b{right:4%}.node.c{left:4%}.node.d{right:4%}.core{width:104px;height:104px}
+ .project-view{padding:17px}.project h3{font-size:25px}.spec{grid-template-columns:1fr}.inputs{grid-template-columns:1fr}.orbit-view{min-height:340px}.links{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}.scroll-note{display:none}}
 </style>
 </head>
 <body>
-<header class="topbar">
-<div class="brand">SAI AKHIL MALLADI <b>/ ENGINEERING UNIVERSE</b></div>
+<header class="top">
+<div class="brand">SAI AKHIL MALLADI <span>/ ENGINEERING UNIVERSE</span></div>
 <nav class="nav"><a href="#identity">IDENTITY</a><a href="#domains">DOMAINS</a><a href="#education">EDUCATION</a><a href="#experience">EXPERIENCE</a><a href="#projects">PROJECTS</a><a href="#orbital">ORBITAL LAB</a><a href="#lab">LAB</a></nav>
 </header>
-<div id="cursor"></div>
 
-<main class="container">
-<section id="identity" class="hero">
+<main class="wrap">
+<section class="hero" id="identity">
 <div class="hero-copy">
-<div class="eyebrow">00 / SYSTEM IDENTITY</div>
-<h1><span>SAI AKHIL</span><span class="name2">MALLADI</span><span class="accent">ENGINEER / EXPLORER</span></h1>
-<p class="lede">Aerospace Engineering graduate with a systems-thinking mindset, technical research experience, digital engineering projects and a growing focus on orbital mechanics, GNC visualization and AI-enabled engineering work.</p>
-<div class="signature"><span class="sig">AEROSPACE</span><span class="sig">SYSTEMS THINKING</span><span class="sig">TECHNICAL RESEARCH</span><span class="sig">DIGITAL BUILDING</span></div>
-<div class="actions"><a class="btn primary" href="#orbital">ENTER ORBITAL LAB ↗</a><a class="btn" href="#projects">EXPLORE PROJECTS</a><a class="btn" href="https://linkedin.com/in/sai-akhil-malladi-437494235" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div>
+<div class="eyebrow">00 / PERSONAL PROFILE</div>
+<h1><span>SAI AKHIL</span><span class="light">MALLADI</span><span class="accent">AEROSPACE ENGINEER</span></h1>
+<p>Systems thinking, technical research and digital building. An aerospace engineering background moving between aircraft systems, orbital mechanics, GNC visualization, composite materials, aviation cybersecurity and AI/ML.</p>
+<div class="hero-meta"><span class="pill">AEROSPACE</span><span class="pill">SYSTEMS THINKING</span><span class="pill">TECHNICAL RESEARCH</span><span class="pill">DIGITAL BUILDING</span></div>
+<div class="actions"><a class="btn primary" href="#orbital">EXPLORE ORBITAL LAB ↗</a><a class="btn" href="#projects">SEE PROJECTS</a><a class="btn" href="https://linkedin.com/in/sai-akhil-malladi-437494235" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div>
 </div>
-<div class="hero-visual">
-<canvas id="hero3d" aria-label="Interactive three dimensional engineering visualization"></canvas>
-<div class="stage-ui"><div class="stage-row"><span>PERSONAL SYSTEM MAP</span><span>ONLINE / 2026</span></div><div class="stage-row"><span>SPACE / AIRCRAFT / DIGITAL</span><span>3D ENGINE</span></div></div>
-<div class="stage-center"></div><div class="stage-label">CURIOUS // SYSTEMATIC // EXPERIMENTAL</div>
-<div class="caption" style="position:absolute;left:18px;right:18px;bottom:17px;display:flex;justify-content:space-between;z-index:3;font:7px var(--mono);color:#687782"><span>TRAJECTORY / SYSTEMS / SIGNAL</span><span>01</span></div>
+<div class="hero-stage">
+<canvas id="hero3d" aria-label="Interactive 3D engineering visualization"></canvas>
+<div class="stage-top"><span>PERSONAL SYSTEM / LIVE</span><span>3D FIELD</span></div>
+<div class="stage-rings"></div>
+<div class="stage-label">AIRCRAFT // ORBIT // RESEARCH</div>
+<div class="stage-bottom"><span>CURIOUS / SYSTEMATIC / EXPERIMENTAL</span><span>01</span></div>
 </div>
-<div class="scroll-cue"><span></span>SCROLL TO EXPLORE</div>
+<div class="scroll-note"><span></span>SCROLL TO EXPLORE</div>
 </section>
 
-<section id="domains" class="section">
-<div class="section-head"><h2>01 / THE WAY THE WORK FITS TOGETHER</h2><div class="code">SAM-IDENTITY-001</div></div>
-<div class="identity-grid">
-<div class="glass identity-card tilt"><div class="eyebrow">PERSONAL ENGINEERING MANIFEST</div><h3>Not one lane.<br>A connected system.</h3><p>The work connects aerospace engineering, systems thinking, technical research, digital tools and independent technical exploration. The common thread is analytical problem-solving, troubleshooting, testing, documentation and experimentation.</p></div>
-<div class="glass signals">
-<div class="signal"><b>01 / CURIOUS</b><span>Orbital mechanics, AI/ML and new technical systems</span></div>
-<div class="signal"><b>02 / STRUCTURED</b><span>Requirements concepts, verification and technical documentation</span></div>
-<div class="signal"><b>03 / BUILDING</b><span>Browser-based engineering tools and technical applications</span></div>
-<div class="signal"><b>04 / EXPERIMENTAL</b><span>Research, calculations, visualization and iterative QA</span></div>
+<section class="section reveal" id="domains">
+<div class="section-head"><h2>01 / THE PERSON BEHIND THE WORK</h2><div class="code">SAM-PROFILE-001</div></div>
+<div class="personality">
+<div class="glass statement"><div class="eyebrow">WORKING STYLE</div><h3>Curiosity first.<br>Structure second.<br>Build the thing.</h3><p>The documented path is deliberately cross-disciplinary. Aerospace education is the base. Research, cybersecurity, digital tools and Orbital Lab are where that base gets tested in different environments.</p></div>
+<div class="traits"><div class="glass trait"><b>CURIOUS</b><span>ORBITAL MECHANICS · AI/ML · NEW TECHNICAL SYSTEMS</span></div><div class="glass trait"><b>SYSTEMATIC</b><span>REQUIREMENTS · V&V · DOCUMENTATION</span></div><div class="glass trait"><b>HANDS-ON</b><span>RESEARCH · CALCULATIONS · SOFTWARE BUILDS</span></div><div class="glass trait"><b>EXPERIMENTAL</b><span>VISUALISATION · ITERATION · QA</span></div></div>
 </div>
-</div>
-<div class="domains">
-<div class="constellation"><canvas id="domainCanvas" aria-label="Interactive engineering domain constellation"></canvas><div class="eyebrow" style="position:absolute;left:14px;top:13px;z-index:4">SYSTEM CONSTELLATION / SELECT NODE</div><div class="constellation-core"><div><b>SAI AKHIL</b><br><span class="code">CORE</span></div></div><button class="node cn1 active" data-domain="aerospace">AEROSPACE</button><button class="node cn2" data-domain="orbital">ORBITAL / GNC</button><button class="node cn3" data-domain="research">RESEARCH</button><button class="node cn4" data-domain="digital">DIGITAL / AI</button></div>
-<div class="glass domain-info" id="domainPanel"></div>
+<div class="constellation-wrap">
+<div class="constellation"><canvas id="domainCanvas" aria-label="Interactive map of engineering interests"></canvas><div class="eyebrow" style="position:absolute;left:14px;top:13px;z-index:4">SELECT AN INTEREST</div><div class="core"><div><b>SAI AKHIL</b><br><span class="code">CORE</span></div></div><button class="node a active" data-domain="aerospace">AEROSPACE</button><button class="node b" data-domain="orbital">ORBITAL / GNC</button><button class="node c" data-domain="research">RESEARCH</button><button class="node d" data-domain="digital">DIGITAL / AI</button></div>
+<div class="glass domain-card" id="domainPanel"></div>
 </div>
 </section>
 
-<section id="education" class="section">
+<section class="section reveal" id="education">
 <div class="section-head"><h2>02 / EDUCATION & TRAINING</h2><div class="code">SAM-CRED-001</div></div>
+<p class="intro">Formal education first, specialist programmes after it. Dates and institutions below follow the available source material.</p>
 <div class="credentials">
-<article class="glass cred tilt"><small>EDUCATION / 2017–2024</small><h3>B.Tech in Aerospace Engineering</h3><p>Hindustan Institute of Technology and Science (HITS), Chennai.</p></article>
-<article class="glass cred tilt"><small>SPACE / NOV 2024–APR 2025</small><h3>Advanced Certification Programme in Space Technologies</h3><p>Indian Institute of Science (IISc), Bengaluru.</p></article>
-<article class="glass cred tilt"><small>AI / 2025–2026</small><h3>Professional Certificate Programme in Generative AI, Machine Learning & Intelligent Automation</h3><p>IHFC, Technology Innovation Hub of IIT Delhi.</p></article>
-<article class="glass cred tilt"><small>PROFESSIONAL DEVELOPMENT</small><h3>Six Sigma White Belt</h3><p>Credential listed in source material. Issuing organisation and completion date are not asserted here.</p></article>
+<article class="glass cred"><small>2017–2024 / EDUCATION</small><h3>B.Tech in Aerospace Engineering</h3><p>Hindustan Institute of Technology and Science (HITS), Chennai.</p></article>
+<article class="glass cred"><small>NOV 2024–APR 2025 / SPACE</small><h3>Advanced Certification Programme in Space Technologies</h3><p>Indian Institute of Science (IISc), Bengaluru.</p></article>
+<article class="glass cred"><small>2025–2026 / AI</small><h3>Professional Certificate Programme in Generative AI, Machine Learning & Intelligent Automation</h3><p>IHFC, Technology Innovation Hub of IIT Delhi.</p></article>
+<article class="glass cred"><small>PROFESSIONAL DEVELOPMENT</small><h3>Six Sigma White Belt</h3><p>Credential listed in the source material. Issuing organisation and completion date are not asserted here.</p></article>
 </div>
 </section>
 
-<section id="experience" class="section">
+<section class="section reveal" id="experience">
 <div class="section-head"><h2>03 / EXPERIENCE</h2><div class="code">SAM-EXP-001</div></div>
 <div class="timeline">
 <div class="event"><div class="when">DEC 2023 / DEC 2024 · HERITAGE CYBERWORLD LLP</div><h3>Aviation Cybersecurity / Research</h3><p>Supported aviation-focused research into aircraft systems, aviation infrastructure and aerospace cybersecurity topics. Organised technical observations and documentation concerning system operation, potential threats and protection concepts. Developed familiarity with threat monitoring, vulnerability assessment, SIEM/SOC concepts and safety, reliability and compliance considerations in aviation.</p></div>
@@ -125,127 +414,124 @@ footer{display:flex;justify-content:space-between;gap:15px;padding:15px 0 40px;b
 </div>
 </section>
 
-<section id="projects" class="section">
+<section class="section reveal" id="projects">
 <div class="section-head"><h2>04 / PROJECT UNIVERSE</h2><div class="code">SAM-DM-001</div></div>
-<p class="sub">Select a project and inspect the actual scope. This is an engineering portfolio, not a catalogue of inflated skill claims.</p>
+<p class="intro">A small set of projects with inspectable scope. Choose a module and read what was actually built or studied.</p>
 <div class="project-console glass">
-<div class="project-nav">
-<button class="active" data-project="p1">P-001 / Orbital Lab</button><button data-project="p2">P-002 / Composite research</button><button data-project="p3">P-003 / RC wing study</button><button data-project="p4">P-004 / Lift calculator</button><button data-project="p5">P-005 / AeroApply</button>
-</div>
+<div class="project-nav"><button class="active" data-project="p1">P-001 / ORBITAL LAB</button><button data-project="p2">P-002 / COMPOSITE RESEARCH</button><button data-project="p3">P-003 / RC WING STUDY</button><button data-project="p4">P-004 / LIFT CALCULATOR</button><button data-project="p5">P-005 / AEROAPPLY</button></div>
 <div class="project-view">
-<div id="p1" class="project active"><div class="eyebrow">ORBITAL MECHANICS / GNC</div><h3>Orbital Lab</h3><p>Interactive aerospace web application for satellite trajectory and GNC visualization. The project explores orbital mechanics, spacecraft parameters, trajectory and ground-track visualization, coordinate transformations and satellite-tracking concepts.</p><div class="spec"><div>Type</div><div>Independent aerospace engineering project</div><div>Current state</div><div>In development</div><div>Work areas</div><div>Orbital propagation · coordinate transforms · ground tracks · satellite data presentation</div><div>Application</div><div><a class="repo" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">OPEN ORBITAL LAB ↗</a></div></div></div>
-<div id="p2" class="project"><div class="eyebrow">MATERIALS / RESEARCH</div><h3>Material Characterization of Nano-Filler Reinforced Composite Structures</h3><p>Final-year academic project completed Jul 2022 / Mar 2023. Work included technical literature research, project methodology, material-related observations, tensile, flexural, impact and hardness testing, failure analysis and SEM/TEM observations, supported by engineering documentation.</p><div class="spec"><div>Guidance</div><div>Dr. R. Asokan, Dean, Aerospace Department</div><div>Application</div><div>Aerospace-oriented composite structures</div><div>Evidence</div><div>Mechanical testing · characterization · technical documentation</div></div></div>
-<div id="p3" class="project"><div class="eyebrow">AIRCRAFT DESIGN</div><h3>RC Aircraft Wing Design & Validation Study</h3><p>Conducted aerodynamic and structural design studies for a fixed-wing RC aircraft. Investigated wing design from aerodynamic and structural perspectives and prepared validation documentation and engineering analyses.</p><div class="spec"><div>Domain</div><div>Fixed-wing aircraft</div><div>Focus</div><div>Design study · aerodynamic and structural evaluation</div><div>Evidence</div><div>Engineering analysis and validation documentation</div></div></div>
+<div id="p1" class="project active"><div class="eyebrow">ORBITAL MECHANICS / GNC</div><h3>Orbital Lab</h3><p>Interactive aerospace web application for satellite trajectory and GNC visualization. The project explores orbital mechanics, spacecraft parameters, trajectory and ground-track visualization, coordinate transformations and satellite-tracking concepts.</p><div class="spec"><div>Type</div><div>Independent aerospace engineering project</div><div>State</div><div>In development</div><div>Work areas</div><div>Orbital propagation · coordinate transforms · ground tracks · satellite data presentation</div><div>Application</div><div><a class="repo" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">OPEN ORBITAL LAB ↗</a></div></div></div>
+<div id="p2" class="project"><div class="eyebrow">MATERIALS / RESEARCH</div><h3>Material Characterization of Nano-Filler Reinforced Composite Structures</h3><p>Final-year academic project completed Jul 2022 / Mar 2023. Work included technical literature research, project methodology, material-related observations, tensile, flexural, impact and hardness testing, failure analysis and SEM/TEM observations, supported by engineering documentation.</p><div class="spec"><div>Guidance</div><div>Dr. R. Asokan, Dean, Aerospace Department</div><div>Period</div><div>Jul 2022 / Mar 2023</div><div>Methods</div><div>Mechanical testing · characterization · failure analysis · technical documentation</div></div></div>
+<div id="p3" class="project"><div class="eyebrow">AIRCRAFT DESIGN</div><h3>RC Aircraft Wing Design & Validation Study</h3><p>Conducted aerodynamic and structural design studies for a fixed-wing RC aircraft. Investigated the wing from aerodynamic and structural perspectives and prepared validation documentation and engineering analyses.</p><div class="spec"><div>Domain</div><div>Fixed-wing aircraft</div><div>Focus</div><div>Design study · aerodynamic and structural evaluation</div><div>Evidence</div><div>Engineering analysis and validation documentation</div></div></div>
 <div id="p4" class="project"><div class="eyebrow">PYTHON / AERODYNAMICS</div><h3>Aircraft Lift Calculator</h3><p>Python-based aircraft lift calculator with dynamic-pressure analysis, validation tests and lift-versus-velocity visualization.</p><div class="spec"><div>Language</div><div>Python</div><div>Model</div><div>L = ½ρV²SCₗ</div><div>Repository</div><div><a class="repo" href="https://github.com/psytronot/aircraft-lift-calculatorv1" target="_blank" rel="noreferrer">GITHUB ↗</a></div></div></div>
 <div id="p5" class="project"><div class="eyebrow">AERODYNAMICS / EDUCATION</div><h3>AeroApply</h3><p>Student-focused engineering calculation project designed around coefficient of lift (C<sub>L</sub>) and coefficient of drag (C<sub>D</sub>) calculations. Organises aerodynamic inputs and calculated outputs to help users follow aerodynamic relationships.</p><div class="spec"><div>Type</div><div>Engineering calculation tool</div><div>Purpose</div><div>Educational / student-oriented aerodynamic calculations</div><div>Approach</div><div>Formula-based input / output workflow</div></div></div>
 </div>
 </div>
 </section>
 
-<section id="orbital" class="section">
-<div class="section-head"><h2>05 / ORBITAL LAB / GNC</h2><div class="code">SAM-PROJ-ORBITAL-001</div></div>
-<div class="orbit-section glass">
-<div class="orbit-visual"><canvas id="orbitCanvas" aria-label="Three dimensional orbital mechanics visualization"></canvas><div class="orbit-ui"><div class="orbit-row"><span>ORBITAL LAB / PERSONAL PROJECT</span><span>IN DEVELOPMENT</span></div><div class="orbit-row"><span>PROPAGATION · MAPPING · SPACECRAFT</span><span>LIVE VISUAL</span></div></div></div>
-<div class="orbit-side"><div class="eyebrow">SATELLITE TRAJECTORY & GNC VISUALIZATION</div><h3>Build the system.<br>Then inspect it.</h3><p>Orbital Lab is a browser-based aerospace toolkit for exploring orbital mechanics, spacecraft parameters and GNC concepts.</p><div class="facts"><div class="fact"><b>Propagation</b><span>Kepler-based propagation and SGP4/TLE work</span></div><div class="fact"><b>Coordinate work</b><span>ECI → ECEF → geodetic transformations and ground-track mapping</span></div><div class="fact"><b>Application structure</b><span>Missions, spacecraft, orbits, ground tracks, systems and console-style tools</span></div><div class="fact"><b>QA / iteration</b><span>Navigation, user-input behaviour, orbit summaries, timeline controls and visualisation troubleshooting</span></div></div><div class="orbit-actions"><button class="mini active" type="button" data-orbitmode="all">ALL PLANES</button><button class="mini" type="button" data-orbitmode="one">PRIMARY</button><button class="mini" type="button" data-orbitmode="trace">TRACE</button></div><a class="orbit-link" style="display:inline-block" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">OPEN LIVE APPLICATION ↗</a><p style="font-size:9px;color:#7f8d98;margin-top:11px">Scope control: perturbations, maneuver analysis and GNC/state-estimation are described in the project material as planned or in development. They are not presented here as completed flight-dynamics validation.</p></div>
+<section class="section reveal" id="orbital">
+<div class="section-head"><h2>05 / ORBITAL LAB</h2><div class="code">SAM-PROJ-ORBITAL-001</div></div>
+<div class="orbit glass">
+<div class="orbit-view"><canvas id="orbitCanvas" aria-label="Interactive orbital mechanics visualization"></canvas><div class="hud"><span>ORBITAL LAB / PERSONAL PROJECT</span><span>IN DEVELOPMENT</span></div><div class="bottom"><span>PROPAGATION · MAPPING · SPACECRAFT</span><span>LIVE VISUAL</span></div></div>
+<div class="orbit-copy"><div class="eyebrow">SATELLITE TRAJECTORY & GNC VISUALIZATION</div><h3>Make aerospace<br>computable.</h3><p>Orbital Lab turns orbital mechanics concepts into an interactive software environment where trajectories, spacecraft parameters, ground tracks and coordinate frames can be explored visually.</p><div class="fact-grid"><div class="fact"><b>Propagation</b><span>Kepler-based propagation and SGP4/TLE work</span></div><div class="fact"><b>Coordinate work</b><span>ECI → ECEF → geodetic transformations and ground-track mapping</span></div><div class="fact"><b>Application structure</b><span>Missions, spacecraft, orbits, ground tracks, systems and console-style tools</span></div><div class="fact"><b>QA / iteration</b><span>Navigation, user-input behaviour, orbit summaries, timeline controls and visualization troubleshooting</span></div></div><div class="orbit-actions"><button class="mini active" data-orbitmode="all">ALL PLANES</button><button class="mini" data-orbitmode="one">PRIMARY</button><button class="mini" data-orbitmode="trace">TRACE</button></div><a class="orbit-link" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer" style="display:inline-flex;margin-top:14px;border:1px solid var(--cyan);padding:9px 11px;color:var(--cyan);font:8px var(--mono)">OPEN LIVE APPLICATION ↗</a><p style="font-size:9px!important;color:#7f8d98!important;margin-top:11px!important">Scope control: perturbations, maneuver analysis and GNC/state-estimation are described in the project material as planned or in development. They are not presented here as completed flight-dynamics validation.</p></div>
 </div>
 </section>
 
-<section id="capability" class="section">
+<section class="section reveal" id="capability">
 <div class="section-head"><h2>06 / CAPABILITY</h2><div class="code">SAM-CAP-001</div></div>
 <div class="capability">
 <div class="glass cap-col"><div class="cap"><div><b>Aerospace engineering</b><i>Aerodynamics · flight mechanics · propulsion · aircraft systems · materials</i></div><span>FOUNDATION</span></div><div class="cap"><div><b>Systems engineering</b><i>Integration · requirements concepts · V&V · technical documentation</i></div><span>FOUNDATION</span></div><div class="cap"><div><b>Orbital mechanics / GNC</b><i>Trajectory visualization · coordinate transforms · SGP4/TLE work</i></div><span>PROJECT</span></div><div class="cap"><div><b>CAD</b><i>SolidWorks</i></div><span>WORKING</span></div></div>
 <div class="glass cap-col"><div class="cap"><div><b>Programming</b><i>Python fundamentals · MATLAB · JavaScript/React exposure</i></div><span>FOUNDATION</span></div><div class="cap"><div><b>AI / ML</b><i>Generative AI · machine learning · intelligent automation</i></div><span>TRAINING</span></div><div class="cap"><div><b>Cybersecurity</b><i>Aviation monitoring · vulnerability-assessment workflows · SIEM/SOC exposure</i></div><span>EXPOSURE</span></div><div class="cap"><div><b>Technical documentation</b><i>Research notes · engineering reports · procedures · structured analysis</i></div><span>CORE</span></div></div>
 </div>
-<div class="method-grid"><div class="glass method"><div class="num">01</div><h3>DEFINE</h3><p>State the problem, intended output, inputs and constraints.</p></div><div class="glass method"><div class="num">02</div><h3>ANALYSE</h3><p>Separate observations, assumptions, interfaces and calculations.</p></div><div class="glass method"><div class="num">03</div><h3>VERIFY</h3><p>Test, compare, document and identify remaining uncertainty.</p></div></div>
+<div class="method-grid"><div class="glass method"><div class="n">01</div><h3>DEFINE</h3><p>State the problem, intended output, inputs and constraints.</p></div><div class="glass method"><div class="n">02</div><h3>ANALYSE</h3><p>Separate observations, assumptions, interfaces and calculations.</p></div><div class="glass method"><div class="n">03</div><h3>VERIFY</h3><p>Test, compare, document and identify remaining uncertainty.</p></div></div>
 </section>
 
-<section id="lab" class="section">
-<div class="section-head"><h2>07 / INTERACTIVE ENGINEERING LAB</h2><div class="code">SAM-LAB-001</div></div>
+<section class="section reveal" id="lab">
+<div class="section-head"><h2>07 / ENGINEERING LAB</h2><div class="code">SAM-LAB-001</div></div>
 <div class="lab">
-<div class="glass lab-card"><div class="eyebrow">LIFT RELATION / FIRST-ORDER MODEL</div><div class="formula">L = ½ρV²SCₗ</div><div class="inputs"><label>ρ air<input id="rho" type="number" min="0" step=".1" value="1.225"></label><label>V velocity<input id="vel" type="number" min="0" step="1" value="35"></label><label>S area<input id="area" type="number" min="0" step=".1" value=".8"></label><label>Cₗ lift coefficient<input id="cl" type="number" min="0" step=".01" value=".7"></label></div><div class="result"><span class="code">CALCULATED LIFT</span><strong id="lift">420.2 N</strong></div><div class="spark"><canvas id="sparkCanvas" aria-label="Lift response visualization"></canvas></div></div>
-<div class="glass lab-card"><div class="eyebrow">WHY IT EXISTS</div><p style="color:#bac4cc;font-size:11px;margin-top:7px">A small working model to make the relationship between inputs and output visible. It is an educational visualization, not flight-performance validation.</p><div class="method-grid" style="grid-template-columns:1fr;margin-top:14px"><div class="method"><div class="num">INPUT</div><h3>VARIABLES</h3><p>ρ · V · S · Cₗ</p></div><div class="method"><div class="num">MODEL</div><h3>EQUATION</h3><p>Standard lift relation</p></div><div class="method"><div class="num">OUTPUT</div><h3>LIFT</h3><p>Force in newtons</p></div></div><p class="lab-note">Try changing velocity first. The curve should respond non-linearly because velocity is squared in the relation.</p></div>
+<div class="glass lab-card"><div class="eyebrow">LIFT RELATION / FIRST-ORDER MODEL</div><div class="formula">L = ½ρV²SCₗ</div><div class="inputs"><label>ρ air<input id="rho" type="number" min="0" step=".1" value="1.225"></label><label>V velocity<input id="vel" type="number" min="0" step="1" value="35"></label><label>S area<input id="area" type="number" min="0" step=".1" value=".8"></label><label>Cₗ lift coefficient<input id="cl" type="number" min="0" step=".01" value=".7"></label></div><div class="result"><span class="code">CALCULATED LIFT</span><strong id="lift">420.2 N</strong></div><div class="spark"><canvas id="sparkCanvas" aria-label="Lift response graph"></canvas></div></div>
+<div class="glass lab-card"><div class="eyebrow">MODEL NOTE</div><p style="font-size:11px;color:#bac4cc;margin:7px 0 0">A small working model to make the relationship between inputs and output visible. It is an educational visualization, not flight-performance validation.</p><div class="method-grid" style="grid-template-columns:1fr;margin-top:14px"><div class="method"><div class="n">INPUT</div><h3>VARIABLES</h3><p>ρ · V · S · Cₗ</p></div><div class="method"><div class="n">MODEL</div><h3>EQUATION</h3><p>Standard lift relation</p></div><div class="method"><div class="n">OUTPUT</div><h3>LIFT</h3><p>Force in newtons</p></div></div></div>
 </div>
 </section>
 
-<section id="contact" class="section">
+<section class="section reveal" id="contact">
 <div class="section-head"><h2>08 / CONTACT</h2><div class="code">SAM-CON-001</div></div>
-<div class="links"><a class="glass link" href="mailto:saiakhilmalladiworks@gmail.com"><small>PROFESSIONAL</small><b>saiakhilmalladiworks@gmail.com</b></a><a class="glass link" href="https://linkedin.com/in/sai-akhil-malladi-437494235" target="_blank" rel="noreferrer"><small>PROFILE</small><b>LinkedIn ↗</b></a><a class="glass link" href="https://github.com/psytronot" target="_blank" rel="noreferrer"><small>SOURCE</small><b>GitHub ↗</b></a></div>
+<div class="links"><a class="glass link" href="mailto:saiakhilmalladiworks@gmail.com"><small>PROFESSIONAL</small><b>saiakhilmalladiworks@gmail.com</b></a><a class="glass link" href="https://linkedin.com/in/sai-akhil-malladi-437494235" target="_blank" rel="noreferrer"><small>LINKEDIN</small><b>Professional profile ↗</b></a><a class="glass link" href="https://github.com/psytronot" target="_blank" rel="noreferrer"><small>GITHUB</small><b>Code and project source ↗</b></a></div>
 </section>
 
-<footer><span>SAM-PORT-001 / ISSUE 01 / REV F</span><span>AEROSPACE · SYSTEMS · ORBITAL · DIGITAL · RESEARCH</span></footer>
+<footer><span>SAM-PORT-001 / REV F</span><span>AEROSPACE · SYSTEMS · ORBITAL · DIGITAL · RESEARCH</span></footer>
 </main>
 
 <script type="module">
-const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-const colors={cyan:'#4ff0e2',violet:'#a78bfa',pink:'#ff4fa3',orange:'#ffad5b',blue:'#67a8ff'};
-function canvas2d(id,draw,animate=true){const c=$(id);if(!c)return;const x=c.getContext('2d');let w=1,h=1,raf=0;function size(){const r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);w=Math.max(1,r.width);h=Math.max(1,r.height);c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw(x,w,h,performance.now(),true)}function frame(t){draw(x,w,h,t,false);if(animate&&!reduce)raf=requestAnimationFrame(frame)}size();addEventListener('resize',size,{passive:true});if(animate&&!reduce)raf=requestAnimationFrame(frame)}
-let THREE=null;
-try{THREE=await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js')}catch(e){THREE=null}
+const palette={cyan:'#4ff0e2',violet:'#a78bfa',pink:'#ff4fa3',orange:'#ffad5b',blue:'#68a8ff'};
 
-if(THREE){
-  function threeScene(canvas,orbital=false){
-    const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});
-    renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.8));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);renderer.setClearColor(0x000000,0);
-    const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(45,1,.1,100);camera.position.set(0,0,8);
-    const group=new THREE.Group();scene.add(group);
-    const ambient=new THREE.AmbientLight(0x667788,1.2);scene.add(ambient);
-    const p1=new THREE.PointLight(0x4ff0e2,8,18);p1.position.set(2,2,5);scene.add(p1);
-    const p2=new THREE.PointLight(0xa78bfa,6,16);p2.position.set(-3,-2,2);scene.add(p2);
-    const core=orbital?new THREE.Mesh(new THREE.SphereGeometry(1.35,48,48),new THREE.MeshStandardMaterial({color:0x1b2738,roughness:.62,metalness:.25,emissive:0x11152a,emissiveIntensity:.35})):new THREE.Mesh(new THREE.IcosahedronGeometry(1.45,4),new THREE.MeshPhysicalMaterial({color:0x1a2632,roughness:.32,metalness:.45,transmission:.15,transparent:true,opacity:.95,emissive:0x102d30,emissiveIntensity:.28}));
-    group.add(core);
-    const rings=[];const ringData=orbital?[[2.0,0.8,-.18,0x67a8ff],[2.55,1.1,.35,0x4ff0e2],[1.7,1.25,1.0,0xa78bfa]]:[[2.0,.68,-.25,0x4ff0e2],[2.55,.9,.4,0xa78bfa],[1.65,1.1,1.05,0xff4fa3]];
-    ringData.forEach((d,i)=>{const geo=new THREE.TorusGeometry(d[0],.008,8,160);const mat=new THREE.MeshBasicMaterial({color:d[3],transparent:true,opacity:.72});const m=new THREE.Mesh(geo,mat);m.scale.y=d[1];m.rotation.x=d[2];m.rotation.z=i*.2;group.add(m);rings.push(m)});
-    const pts=new Float32Array(850*3);for(let i=0;i<850;i++){const rr=3+Math.random()*5,a=Math.random()*Math.PI*2,z=(Math.random()-.5)*3;pts[i*3]=Math.cos(a)*rr;pts[i*3+1]=Math.sin(a)*rr*.65;pts[i*3+2]=z}
-    const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pts,3));const pm=new THREE.PointsMaterial({color:0x96a6b5,size:.025,transparent:true,opacity:.7});const stars=new THREE.Points(pg,pm);scene.add(stars);
-    let targetX=0,targetY=0,currentX=0,currentY=0,last=performance.now(),mode='all';
-    function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=Math.max(.4,w/Math.max(1,h));camera.updateProjectionMatrix()}
-    addEventListener('resize',resize,{passive:true});resize();
-    canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();targetX=((e.clientX-r.left)/r.width-.5)*.7;targetY=((e.clientY-r.top)/r.height-.5)*.5},{passive:true});
-    function draw(t){const dt=Math.min(.05,(t-last)/1000);last=t;currentX+=(targetX-currentX)*.05;currentY+=(targetY-currentY)*.05;group.rotation.y+=dt*.11;group.rotation.x=currentY*.28;group.position.x=currentX*.3;stars.rotation.y-=dt*.008;
-      rings.forEach((r,i)=>{r.rotation.y+=dt*(.07+i*.018);r.rotation.x+=dt*(i%2?.025:-.02);r.visible=mode!=='one'||i===0||!orbital;});
-      if(mode==='trace'){rings.forEach(r=>r.material.opacity=.24);rings[0].material.opacity=.95}else rings.forEach(r=>r.material.opacity=.72);
-      const pulse=1+Math.sin(t*.0016)*.018;core.scale.setScalar(pulse);renderer.render(scene,camera)
-    }
-    if(reduce){draw(performance.now())}else{const loop=t=>{draw(t);requestAnimationFrame(loop)};requestAnimationFrame(loop)}
-    return {setMode:m=>mode=m};
-  }
-  window.heroScene=threeScene($('#hero3d'),false);
-  window.orbitScene=threeScene($('#orbitCanvas'),true);
-}else{
-  canvas2d('#hero3d',(ctx,w,h,t)=>{ctx.clearRect(0,0,w,h);const cx=w/2,cy=h/2;[1,2,3].forEach((k,i)=>{ctx.strokeStyle=[colors.cyan,colors.violet,colors.pink][i];ctx.globalAlpha=.55-i*.1;ctx.beginPath();ctx.ellipse(cx,cy,70+k*52,38+k*23,Math.sin(t*.0002+i),0,Math.PI*2);ctx.stroke()});ctx.globalAlpha=1;ctx.fillStyle=colors.cyan;ctx.beginPath();ctx.arc(cx,cy,7,0,Math.PI*2);ctx.fill()});
-  canvas2d('#orbitCanvas',(ctx,w,h,t)=>{ctx.clearRect(0,0,w,h);const cx=w/2,cy=h/2;ctx.fillStyle='#38475d';ctx.beginPath();ctx.arc(cx,cy,Math.min(w,h)*.18,0,Math.PI*2);ctx.fill();[0,1,2].forEach(i=>{ctx.strokeStyle=[colors.blue,colors.cyan,colors.violet][i];ctx.beginPath();ctx.ellipse(cx,cy,Math.min(w,h)*(.3+i*.07),Math.min(w,h)*(.11+i*.05),i*.55,0,Math.PI*2);ctx.stroke()})},true)
+function setupCanvas(selector,draw){
+  const canvas=$(selector); if(!canvas)return;
+  const ctx=canvas.getContext('2d');let w=1,h=1;
+  function resize(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);w=Math.max(1,r.width);h=Math.max(1,r.height);canvas.width=Math.floor(w*d);canvas.height=Math.floor(h*d);ctx.setTransform(d,0,0,d,0,0);draw(ctx,w,h,performance.now())}
+  addEventListener('resize',resize,{passive:true});resize();
+  if(!reduce){const loop=t=>{draw(ctx,w,h,t);requestAnimationFrame(loop)};requestAnimationFrame(loop)}
 }
+let THREE=null;
+try{THREE=await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js')}catch(err){THREE=null}
 
-// Domain constellation + content.
+function makeThree(selector,orbital){
+ const canvas=$(selector);if(!canvas||!THREE)return null;
+ const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});
+ renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.8));renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);renderer.setClearColor(0x000000,0);
+ const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(43,1,.1,100);camera.position.set(0,0,8);
+ const root=new THREE.Group();scene.add(root);
+ scene.add(new THREE.AmbientLight(0x596673,1.15));
+ const l1=new THREE.PointLight(0x4ff0e2,7,18);l1.position.set(3,2,5);scene.add(l1);
+ const l2=new THREE.PointLight(0xa78bfa,5,16);l2.position.set(-3,-2,3);scene.add(l2);
+ const core=orbital
+   ? new THREE.Mesh(new THREE.SphereGeometry(1.28,48,48),new THREE.MeshStandardMaterial({color:0x26374b,roughness:.6,metalness:.18,emissive:0x15152c,emissiveIntensity:.3}))
+   : new THREE.Mesh(new THREE.IcosahedronGeometry(1.34,3),new THREE.MeshPhysicalMaterial({color:0x1c2934,roughness:.34,metalness:.5,transmission:.1,transparent:true,opacity:.96,emissive:0x102b2f,emissiveIntensity:.24}));
+ root.add(core);
+ const rings=[];
+ const data=orbital?[[2.0,.78,-.22,0x68a8ff],[2.48,1.05,.34,0x4ff0e2],[1.72,1.28,1.0,0xa78bfa]]:[[1.95,.72,-.24,0x4ff0e2],[2.55,.9,.42,0xa78bfa],[1.6,1.15,1.06,0xff4fa3]];
+ data.forEach((d,i)=>{const g=new THREE.TorusGeometry(d[0],.008,8,160);const m=new THREE.MeshBasicMaterial({color:d[3],transparent:true,opacity:.7});const r=new THREE.Mesh(g,m);r.scale.y=d[1];r.rotation.x=d[2];r.rotation.z=i*.18;root.add(r);rings.push(r)});
+ const pos=new Float32Array(700*3);let seed=11;function rand(){seed=(seed*16807)%2147483647;return(seed-1)/2147483646}
+ for(let i=0;i<700;i++){const rr=3.2+rand()*4.5,a=rand()*Math.PI*2;pos[i*3]=Math.cos(a)*rr;pos[i*3+1]=Math.sin(a)*rr*.65;pos[i*3+2]=(rand()-.5)*3}
+ const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));scene.add(new THREE.Points(pg,new THREE.PointsMaterial({color:0x8f9da9,size:.022,transparent:true,opacity:.65})));
+ let tx=0,ty=0,cx=0,cy=0,mode='all',last=performance.now();
+ function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=Math.max(.4,w/Math.max(1,h));camera.updateProjectionMatrix()}addEventListener('resize',resize,{passive:true});
+ canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*.7;ty=((e.clientY-r.top)/r.height-.5)*.5},{passive:true});
+ function draw(t){const dt=Math.min(.05,(t-last)/1000);last=t;cx+=(tx-cx)*.055;cy+=(ty-cy)*.055;root.rotation.y+=dt*.1;root.rotation.x=cy*.25;root.position.x=cx*.22;root.position.y=-cy*.08;
+  rings.forEach((r,i)=>{r.rotation.y+=dt*(.06+i*.018);r.rotation.x+=dt*(i%2?.022:-.016);r.visible=mode!=='one'||i===0||!orbital;r.material.opacity=mode==='trace'?(i===0?.92:.17):.7});
+  core.scale.setScalar(1+Math.sin(t*.0015)*.015);renderer.render(scene,camera)
+ }
+ if(reduce)draw(performance.now());else{const loop=t=>{draw(t);requestAnimationFrame(loop)};requestAnimationFrame(loop)}
+ return {setMode:m=>mode=m}
+}
+let hero3d=makeThree('#hero3d',false),orbit3d=makeThree('#orbitCanvas',true);
+if(!hero3d)setupCanvas('#hero3d',(ctx,w,h,t)=>{ctx.clearRect(0,0,w,h);const cx=w/2,cy=h/2;[0,1,2].forEach(i=>{ctx.strokeStyle=[palette.cyan,palette.violet,palette.pink][i];ctx.globalAlpha=.55-i*.1;ctx.beginPath();ctx.ellipse(cx,cy,90+i*60,45+i*25,i*.4+t*.00005,0,Math.PI*2);ctx.stroke()});ctx.globalAlpha=1;ctx.fillStyle=palette.cyan;ctx.beginPath();ctx.arc(cx,cy,7,0,Math.PI*2);ctx.fill()});
+if(!orbit3d)setupCanvas('#orbitCanvas',(ctx,w,h,t)=>{ctx.clearRect(0,0,w,h);const cx=w/2,cy=h/2,r=Math.min(w,h)*.18;ctx.fillStyle='#37465a';ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();[palette.blue,palette.cyan,palette.violet].forEach((c,i)=>{ctx.strokeStyle=c;ctx.globalAlpha=.65;ctx.beginPath();ctx.ellipse(cx,cy,r*(1.7+i*.38),r*(.62+i*.24),i*.6,0,Math.PI*2);ctx.stroke()});ctx.globalAlpha=1});
+
 const domainData={
- aerospace:{label:'DOMAIN / AEROSPACE',title:'Aircraft, systems<br>and engineering fundamentals.',body:'Engineering education and project work spanning aircraft systems, propulsion fundamentals, aerodynamics, flight mechanics, structures, materials and space-related coursework.',rows:[['Academic base','B.TECH AEROSPACE ENGINEERING'],['Project evidence','RC AIRCRAFT WING DESIGN & VALIDATION'],['Related areas','AIRCRAFT SYSTEMS · NAVIGATION · PROPULSION · FLIGHT DYNAMICS']]},
- orbital:{label:'DOMAIN / ORBITAL & GNC',title:'Orbits, trajectories<br>and GNC visualization.',body:'Independent technical development focused on orbital mechanics, satellite trajectory visualization, coordinate transformations, ground-track mapping and GNC-oriented software exploration.',rows:[['Primary project','ORBITAL LAB'],['Project state','IN DEVELOPMENT'],['Related areas','ORBITAL MECHANICS · SATELLITE DATA · VISUALIZATION']]},
- research:{label:'DOMAIN / RESEARCH',title:'Materials, testing<br>and technical analysis.',body:'Final-year aerospace materials work focused on nano-filler reinforced composite structures, mechanical testing, failure analysis, characterization and structured technical documentation.',rows:[['Research project','NANO-FILLER REINFORCED COMPOSITES'],['Methods','TENSILE · FLEXURAL · IMPACT · HARDNESS'],['Characterization','SEM / TEM OBSERVATIONS']]},
+ aerospace:{label:'DOMAIN / AEROSPACE',title:'Aircraft, systems<br>and fundamentals.',body:'Engineering education and project work spanning aircraft systems, propulsion fundamentals, aerodynamics, flight mechanics, structures, materials and space-related coursework.',rows:[['Academic base','B.TECH AEROSPACE ENGINEERING'],['Project evidence','RC AIRCRAFT WING DESIGN & VALIDATION'],['Related areas','AIRCRAFT SYSTEMS · NAVIGATION · PROPULSION · FLIGHT DYNAMICS']]},
+ orbital:{label:'DOMAIN / ORBITAL & GNC',title:'Orbits, trajectories<br>and visualization.',body:'Independent technical development focused on orbital mechanics, satellite trajectory visualization, coordinate transformations, ground-track mapping and GNC-oriented software exploration.',rows:[['Primary project','ORBITAL LAB'],['Project state','IN DEVELOPMENT'],['Related areas','ORBITAL MECHANICS · SATELLITE DATA · VISUALIZATION']]},
+ research:{label:'DOMAIN / RESEARCH',title:'Materials, testing<br>and technical analysis.',body:'Final-year aerospace materials work focused on nano-filler reinforced composite structures, mechanical testing, failure analysis, characterization and technical documentation.',rows:[['Research project','NANO-FILLER REINFORCED COMPOSITES'],['Methods','TENSILE · FLEXURAL · IMPACT · HARDNESS'],['Characterization','SEM / TEM OBSERVATIONS']]},
  digital:{label:'DOMAIN / DIGITAL & AI',title:'Engineering<br>through software.',body:'Digital work includes Python fundamentals, data visualization, browser-based engineering applications, generative AI, machine learning and intelligent automation training.',rows:[['Project evidence','AIRCRAFT LIFT CALCULATOR'],['Professional training','GENERATIVE AI · ML · INTELLIGENT AUTOMATION'],['Exposure','JAVASCRIPT / REACT · GITHUB · DATA VISUALIZATION']]}
 };
-function renderDomain(k){const d=domainData[k],p=$('#domainPanel');p.innerHTML='<div class="eyebrow">'+d.label+'</div><h3>'+d.title+'</h3><p>'+d.body+'</p><div class="detail">'+d.rows.map(r=>'<div class="detail-item"><b>'+r[0]+'</b><span>'+r[1]+'</span></div>').join('')+'</div>';$$('.constellation .node').forEach(b=>b.classList.toggle('active',b.dataset.domain===k))}
+function renderDomain(k){const d=domainData[k],p=$('#domainPanel');p.innerHTML='<div class="eyebrow">'+d.label+'</div><h3>'+d.title+'</h3><p>'+d.body+'</p><div class="detail-list">'+d.rows.map(r=>'<div class="detail"><b>'+r[0]+'</b><span>'+r[1]+'</span></div>').join('')+'</div>';$$('.constellation .node').forEach(b=>b.classList.toggle('active',b.dataset.domain===k))}
 $$('.constellation .node').forEach(b=>b.addEventListener('click',()=>renderDomain(b.dataset.domain)));renderDomain('aerospace');
-canvas2d('#domainCanvas',(ctx,w,h,t)=>{ctx.clearRect(0,0,w,h);const c={x:w*.5,y:h*.5},ps=[{x:w*.18,y:h*.20,c:colors.cyan},{x:w*.82,y:h*.20,c:colors.violet},{x:w*.18,y:h*.80,c:colors.pink},{x:w*.82,y:h*.80,c:colors.orange}];ps.forEach((p,i)=>{ctx.strokeStyle=i%2?'rgba(167,139,250,.22)':'rgba(79,240,226,.22)';ctx.beginPath();ctx.moveTo(c.x,c.y);ctx.lineTo(p.x,p.y);ctx.stroke();ctx.fillStyle=p.c;ctx.shadowColor=p.c;ctx.shadowBlur=8+4*Math.sin(t*.001+i);ctx.beginPath();ctx.arc(p.x,p.y,3.5,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0});ctx.strokeStyle='rgba(79,240,226,.18)';ctx.beginPath();ctx.arc(c.x,c.y,74+5*Math.sin(t*.0014),0,Math.PI*2);ctx.stroke()});
 
-// Project explorer
-$$('[data-project]').forEach(btn=>btn.addEventListener('click',()=>{$$('[data-project]').forEach(x=>x.classList.remove('active'));$$('.project').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const target=$('#'+btn.dataset.project);if(target)target.classList.add('active')}));
+$$('[data-project]').forEach(btn=>btn.addEventListener('click',()=>{$$('[data-project]').forEach(x=>x.classList.remove('active'));$$('.project').forEach(x=>x.classList.remove('active'));btn.classList.add('active');$('#'+btn.dataset.project)?.classList.add('active')}));
+$$('[data-orbitmode]').forEach(btn=>btn.addEventListener('click',()=>{$$('[data-orbitmode]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');orbit3d?.setMode(btn.dataset.orbitmode)}));
 
-// Orbital modes
-$$('[data-orbitmode]').forEach(btn=>btn.addEventListener('click',()=>{$$('[data-orbitmode]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');window.orbitScene?.setMode(btn.dataset.orbitmode)}));
-
-// Lift lab
-const liftIds=['rho','vel','area','cl'];const lift=$('#lift'),spark=$('#sparkCanvas');let curveRaf=0;
-function calcLift(){const n=liftIds.map(id=>Math.max(0,Number($('#'+id)?.value)||0));const L=.5*n[0]*n[1]*n[1]*n[2]*n[3];lift.textContent=(Number.isFinite(L)?L:0).toFixed(1)+' N';return {v:n[1],L:Number.isFinite(L)?L:0}}
-liftIds.forEach(id=>$('#'+id)?.addEventListener('input',calcLift));
-function drawSpark(){if(!spark)return;const c=spark.getContext('2d');const r=spark.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(spark.width!==r.width*d||spark.height!==r.height*d){spark.width=r.width*d;spark.height=r.height*d}c.setTransform(d,0,0,d,0,0);const w=r.width,h=r.height;const cur=calcLift();c.clearRect(0,0,w,h);c.strokeStyle='rgba(79,240,226,.08)';c.lineWidth=1;for(let i=1;i<6;i++){c.beginPath();c.moveTo(0,h*i/6);c.lineTo(w,h*i/6);c.stroke()}c.beginPath();c.moveTo(0,h-8);const rho=Math.max(0,Number($('#rho').value)||0),s=Math.max(0,Number($('#area').value)||0),cl=Math.max(0,Number($('#cl').value)||0);for(let x=0;x<=w;x++){const v=(x/w)*120,L=.5*rho*v*v*s*cl,max=.5*rho*120*120*s*cl||1,y=h-9-(L/max)*(h-18);if(x===0)c.moveTo(x,y);else c.lineTo(x,y)}c.strokeStyle=colors.cyan;c.lineWidth=2;c.stroke();const px=Math.min(120,cur.v)/120*w;c.fillStyle=colors.pink;c.beginPath();c.arc(px,h-9-(cur.L/(.5*rho*120*120*s*cl||1))*(h-18),4,0,Math.PI*2);c.fill();if(!reduce)curveRaf=requestAnimationFrame(drawSpark)}
-calcLift();drawSpark();
-
-// Tilt effect
-if(window.matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce){$$('.tilt').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(900px) rotateX('+(-y*5)+'deg) rotateY('+(x*6)+'deg) translateY(-3px)'});el.addEventListener('pointerleave',()=>{el.style.transform=''});})}
-const cursor=$('#cursor');if(cursor&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){addEventListener('pointermove',e=>{cursor.classList.add('active');cursor.style.transform='translate('+(e.clientX-6)+'px,'+(e.clientY-6)+'px)'});$$('a,button,.tilt,.fact').forEach(el=>el.addEventListener('pointerenter',()=>cursor.style.transform+=' scale(1.65)'));$$('a,button,.tilt,.fact').forEach(el=>el.addEventListener('pointerleave',()=>cursor.style.transform=cursor.style.transform.replace(' scale(1.65)','')))}
-// Scroll-aware nav
-if('IntersectionObserver' in window){const links=$$('.nav a'),sections=links.map(a=>$(a.getAttribute('href'))).filter(Boolean);const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-42% 0px -50% 0px',threshold:0});sections.forEach(s=>io.observe(s))}
+const ids=['rho','vel','area','cl'],out=$('#lift'),spark=$('#sparkCanvas');
+function calcLift(){const n=ids.map(id=>Math.max(0,Number($('#'+id)?.value)||0));const L=.5*n[0]*n[1]*n[1]*n[2]*n[3];out.textContent=(Number.isFinite(L)?L:0).toFixed(1)+' N';return{v:n[1],L:Number.isFinite(L)?L:0}}
+ids.forEach(id=>$('#'+id)?.addEventListener('input',calcLift));calcLift();
+if(spark){
+ function drawSpark(){const c=spark.getContext('2d'),r=spark.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(spark.width!==r.width*d||spark.height!==r.height*d){spark.width=r.width*d;spark.height=r.height*d}c.setTransform(d,0,0,d,0,0);const w=r.width,h=r.height,rho=Math.max(0,Number($('#rho').value)||0),s=Math.max(0,Number($('#area').value)||0),cl=Math.max(0,Number($('#cl').value)||0),cur=calcLift();c.clearRect(0,0,w,h);c.strokeStyle='rgba(79,240,226,.07)';for(let i=1;i<6;i++){c.beginPath();c.moveTo(0,h*i/6);c.lineTo(w,h*i/6);c.stroke()}const max=.5*rho*120*120*s*cl||1;c.beginPath();for(let x=0;x<=w;x++){const v=x/w*120,L=.5*rho*v*v*s*cl,y=h-8-(L/max)*(h-16);x?c.lineTo(x,y):c.moveTo(x,y)}c.strokeStyle=palette.cyan;c.lineWidth=2;c.stroke();const px=Math.min(120,cur.v)/120*w;const py=h-8-(cur.L/max)*(h-16);c.fillStyle=palette.pink;c.beginPath();c.arc(px,py,4,0,Math.PI*2);c.fill();if(!reduce)requestAnimationFrame(drawSpark)}drawSpark();
+}
+if('IntersectionObserver' in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.1});$$('.reveal').forEach(x=>ob.observe(x));}
+if('IntersectionObserver' in window){const navs=$$('.nav a'),sections=navs.map(a=>$(a.getAttribute('href'))).filter(Boolean);const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-43% 0px -48% 0px'});sections.forEach(s=>io.observe(s))}
+const cursor=$('#cursor');
+if(cursor&&matchMedia('(hover:hover) and (pointer:fine)').matches){document.addEventListener('pointermove',e=>{cursor.classList.add('active');cursor.style.transform='translate('+(e.clientX-6)+'px,'+(e.clientY-6)+'px)'},{passive:true})}
 </script>
 </body>
 </html>
