@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
---bg:#0b1117;--panel:#111a23;--ink:#edf3f7;--muted:#9aaab7;--line:#2a3947;--soft:#16212b;
---navy:#0c151e;--blue:#78a9ff;--cyan:#7dd3df;--amber:#e7b96d;--green:#86c59e;
+--bg:#080b0f;--panel:#10141a;--ink:#f4f0e8;--muted:#9ca5af;--line:#27313b;--soft:#141b23;
+--navy:#070b10;--blue:#67a8ff;--cyan:#4ff0e2;--amber:#ffb45c;--green:#7ed5a3;--violet:#a78bfa;--pink:#ff4fa3;
 --sans:Montserrat,Arial,sans-serif;--mono:"Space Mono",monospace;--rail:248px;--max:1500px
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.58 var(--sans)}
@@ -28,7 +28,7 @@ a{text-decoration:none;color:inherit}
 .note-rail{margin-top:24px;border-top:1px solid #ccd4db;padding-top:14px;color:#8495a2;font:8px/1.5 var(--mono)}
 .main{width:min(var(--max),100%);padding:28px 40px 60px;margin:auto}.crumb{font:8px var(--mono);color:#7c868f;margin-bottom:11px;text-transform:uppercase}
 .panel{background:var(--panel);border:1px solid var(--line)}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:9px 12px;background:#151d26;border-bottom:1px solid var(--line)}.panel-head b{font-size:10px}.code{font:8px var(--mono);color:#8495a2;letter-spacing:.04em;text-transform:uppercase}
-.hero{display:grid;grid-template-columns:1.45fr .75fr;min-height:405px}.hero-main{padding:41px 42px;border-right:1px solid var(--line)}.hero h2{font-size:clamp(44px,5.8vw,82px);line-height:.92;letter-spacing:-.068em;margin:15px 0 17px}.hero p{max-width:820px;color:#bdc9d3;font-size:15px;margin:0}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}.chip{border:1px solid #2d3d4a;background:#15212b;padding:5px 7px;font:8px var(--mono);color:#4f5a65;text-transform:uppercase}
+.hero{display:grid;grid-template-columns:1.45fr .75fr;min-height:405px;position:relative;overflow:hidden;box-shadow:0 0 0 1px rgba(79,240,226,.02),0 20px 50px rgba(0,0,0,.18)}.hero-main{padding:41px 42px;border-right:1px solid var(--line);background:radial-gradient(circle at 84% 18%,rgba(167,139,250,.10),transparent 22%),radial-gradient(circle at 10% 85%,rgba(79,240,226,.06),transparent 26%),var(--panel)}.hero h2{font-size:clamp(44px,5.8vw,82px);text-shadow:0 0 28px rgba(79,240,226,.04);line-height:.92;letter-spacing:-.068em;margin:15px 0 17px}.hero p{max-width:820px;color:#bdc9d3;font-size:15px;margin:0}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}.chip{border:1px solid #2d3d4a;background:#15212b;padding:5px 7px;font:8px var(--mono);color:#4f5a65;text-transform:uppercase}
 .hero-side{padding:20px;background:#0d1218;display:grid;gap:15px;align-content:center}.stat{border:1px solid #2d3d4a;background:var(--panel);padding:13px}.stat small{display:block;font:8px var(--mono);color:#8495a2;text-transform:uppercase;margin-bottom:5px}.stat strong{display:block;font-size:21px;letter-spacing:-.045em;line-height:1.05}.stat p{margin:6px 0 0;font-size:10px;color:#9cabb7}
 .signal{height:76px;border:1px solid #ced5db;background:linear-gradient(90deg,#edf1f3 1px,transparent 1px),linear-gradient(#edf1f3 1px,transparent 1px);background-size:19px 19px;position:relative;overflow:hidden}.signal:after{content:"";position:absolute;left:-12%;right:-12%;top:50%;height:2px;background:linear-gradient(90deg,transparent 0 8%,var(--blue) 9% 13%,transparent 14% 28%,var(--cyan) 29% 33%,transparent 34% 48%,var(--blue) 49% 53%,transparent 54% 67%,var(--cyan) 68% 72%,transparent 73% 89%,var(--blue) 90% 94%,transparent);animation:sweep 2.8s linear infinite}@keyframes sweep{from{transform:translateX(-7%)}to{transform:translateX(7%)}}
 section{scroll-margin-top:20px;margin-top:30px}.section-head{position:relative;display:flex;justify-content:space-between;align-items:end;gap:18px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:13px}.section-head h3{font-size:15px;color:var(--ink);margin:0;letter-spacing:-.025em}
@@ -128,10 +128,11 @@ footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid 
 <div class="orbital-main">
 <div class="orbit-view">
 <div class="read"><span>ORBITAL LAB · PERSONAL PROJECT</span><span>IN DEVELOPMENT</span></div>
-<div class="reticle"></div><div class="glow-core"></div><div class="earth"></div>
+<div class="scanline"></div><div class="reticle"></div><div class="glow-core"></div><div class="earth"></div>
 <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
 <div class="node node-1"></div><div class="node node-2"></div><div class="node node-3"></div>
-<div class="sat"></div><div class="telemetry">ALT / TRAJECTORY / FRAME / GNC</div>
+<div class="sat"></div><div class="telemetry">ALT // VELOCITY // FRAME // GNC</div>
+<div class="orbit-id">01</div><div class="orbit-id o2">02</div><div class="orbit-id o3">03</div>
 <div class="read bottom"><span>PROPAGATION · MAPPING · SPACECRAFT</span><span>VISUALISATION</span></div>
 </div>
 </div>
@@ -145,8 +146,9 @@ footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid 
 <div class="fact"><b>Workspaces</b><span>Missions, spacecraft, orbits, ground tracks, systems and console-style tools</span></div>
 <div class="fact"><b>QA / iteration</b><span>Navigation, user-input behaviour, orbit summaries, timeline controls and visualisation troubleshooting</span></div>
 </div>
+<div class="orbital-meta"><span>OPEN SOURCE / PERSONAL BUILD</span><span>ORBITAL / GNC</span></div>
 <a class="launch" href="https://orbital-lab-lq22ug.v2.appdeploy.ai/" target="_blank" rel="noreferrer">OPEN ORBITAL LAB ↗</a>
-<p style="font-size:9px;color:#8b98a5;margin-top:10px">Scope control: perturbations, maneuver analysis and GNC/state-estimation are described in the source material as planned or in development. They are not presented here as completed flight-dynamics validation.</p>
+<p class="scope-note">Scope control: perturbations, maneuver analysis and GNC/state-estimation are described in the source material as planned or in development. They are not presented here as completed flight-dynamics validation.</p>
 </div>
 </div>
 </section>
