@@ -8,7 +8,7 @@
 <title>Sai Akhil Malladi | Aerospace Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
  --bg:#090a0e;--surface:#10141a;--surface2:#0d1117;--ink:#f3efe7;--soft:#c2cad1;--muted:#8b98a3;--line:#29333d;
@@ -38,14 +38,14 @@ a{text-decoration:none;color:inherit}button,input{font:inherit}
 .glass{background:linear-gradient(145deg,rgba(20,27,35,.66),rgba(8,12,17,.52));border:1px solid var(--line);border-radius:18px;overflow:hidden;backdrop-filter:blur(18px) saturate(1.15);-webkit-backdrop-filter:blur(18px) saturate(1.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 22px 65px rgba(0,0,0,.16)}
 .personality{display:grid;grid-template-columns:1.12fr .88fr;gap:11px;margin-top:16px}.statement{padding:25px;min-height:275px}.statement h3{font-size:34px;line-height:1.02;letter-spacing:-.06em;margin:8px 0 12px}.statement p{color:#bec8cf;font-size:12px;margin:0;max-width:720px}.traits{display:grid;grid-template-columns:1fr 1fr;gap:8px}.trait{padding:15px;border:1px solid var(--line);background:#0e141b;min-height:133px;transition:.2s}.trait:hover{transform:translateY(-3px);border-color:#3d4c58}.trait:nth-child(1){box-shadow:inset 0 2px var(--cyan)}.trait:nth-child(2){box-shadow:inset 0 2px var(--violet)}.trait:nth-child(3){box-shadow:inset 0 2px var(--pink)}.trait:nth-child(4){box-shadow:inset 0 2px var(--orange)}.trait b{font-size:10px}.trait span{display:block;color:#87949e;font:8px var(--mono);margin-top:6px}
 .domains{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}.constellation{position:relative;min-height:390px;overflow:hidden;background:#070b10;border:1px solid var(--line)}.constellation canvas{position:absolute;inset:0;width:100%;height:100%}.constellation .node{position:absolute;z-index:3;border:1px solid #34424e;background:rgba(10,15,21,.82);color:#bdc6cd;padding:9px 10px;font:7px var(--mono);cursor:pointer;backdrop-filter:blur(7px);transition:.18s}.constellation .node:hover,.constellation .node.active{border-color:var(--cyan);color:#f3efe7;box-shadow:0 0 17px rgba(79,240,226,.07)}.node.a{left:8%;top:14%}.node.b{right:7%;top:14%}.node.c{left:8%;bottom:14%}.node.d{right:7%;bottom:14%}.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:116px;height:116px;border:1px solid rgba(79,240,226,.5);border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(7,12,17,.9);z-index:2;box-shadow:0 0 34px rgba(79,240,226,.06)}.core b{font-size:14px}.domain-card{padding:21px;min-height:390px}.domain-card h3{font-size:29px;line-height:1.02;letter-spacing:-.055em;margin:8px 0 12px}.domain-card p{color:#bec8cf;font-size:11px;margin:0}.detail-list{display:grid;gap:9px;margin-top:17px}.detail{padding-top:9px;border-top:1px solid var(--line)}.detail b{display:block;font-size:10px}.detail span{display:block;color:#86949f;font:8px var(--mono);margin-top:3px}
-.credentials{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.cred{padding:17px;min-height:150px;position:relative;transition:.2s}.cred:before{content:"";position:absolute;left:0;top:0;width:34px;height:2px;background:var(--cyan)}.cred:nth-child(2):before{background:var(--violet)}.cred:nth-child(3):before{background:var(--pink)}.cred:nth-child(4):before{background:var(--orange)}.cred:hover{transform:translateY(-3px);border-color:#414d58}.cred small{font:8px var(--mono);color:#7f8c97}.cred h3{font-size:17px;line-height:1.08;margin:7px 0}.cred p{font-size:10px;color:#abb6c0;margin:0}
+.credentials{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.cred{padding:17px;min-height:150px;position:relative;transition:.2s}.cred:before{content:"";position:absolute;left:0;top:0;width:34px;height:2px;background:var(--cyan)}.cred:nth-child(2):before{background:var(--violet)}.cred:nth-child(3):before{background:var(--pink)}.cred:nth-child(4):before{background:var(--orange)}.cred:hover{transform:translateY(-3px);border-color:#414d58}.cred small{font:8px var(--mono);color:#7f8c97}.cred h3{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.08;margin:7px 0}.cred p{font-size:10px;color:#abb6c0;margin:0}
 .timeline{margin-top:17px;border-left:1px solid #2a3540;padding-left:22px}.event{position:relative;padding-bottom:22px}.event:before{content:"";position:absolute;left:-27px;top:4px;width:8px;height:8px;background:#0d1318;border:2px solid var(--cyan)}.event:nth-child(2):before{border-color:var(--violet)}.when{font:8px var(--mono);color:#74828d}.event h3{font-size:13px;margin:4px 0}.event p{font-size:11px;color:#bac4cc;margin:0;max-width:900px}
-.project-console{display:grid;grid-template-columns:232px 1fr;min-height:430px;margin-top:16px;overflow:hidden;border:1px solid var(--line);background:#0b1016}.project-nav{background:#080c11;border-right:1px solid var(--line)}.project-nav button{display:block;width:100%;border:0;border-bottom:1px solid rgba(180,200,215,.1);background:transparent;color:#7f8d98;padding:12px;text-align:left;font:8px var(--mono);cursor:pointer;transition:.16s}.project-nav button:hover{background:#10171f;color:#dae0e4}.project-nav button.active{background:#10242d;color:var(--cyan);border-left:3px solid var(--cyan);padding-left:9px}.project-view{padding:22px;background:linear-gradient(145deg,#10161d,#0b1016)}.project{display:none}.project.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:.1;transform:translateY(5px)}to{opacity:1;transform:none}}.project h3{font-size:30px;line-height:1.02;letter-spacing:-.055em;margin:7px 0 11px}.project>p{color:#bdc7cf;font-size:11px;max-width:910px}.spec{display:grid;grid-template-columns:145px 1fr;border-top:1px solid var(--line);margin-top:15px}.spec div{padding:9px 0;border-bottom:1px solid rgba(180,200,215,.1);font-size:10px;color:#c0c8cf}.spec div:nth-child(odd){font:8px var(--mono);color:#798792;text-transform:uppercase}.repo{display:inline-block;color:var(--cyan);border-bottom:1px solid rgba(79,240,226,.35);font:8px var(--mono);padding-bottom:2px;margin-top:12px}
-.orbit{display:grid;grid-template-columns:1.07fr .93fr;margin-top:16px;overflow:hidden;background:#070b10;border:1px solid var(--line)}.orbit-view{position:relative;min-height:470px;border-right:1px solid var(--line);background:#05090e}.orbit-view canvas{position:absolute;inset:0;width:100%;height:100%}.orbit-view .hud{position:absolute;left:15px;right:15px;top:14px;display:flex;justify-content:space-between;font:7px var(--mono);color:#73828e;z-index:3}.orbit-view .hud span:last-child{color:var(--cyan)}.orbit-view .bottom{position:absolute;left:15px;right:15px;bottom:14px;display:flex;justify-content:space-between;font:7px var(--mono);color:#73828e;z-index:3}.orbit-side{padding:23px;background:linear-gradient(145deg,#11171e,#0b1117)}.orbit-side h3{font-size:33px;line-height:.96;letter-spacing:-.06em;margin:7px 0 11px}.orbit-side>p{font-size:11px;color:#c0c9d0;margin:0}.facts{display:grid;gap:8px;margin-top:16px}.fact{padding:10px;border:1px solid var(--line);background:#0f151c;transition:.18s}.fact:hover{border-color:rgba(79,240,226,.35);transform:translateX(2px)}.fact b{font-size:10px}.fact span{display:block;color:#8d9aa4;font:8px var(--mono);margin-top:3px}.orbit-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.mini{padding:8px 9px;border:1px solid #34424e;background:#0a1016;color:#abb5bd;font:7px var(--mono);cursor:pointer}.mini.active{border-color:var(--cyan);color:var(--cyan)}
+.project-console{display:grid;grid-template-columns:232px 1fr;min-height:430px;margin-top:16px;overflow:hidden;border:1px solid var(--line);background:#0b1016}.project-nav{background:#080c11;border-right:1px solid var(--line)}.project-nav button{display:block;width:100%;border:0;border-bottom:1px solid rgba(180,200,215,.1);background:transparent;color:#7f8d98;padding:12px;text-align:left;font:8px var(--mono);cursor:pointer;transition:.16s}.project-nav button:hover{background:#10171f;color:#dae0e4}.project-nav button.active{background:#10242d;color:var(--cyan);border-left:3px solid var(--cyan);padding-left:9px}.project-view{padding:22px;background:linear-gradient(145deg,#10161d,#0b1016)}.project{display:none}.project.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:.1;transform:translateY(5px)}to{opacity:1;transform:none}}.project h3{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.02;letter-spacing:-.055em;margin:7px 0 11px}.project>p{color:#bdc7cf;font-size:11px;max-width:910px}.spec{display:grid;grid-template-columns:145px 1fr;border-top:1px solid var(--line);margin-top:15px}.spec div{padding:9px 0;border-bottom:1px solid rgba(180,200,215,.1);font-size:10px;color:#c0c8cf}.spec div:nth-child(odd){font:8px var(--mono);color:#798792;text-transform:uppercase}.repo{display:inline-block;color:var(--cyan);border-bottom:1px solid rgba(79,240,226,.35);font:8px var(--mono);padding-bottom:2px;margin-top:12px}
+.orbit{display:grid;grid-template-columns:1.07fr .93fr;margin-top:16px;overflow:hidden;background:#070b10;border:1px solid var(--line)}.orbit-view{position:relative;min-height:470px;border-right:1px solid var(--line);background:#05090e}.orbit-view canvas{position:absolute;inset:0;width:100%;height:100%}.orbit-view .hud{position:absolute;left:15px;right:15px;top:14px;display:flex;justify-content:space-between;font:7px var(--mono);color:#73828e;z-index:3}.orbit-view .hud span:last-child{color:var(--cyan)}.orbit-view .bottom{position:absolute;left:15px;right:15px;bottom:14px;display:flex;justify-content:space-between;font:7px var(--mono);color:#73828e;z-index:3}.orbit-side{padding:23px;background:linear-gradient(145deg,#11171e,#0b1117)}.orbit-side h3{font-family:var(--display);font-weight:600;font-size:33px;line-height:.96;letter-spacing:-.06em;margin:7px 0 11px}.orbit-side>p{font-size:11px;color:#c0c9d0;margin:0}.facts{display:grid;gap:8px;margin-top:16px}.fact{padding:10px;border:1px solid var(--line);background:#0f151c;transition:.18s}.fact:hover{border-color:rgba(79,240,226,.35);transform:translateX(2px)}.fact b{font-size:10px}.fact span{display:block;color:#8d9aa4;font:8px var(--mono);margin-top:3px}.orbit-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.mini{padding:8px 9px;border:1px solid #34424e;background:#0a1016;color:#abb5bd;font:7px var(--mono);cursor:pointer}.mini.active{border-color:var(--cyan);color:var(--cyan)}
 .capability{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.cap-col{overflow:hidden}.cap{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 12px;border-bottom:1px solid rgba(180,200,215,.1)}.cap:last-child{border-bottom:0}.cap b{font-size:10px}.cap i{display:block;font-style:normal;font-size:9px;color:#8f9ca7;margin-top:3px}.cap span{font:8px var(--mono);color:#7f8c97;text-align:right}
-.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.method{padding:14px}.method .n{font:8px var(--mono);color:var(--cyan)}.method h3{font-size:14px;margin:4px 0}.method p{font-size:10px;color:#919ea9;margin:0}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.method{padding:14px}.method .n{font:8px var(--mono);color:var(--cyan)}.method h3{font-family:var(--display);font-weight:600;font-size:14px;margin:4px 0}.method p{font-size:10px;color:#919ea9;margin:0}
 .lab{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.lab-card{padding:17px}.formula{font:700 22px var(--mono);margin:4px 0 17px}.inputs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.inputs label{font:8px var(--mono);color:#84919c;text-transform:uppercase}.inputs input{width:100%;margin-top:4px;background:#090d12;color:#f2eee7;border:1px solid #30404c;padding:8px;outline:0}.inputs input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(79,240,226,.08)}.result{display:flex;justify-content:space-between;align-items:end;border-top:1px solid var(--line);margin-top:13px;padding-top:12px}.result strong{font-size:29px}.spark{height:126px;border:1px solid var(--line);background:#070b10;margin-top:15px;position:relative}.spark canvas{position:absolute;inset:0;width:100%;height:100%}
-.links{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}.link{padding:14px;transition:.18s}.link:hover{transform:translateY(-2px);border-color:rgba(79,240,226,.35)}.link small{display:block;font:8px var(--mono);color:#788690}.link b{display:block;font-size:11px;margin-top:5px}
+.lab-shell{margin-top:16px}.lab-tabs{display:flex;gap:4px;padding:6px;width:max-content;max-width:100%;margin-bottom:10px;border-radius:16px}.lab-tab{border:0;background:transparent;color:#7d8a95;padding:9px 12px;border-radius:11px;font:8px var(--mono);cursor:pointer;transition:.2s;white-space:nowrap}.lab-tab:hover{color:#dce1e4}.lab-tab.active{background:rgba(79,240,226,.09);color:var(--cyan)}.lab-stage{min-height:480px}.lab-pane{display:none}.lab-pane.active{display:block;animation:labin .28s ease}@keyframes labin{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}.lab-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:10px}.lab-card{padding:20px;min-height:405px}.lab-card h3{font-family:var(--display);font-weight:600;font-size:25px;line-height:1.03;letter-spacing:-.05em;margin:8px 0 11px}.lab-explain p{font-size:11px;color:#bac4cc;margin:0}.lab-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.lab-facts>div{border:1px solid var(--line);background:#0c1218;padding:11px}.lab-facts span{display:block;font:7px var(--mono);color:#778591;margin-bottom:4px}.lab-facts b{font-size:11px}.note-mini{border-left:2px solid var(--cyan);background:rgba(79,240,226,.035);padding:9px 10px;margin-top:14px;color:#8e9ba5;font:8px var(--mono)}.axis-note{position:absolute;right:8px;bottom:6px;color:#65737e;font:6px var(--mono);pointer-events:none}.pressure-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pressure-card{padding:22px;min-height:405px}.big-number{font-family:var(--display);font-weight:600;font-size:58px;letter-spacing:-.07em;margin:20px 0 15px}.big-number span{font:10px var(--mono);color:#778691}.pressure-bar{height:10px;border:1px solid #283540;background:#090e13;overflow:hidden}.pressure-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 18px rgba(79,240,226,.22);transition:width .35s cubic-bezier(.22,.7,.2,1)}.pressure-card p{font-size:11px;color:#adb8c1;margin-top:16px}.relationship{display:grid;gap:11px;margin-top:18px}.relationship div{display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:8px;border-bottom:1px solid var(--line);padding-bottom:9px}.relationship span{font:700 13px var(--mono);color:var(--cyan)}.relationship b{font-size:10px}.relationship small{font:7px var(--mono);color:#788691}.sensitivity-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:10px}.sensitivity-card{padding:18px;min-height:410px}.sweep-head{display:flex;justify-content:space-between;gap:10px;color:#7c8994;font:7px var(--mono);margin:14px 0 8px}.sweep-head span:last-child{color:var(--cyan)}#sweepCanvas{display:block;width:100%;height:315px;border:1px solid var(--line);background:#070b10}.plot-legend{display:flex;gap:14px;margin-top:8px;color:#6f7d87;font:7px var(--mono)}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;vertical-align:middle;margin-right:4px}.dot.c1{background:var(--violet)}.dot.c2{background:var(--pink)}.sens-list{display:grid;gap:11px;margin-top:17px}.sens-list>div{border-top:1px solid var(--line);padding-top:9px}.sens-list b{font:8px var(--mono);color:var(--cyan)}.sens-list span{display:block;color:#929ea8;font-size:10px;margin-top:3px}.reset-lab{margin-top:17px}@media(max-width:1050px){.lab-grid,.pressure-grid,.sensitivity-grid{grid-template-columns:1fr}}@media(max-width:620px){.lab-tabs{width:100%;overflow:auto}.lab-card,.pressure-card,.sensitivity-card{min-height:0}.lab-facts{grid-template-columns:1fr}.big-number{font-size:45px}.lab-stage{min-height:0}}.links{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}.link{padding:14px;transition:.18s}.link:hover{transform:translateY(-2px);border-color:rgba(79,240,226,.35)}.link small{display:block;font:8px var(--mono);color:#788690}.link b{display:block;font-size:11px;margin-top:5px}
 footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding:15px 0 40px;margin-top:36px;color:#6e7b86;font:8px var(--mono)}
 #cursor{position:fixed;z-index:120;width:9px;height:9px;border:1px solid rgba(79,240,226,.82);border-radius:50%;pointer-events:none;mix-blend-mode:screen;opacity:0;transition:opacity .2s}
 #cursor.on{opacity:1}
@@ -145,9 +145,85 @@ footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid 
 
 <section class="section reveal" id="lab">
 <div class="section-head"><h2>07 / ENGINEERING LAB</h2><div class="code">LAB-001</div></div>
-<div class="lab">
-<div class="glass lab-card"><div class="eyebrow">LIFT RELATION / FIRST-ORDER MODEL</div><div class="formula">L = ½ρV²SCₗ</div><div class="inputs"><label>ρ air<input id="rho" type="number" min="0" step=".1" value="1.225"></label><label>V velocity<input id="vel" type="number" min="0" step="1" value="35"></label><label>S area<input id="area" type="number" min="0" step=".1" value=".8"></label><label>Cₗ lift coefficient<input id="cl" type="number" min="0" step=".01" value=".7"></label></div><div class="result"><span class="code">CALCULATED LIFT</span><strong id="lift">420.2 N</strong></div><div class="spark"><canvas id="sparkCanvas" aria-label="Lift response graph"></canvas></div></div>
-<div class="glass lab-card"><div class="eyebrow">MODEL NOTE</div><p style="font-size:11px;color:#bac4cc;margin:7px 0 0">A small working model to make the relationship between inputs and output visible. It is an educational visualization, not flight-performance validation.</p><div class="method-grid" style="grid-template-columns:1fr;margin-top:14px"><div class="method"><div class="n">INPUT</div><h3>VARIABLES</h3><p>ρ · V · S · Cₗ</p></div><div class="method"><div class="n">MODEL</div><h3>EQUATION</h3><p>Standard lift relation</p></div><div class="method"><div class="n">OUTPUT</div><h3>LIFT</h3><p>Force in newtons</p></div></div></div>
+<p class="intro">A compact aerospace workbench. Change the inputs, inspect the relationships, and use the plots to see how the simple model behaves.</p>
+
+<div class="lab-shell">
+<div class="lab-tabs glass">
+<button class="lab-tab active" data-labtab="lift">LIFT</button>
+<button class="lab-tab" data-labtab="pressure">DYNAMIC PRESSURE</button>
+<button class="lab-tab" data-labtab="sensitivity">VELOCITY SWEEP</button>
+</div>
+
+<div class="lab-pane active" id="lab-lift">
+<div class="lab-grid">
+<div class="glass lab-card">
+<div class="eyebrow">01 / LIFT MODEL</div>
+<div class="formula">L = ½ρV²SCₗ</div>
+<div class="inputs">
+<label>ρ AIR<input id="rho" type="number" min="0" step=".1" value="1.225"></label>
+<label>V VELOCITY<input id="vel" type="number" min="0" step="1" value="35"></label>
+<label>S AREA<input id="area" type="number" min="0" step=".1" value=".8"></label>
+<label>Cₗ COEFFICIENT<input id="cl" type="number" min="0" step=".01" value=".7"></label>
+</div>
+<div class="result"><span class="code">CALCULATED LIFT</span><strong id="lift">420.2 N</strong></div>
+<div class="spark"><canvas id="sparkCanvas" aria-label="Lift versus velocity graph"></canvas><span class="axis-note">VELOCITY →</span></div>
+</div>
+<div class="glass lab-card lab-explain">
+<div class="eyebrow">READ THE MODEL</div>
+<h3>Change one variable.<br>See the response.</h3>
+<p>The model exposes the relationship directly. Velocity is squared, while area and lift coefficient scale the result linearly.</p>
+<div class="lab-facts">
+<div><span>DYNAMIC PRESSURE</span><b id="qReadout">q = 750.3 Pa</b></div>
+<div><span>VELOCITY</span><b id="vReadout">35 m/s</b></div>
+<div><span>AREA</span><b id="sReadout">0.80 m²</b></div>
+<div><span>Cₗ</span><b id="clReadout">0.70</b></div>
+</div>
+<div class="note-mini">Educational first-order model. It is not a flight-performance validation tool.</div>
+</div>
+</div>
+</div>
+
+<div class="lab-pane" id="lab-pressure">
+<div class="pressure-grid">
+<div class="glass pressure-card">
+<div class="eyebrow">02 / DYNAMIC PRESSURE</div>
+<div class="formula">q = ½ρV²</div>
+<div class="big-number" id="qBig">750.3 <span>Pa</span></div>
+<div class="pressure-bar"><span id="qBar"></span></div>
+<p>Dynamic pressure increases with the square of velocity for a fixed density. In the lift model, it forms the pressure term multiplied by area and Cₗ.</p>
+</div>
+<div class="glass pressure-card">
+<div class="eyebrow">PARAMETER RELATIONSHIP</div>
+<div class="relationship">
+<div><span>ρ</span><b>air density</b><small>kg/m³</small></div>
+<div><span>V</span><b>velocity</b><small>m/s</small></div>
+<div><span>q</span><b>dynamic pressure</b><small>Pa</small></div>
+</div>
+<p class="lab-note">The density and velocity values here are shared with the lift model, so both views stay synchronized.</p>
+</div>
+</div>
+</div>
+
+<div class="lab-pane" id="lab-sensitivity">
+<div class="sensitivity-grid">
+<div class="glass sensitivity-card">
+<div class="eyebrow">03 / VELOCITY SWEEP</div>
+<div class="sweep-head"><span>LIFT RESPONSE / 0–120 m/s</span><span id="sweepPeak">MAX 0.0 N</span></div>
+<canvas id="sweepCanvas" aria-label="Lift response across velocity"></canvas>
+<div class="plot-legend"><span><i class="dot c1"></i>CURVE</span><span><i class="dot c2"></i>CURRENT POINT</span></div>
+</div>
+<div class="glass sensitivity-card">
+<div class="eyebrow">WHAT CHANGES</div>
+<h3>One equation.<br>Different slopes.</h3>
+<div class="sens-list">
+<div><b>V ↑</b><span>Lift changes quadratically when the other inputs stay fixed.</span></div>
+<div><b>S ↑</b><span>Lift scales linearly with reference area.</span></div>
+<div><b>Cₗ ↑</b><span>Lift scales linearly with the selected coefficient.</span></div>
+</div>
+<button class="mini reset-lab" type="button">RESET INPUTS</button>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -240,10 +316,17 @@ $$('.constellation .node').forEach(b=>b.addEventListener('click',()=>renderDomai
 $$('[data-project]').forEach(btn=>btn.addEventListener('click',()=>{$$('[data-project]').forEach(x=>x.classList.remove('active'));$$('.project').forEach(x=>x.classList.remove('active'));btn.classList.add('active');$('#'+btn.dataset.project)?.classList.add('active')}));
 $$('[data-orbitmode]').forEach(btn=>btn.addEventListener('click',()=>{$$('[data-orbitmode]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');orbital?.setMode(btn.dataset.orbitmode)}));
 
-const ids=['rho','vel','area','cl'],out=$('#lift'),spark=$('#sparkCanvas');
-function calcLift(){const n=ids.map(id=>Math.max(0,Number($('#'+id)?.value)||0));const L=.5*n[0]*n[1]*n[1]*n[2]*n[3];out.textContent=(Number.isFinite(L)?L:0).toFixed(1)+' N';return{v:n[1],L:Number.isFinite(L)?L:0}}
-ids.forEach(id=>$('#'+id)?.addEventListener('input',calcLift));calcLift();
-if(spark){function drawSpark(){const c=spark.getContext('2d'),r=spark.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(spark.width!==r.width*d||spark.height!==r.height*d){spark.width=r.width*d;spark.height=r.height*d}c.setTransform(d,0,0,d,0,0);const w=r.width,h=r.height,rho=Math.max(0,Number($('#rho').value)||0),s=Math.max(0,Number($('#area').value)||0),cl=Math.max(0,Number($('#cl').value)||0),cur=calcLift();c.clearRect(0,0,w,h);c.strokeStyle='rgba(79,240,226,.06)';for(let i=1;i<6;i++){c.beginPath();c.moveTo(0,h*i/6);c.lineTo(w,h*i/6);c.stroke()}const max=.5*rho*120*120*s*cl||1;c.beginPath();for(let x=0;x<=w;x++){const v=x/w*120,L=.5*rho*v*v*s*cl,y=h-8-(L/max)*(h-16);x?c.lineTo(x,y):c.moveTo(x,y)}c.strokeStyle=palette.cyan;c.lineWidth=2;c.stroke();const px=Math.min(120,cur.v)/120*w,py=h-8-(cur.L/max)*(h-16);c.fillStyle=palette.pink;c.beginPath();c.arc(px,py,4,0,Math.PI*2);c.fill();if(!reduce)requestAnimationFrame(drawSpark)}drawSpark()}
+const labIds=['rho','vel','area','cl'];
+const labDefaults={rho:1.225,vel:35,area:.8,cl:.7};
+const liftOut=$('#lift'),qRead=$('#qReadout'),vRead=$('#vReadout'),sRead=$('#sReadout'),clRead=$('#clReadout'),qBig=$('#qBig'),qBar=$('#qBar'),spark=$('#sparkCanvas'),sweep=$('#sweepCanvas');
+function labModel(){const rho=Math.max(0,Number($('#rho')?.value)||0),vel=Math.max(0,Number($('#vel')?.value)||0),area=Math.max(0,Number($('#area')?.value)||0),cl=Math.max(0,Number($('#cl')?.value)||0),q=.5*rho*vel*vel,L=q*area*cl;return{rho,vel,area,cl,q,L}}
+function paintLift(){const m=labModel();if(liftOut)liftOut.textContent=m.L.toFixed(1)+' N';if(qRead)qRead.textContent='q = '+m.q.toFixed(1)+' Pa';if(vRead)vRead.textContent=m.vel.toFixed(0)+' m/s';if(sRead)sRead.textContent=m.area.toFixed(2)+' m²';if(clRead)clRead.textContent=m.cl.toFixed(2);if(qBig)qBig.innerHTML=m.q.toFixed(1)+' <span>Pa</span>';if(qBar)qBar.style.width=Math.min(100,m.q/3000*100)+'%';return m}
+function paintGraph(canvas,maxV=120){if(!canvas)return;const c=canvas.getContext('2d'),r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2),w=Math.max(1,r.width),h=Math.max(1,r.height);canvas.width=Math.round(w*d);canvas.height=Math.round(h*d);c.setTransform(d,0,0,d,0,0);c.clearRect(0,0,w,h);c.strokeStyle='rgba(255,255,255,.055)';c.lineWidth=1;for(let i=1;i<6;i++){c.beginPath();c.moveTo(0,h*i/6);c.lineTo(w,h*i/6);c.stroke()}const m=labModel(),maxL=.5*m.rho*maxV*maxV*m.area*m.cl||1;c.beginPath();for(let x=0;x<=w;x++){const v=x/w*maxV,L=.5*m.rho*v*v*m.area*m.cl,y=h-9-(L/maxL)*(h-18);x?c.lineTo(x,y):c.moveTo(x,y)}c.strokeStyle=canvas===sweep?palette.violet:palette.cyan;c.lineWidth=2;c.stroke();const px=Math.min(maxV,m.vel)/maxV*w,py=h-9-(m.L/maxL)*(h-18);c.fillStyle=palette.pink;c.shadowColor=palette.pink;c.shadowBlur=10;c.beginPath();c.arc(px,py,4,0,Math.PI*2);c.fill();c.shadowBlur=0;return{maxL}}
+function refreshLab(){paintLift();paintGraph(spark,120);const data=paintGraph(sweep,120);const peak=$('#sweepPeak');if(peak)peak.textContent='MAX '+(data?.maxL||0).toFixed(1)+' N'}
+labIds.forEach(id=>$('#'+id)?.addEventListener('input',refreshLab));
+refreshLab();
+$$('[data-labtab]').forEach(btn=>btn.addEventListener('click',()=>{$$('[data-labtab]').forEach(x=>x.classList.remove('active'));$$('.lab-pane').forEach(x=>x.classList.remove('active'));btn.classList.add('active');$('#lab-'+btn.dataset.labtab)?.classList.add('active');refreshLab()}));
+$('.reset-lab')?.addEventListener('click',()=>{labIds.forEach(id=>$('#'+id).value=labDefaults[id]);refreshLab()});
 
 if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});$$('.reveal').forEach(x=>io.observe(x))}
 if('IntersectionObserver' in window){const navs=$$('.nav a'),sections=navs.map(a=>$(a.getAttribute('href'))).filter(Boolean);const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-43% 0px -48% 0px'});sections.forEach(s=>io.observe(s))}
