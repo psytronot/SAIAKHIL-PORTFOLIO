@@ -607,33 +607,33 @@
           </div>
         </div>
 
-        <!-- Real Email Transmission Form -->
+        <!-- Direct Email Compose Form -->
         <div class="lg:col-span-7 bg-graphite-900/60 backdrop-blur-xl border border-white/[0.08] rounded-2xl p-6 sm:p-8">
           <div class="flex items-center justify-between border-b border-white/[0.06] pb-4 mb-6">
-            <span class="text-xs font-mono text-slate-400">Direct Message / Mailto Dispatch</span>
-            <button id="copy-email-btn" class="btn-magnetic text-[11px] font-mono text-accent-cyan hover:underline flex items-center gap-1">
+            <span class="text-xs font-mono text-slate-400">Direct Message / Email Compose</span>
+            <button id="copy-email-btn" type="button" class="btn-magnetic text-[11px] font-mono text-accent-cyan hover:underline flex items-center gap-1">
               Copy Email Address
             </button>
           </div>
 
           <form id="contact-form" class="space-y-4">
             <div>
-              <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Name</label>
+              <label for="contact-name" class="block text-xs font-mono text-slate-400 mb-1.5">Your Name</label>
               <input type="text" id="contact-name" required placeholder="Jane Doe" class="w-full bg-graphite-950 border border-white/[0.08] focus:border-accent-cyan rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none transition-colors">
             </div>
 
             <div>
-              <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Email</label>
+              <label for="contact-email" class="block text-xs font-mono text-slate-400 mb-1.5">Your Email</label>
               <input type="email" id="contact-email" required placeholder="jane@organization.com" class="w-full bg-graphite-950 border border-white/[0.08] focus:border-accent-cyan rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none transition-colors">
             </div>
 
             <div>
-              <label class="block text-xs font-mono text-slate-400 mb-1.5">Message / Inquiry</label>
+              <label for="contact-message" class="block text-xs font-mono text-slate-400 mb-1.5">Message / Inquiry</label>
               <textarea id="contact-message" rows="4" required placeholder="Regarding Orbital Lab calculations, composite testing documentation, or engineering opportunities..." class="w-full bg-graphite-950 border border-white/[0.08] focus:border-accent-cyan rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none transition-colors"></textarea>
             </div>
 
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
-              <span id="form-feedback" class="text-xs font-mono text-slate-400">Opens your default email client with formatted parameters.</span>
+              <div class="flex flex-col gap-2"><span id="form-feedback" class="text-xs font-mono text-slate-400">Uses your email app to compose the message.</span><a id="gmail-compose-btn" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-slate-500 hover:text-accent-cyan transition-colors w-fit">Open Gmail instead ↗</a></div>
               <button type="submit" class="btn-magnetic px-5 py-2.5 rounded-lg bg-white text-graphite-950 font-medium text-xs hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
                 <span>Compose Email</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -1005,11 +1005,12 @@
     });
 
     /* ========================================================
-       8. AUTHENTIC CONTACT DISPATCH (Real mailto & Copy fallback)
+       8. AUTHENTIC CONTACT DISPATCH (Direct mailto + Gmail fallback)
        ======================================================== */
     const contactForm = document.getElementById('contact-form');
     const formFeedback = document.getElementById('form-feedback');
     const copyEmailBtn = document.getElementById('copy-email-btn');
+    const gmailComposeBtn = document.getElementById('gmail-compose-btn');
     const targetEmail = 'saiakhilmalladiworks@gmail.com';
 
     contactForm.addEventListener('submit', (e) => {
@@ -1020,18 +1021,30 @@
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
 
-      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-      const body = encodeURIComponent(`Sender: ${name}\nContact Email: ${email}\n\nMessage:\n${message}\n\n---\nSent via Sai Akhil Malladi Portfolio Dispatch`);
+      const subjectText = `Portfolio Inquiry from ${name}`;
+      const bodyText = `Sender: ${name}\nContact Email: ${email}\n\nMessage:\n${message}\n\n---\nSent via Sai Akhil Malladi Portfolio`;
+      const subject = encodeURIComponent(subjectText);
+      const body = encodeURIComponent(bodyText);
+      const mailtoUrl = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+      const gmailUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(targetEmail)}&su=${subject}&body=${body}`;
 
-      formFeedback.textContent = 'Opening your email client...';
+      formFeedback.textContent = 'Opening your email composer...';
       formFeedback.className = 'text-xs font-mono text-accent-cyan';
 
-      // Launch actual mailto client
-      window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+      // Trigger mailto from the same user gesture using a real anchor.
+      const mailtoLink = document.createElement('a');
+      mailtoLink.href = mailtoUrl;
+      mailtoLink.setAttribute('aria-label', 'Open your default email client');
+      document.body.appendChild(mailtoLink);
+      mailtoLink.click();
+      mailtoLink.remove();
+
+      // Keep a web-based Gmail fallback with the same recipient and message.
+      gmailComposeBtn.href = gmailUrl;
 
       setTimeout(() => {
-        formFeedback.textContent = 'If your mail client did not open, click "Copy Email Address" above.';
-      }, 2500);
+        formFeedback.textContent = 'Email app launched if available. Gmail fallback is ready below.';
+      }, 1200);
     });
 
     copyEmailBtn.addEventListener('click', () => {
