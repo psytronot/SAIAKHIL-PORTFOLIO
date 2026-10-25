@@ -128,7 +128,98 @@
   .lens-step p { color:#8a96a5; font-size:12px; line-height:1.6; margin:0; }
   @media (max-width:1100px) { .hero-editorial { grid-template-columns:1fr; } .hero-rail { border-left:0; padding-left:0; } .lens-grid { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:640px) { .lens-grid { grid-template-columns:1fr; } .portfolio-mark { display:none; } }
-  </style>
+  
+  /* Mobile refinement */
+  @media (max-width: 620px) {
+    body { font-size: 13px; }
+    .top { height: 56px; padding: 0 10px; }
+    .top > div { min-width: 0; }
+    .brand { max-width: 58vw; }
+    .brand span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .hero { min-height: auto; }
+    .hero-copy { padding: 42px 0 34px; }
+    .hero h1 { font-size: clamp(40px, 14vw, 56px); line-height: .9; }
+    .hero-copy > p { font-size: 14px; }
+    .hero-meta { gap: 6px; }
+    .hero-stage { min-height: 330px; }
+    .hero-float { left: 12px; right: 12px; min-width: 0; width: auto; padding: 11px 12px; }
+    .actions { display: grid; grid-template-columns: 1fr; }
+    .actions .btn { width: 100%; }
+    .section { padding: 58px 0; }
+    .section-head h2 { font-size: 16px; }
+    .section:before { display: none; }
+    .statement { padding: 18px; min-height: 0; }
+    .statement h3 { font-size: 28px; }
+    .domains, .orbit, .lab, .lab-grid, .pressure-grid, .sensitivity-grid, .credentials, .capability, .personality { grid-template-columns: 1fr; }
+    .constellation { min-height: 290px; }
+    .domain-card { min-height: 0; padding: 18px; }
+    .project-console { grid-template-columns: 1fr; min-height: 0; }
+    .project-nav {
+      display: flex;
+      overflow-x: auto;
+      gap: 6px;
+      padding: 6px;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      scrollbar-width: thin;
+    }
+    .project-nav button {
+      flex: 0 0 auto;
+      width: auto;
+      border: 1px solid rgba(180,200,215,.1);
+      padding: 10px 11px;
+      white-space: nowrap;
+      border-radius: 8px;
+    }
+    .project-nav button.active {
+      border-left: 1px solid var(--cyan);
+      padding-left: 11px;
+    }
+    .project-view { padding: 17px; }
+    .project h3 { font-size: 25px; }
+    .project > p { font-size: 11px; }
+    .spec { grid-template-columns: 1fr; }
+    .spec div { padding: 8px 0; }
+    .orbit-view { min-height: 330px; border-right: 0; border-bottom: 1px solid var(--line); }
+    .orbit-side { padding: 18px; }
+    .orbit-side h3 { font-size: 28px; }
+    .cap { grid-template-columns: 1fr; gap: 5px; }
+    .cap span { text-align: left; }
+    .method-grid { grid-template-columns: 1fr; }
+    .lab-tabs {
+      width: 100%;
+      overflow-x: auto;
+      padding: 5px;
+      scrollbar-width: thin;
+    }
+    .lab-tab { flex: 0 0 auto; padding: 9px 10px; }
+    .lab-grid, .pressure-grid, .sensitivity-grid { gap: 8px; }
+    .lab-card, .pressure-card, .sensitivity-card { padding: 16px; min-height: 0; }
+    .inputs { grid-template-columns: 1fr; }
+    .formula { font-size: 19px; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; }
+    .big-number { font-size: 42px; }
+    #sweepCanvas { height: 240px; }
+    #sparkCanvas { height: 110px; }
+    .lab-facts { grid-template-columns: 1fr 1fr; }
+    .links { grid-template-columns: 1fr; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .lens-step { min-height: 120px; padding: 16px; }
+    .lens-step h3 { font-size: 18px; }
+    .btn-magnetic { max-width: 100%; }
+    input, textarea, select, button { max-width: 100%; }
+  }
+
+  @media (max-width: 390px) {
+    .brand { max-width: 48vw; }
+    .brand span { font-size: 8px; }
+    .hero h1 { font-size: 38px; }
+    .hero-stage { min-height: 290px; }
+    .hero-float strong { font-size: 13px; }
+    .lab-facts { grid-template-columns: 1fr; }
+    .section-head { padding-right: 0; }
+  }
+
+</style>
 </head>
 <body class="bg-graphite-950 text-slate-300 font-sans selection:bg-accent-cyan/20 selection:text-white relative overflow-x-hidden min-h-screen">
 
