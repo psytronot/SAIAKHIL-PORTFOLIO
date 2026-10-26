@@ -129,6 +129,33 @@
   @media (max-width:1100px) { .hero-editorial { grid-template-columns:1fr; } .hero-rail { border-left:0; padding-left:0; } .lens-grid { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:640px) { .lens-grid { grid-template-columns:1fr; } .portfolio-mark { display:none; } }
   
+
+  /* Satellite visual themes */
+  body[data-satellite-theme] {
+    --sat-accent:#38bdf8;
+    --sat-accent-2:#818cf8;
+    --sat-glow:rgba(56,189,248,.08);
+  }
+  body[data-satellite-theme="leo"] { --sat-accent:#38bdf8; --sat-accent-2:#68a8ff; --sat-glow:rgba(56,189,248,.09); }
+  body[data-satellite-theme="geo"] { --sat-accent:#fbbf24; --sat-accent-2:#fb923c; --sat-glow:rgba(251,191,36,.09); }
+  body[data-satellite-theme="lunar"] { --sat-accent:#c4b5fd; --sat-accent-2:#a5b4fc; --sat-glow:rgba(196,181,253,.09); }
+  body[data-satellite-theme="deep-space"] { --sat-accent:#f472b6; --sat-accent-2:#c084fc; --sat-glow:rgba(244,114,182,.09); }
+  body[data-satellite-theme] { background-image:radial-gradient(circle at 15% 18%,var(--sat-glow),transparent 28%),radial-gradient(circle at 82% 42%,color-mix(in srgb,var(--sat-accent-2) 8%,transparent),transparent 30%); }
+  body[data-satellite-theme] .text-accent-cyan { color:var(--sat-accent)!important; }
+  body[data-satellite-theme] .text-accent-indigo { color:var(--sat-accent-2)!important; }
+  body[data-satellite-theme] .border-accent-cyan\/30 { border-color:color-mix(in srgb,var(--sat-accent) 30%,transparent)!important; }
+  body[data-satellite-theme] .border-accent-cyan\/40 { border-color:color-mix(in srgb,var(--sat-accent) 40%,transparent)!important; }
+  body[data-satellite-theme] .hover\\:border-accent-cyan\\/60:hover { border-color:color-mix(in srgb,var(--sat-accent) 60%,transparent)!important; }
+  body[data-satellite-theme] .bg-accent-cyan\/5 { background-color:color-mix(in srgb,var(--sat-accent) 5%,transparent)!important; }
+  body[data-satellite-theme] input[type="range"] { accent-color:var(--sat-accent); }
+  .satellite-theme-wrap { position:relative; }
+  .satellite-theme-menu { position:absolute; right:0; top:calc(100% + 8px); width:210px; padding:6px; border:1px solid rgba(255,255,255,.09); border-radius:12px; background:rgba(10,13,18,.96); box-shadow:0 18px 45px rgba(0,0,0,.35); backdrop-filter:blur(18px); }
+  .satellite-theme-option { display:flex; align-items:center; gap:10px; width:100%; padding:9px 10px; border:0; border-radius:8px; background:transparent; color:#a8b3bd; text-align:left; font:10px 'Space Mono',monospace; cursor:pointer; }
+  .satellite-theme-option:hover,.satellite-theme-option.active { background:rgba(255,255,255,.055); color:#fff; }
+  .satellite-theme-dot { width:8px; height:8px; border-radius:50%; flex:0 0 auto; box-shadow:0 0 10px currentColor; }
+  .satellite-theme-note { display:block; margin-top:2px; color:#66727e; font-size:8px; }
+  @media (max-width:620px){ .satellite-theme-menu{right:-34px;} }
+
   /* Mobile refinement */
   @media (max-width: 620px) {
     body { font-size: 13px; }
@@ -260,6 +287,19 @@
           <svg id="audio-icon-off" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
           <span class="text-[10px] font-mono hidden sm:inline" id="audio-label">AUDIO OFF</span>
         </button>
+
+        <div class="satellite-theme-wrap">
+          <button id="satellite-theme-btn" type="button" class="btn-magnetic flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/[0.08] bg-graphite-900/80 hover:border-slate-600 text-[10px] font-mono text-slate-300 transition-all" aria-expanded="false" aria-controls="satellite-theme-menu">
+            <span id="satellite-theme-dot" class="satellite-theme-dot text-sky-400"></span>
+            <span id="satellite-theme-label">LEO</span>
+          </button>
+          <div id="satellite-theme-menu" class="satellite-theme-menu hidden" role="menu">
+            <button type="button" class="satellite-theme-option" data-satellite-theme="leo" role="menuitem"><span class="satellite-theme-dot text-sky-400"></span><span>LEO<span class="satellite-theme-note">Electric blue</span></span></button>
+            <button type="button" class="satellite-theme-option" data-satellite-theme="geo" role="menuitem"><span class="satellite-theme-dot text-amber-400"></span><span>GEO<span class="satellite-theme-note">Solar gold</span></span></button>
+            <button type="button" class="satellite-theme-option" data-satellite-theme="lunar" role="menuitem"><span class="satellite-theme-dot text-violet-300"></span><span>LUNAR<span class="satellite-theme-note">Ice violet</span></span></button>
+            <button type="button" class="satellite-theme-option" data-satellite-theme="deep-space" role="menuitem"><span class="satellite-theme-dot text-pink-400"></span><span>DEEP SPACE<span class="satellite-theme-note">Infrared magenta</span></span></button>
+          </div>
+        </div>
 
         <button id="cmd-palette-btn" class="btn-magnetic flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/[0.08] bg-graphite-900/80 hover:border-slate-600 text-xs font-mono text-slate-300 transition-all">
           <span class="w-1.5 h-1.5 rounded-full bg-accent-cyan"></span>
@@ -1197,7 +1237,54 @@
     });
 
     /* ========================================================
-       9. WORKSTATION COMMAND PALETTE (Ctrl / Cmd + K)
+       9. SATELLITE THEME SYSTEM
+       ======================================================== */
+    const satelliteThemeBtn = document.getElementById('satellite-theme-btn');
+    const satelliteThemeMenu = document.getElementById('satellite-theme-menu');
+    const satelliteThemeLabel = document.getElementById('satellite-theme-label');
+    const satelliteThemeDot = document.getElementById('satellite-theme-dot');
+    const satelliteThemeOptions = document.querySelectorAll('[data-satellite-theme]');
+    const satelliteThemeLabels = { leo:'LEO', geo:'GEO', lunar:'LUNAR', 'deep-space':'DEEP SPACE' };
+
+    function applySatelliteTheme(theme, persist = true) {
+      const safeTheme = satelliteThemeLabels[theme] ? theme : 'leo';
+      document.body.dataset.satelliteTheme = safeTheme;
+      satelliteThemeLabel.textContent = satelliteThemeLabels[safeTheme];
+      satelliteThemeOptions.forEach(option => option.classList.toggle('active', option.dataset.satelliteTheme === safeTheme));
+      const dotColors = { leo:'#38bdf8', geo:'#fbbf24', lunar:'#c4b5fd', 'deep-space':'#f472b6' };
+      satelliteThemeDot.style.color = dotColors[safeTheme];
+      satelliteThemeDot.style.backgroundColor = dotColors[safeTheme];
+      if (persist) localStorage.setItem('saiSatelliteTheme', safeTheme);
+    }
+
+    const savedSatelliteTheme = localStorage.getItem('saiSatelliteTheme') || 'leo';
+    applySatelliteTheme(savedSatelliteTheme, false);
+
+    satelliteThemeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const hidden = satelliteThemeMenu.classList.toggle('hidden');
+      satelliteThemeBtn.setAttribute('aria-expanded', String(!hidden));
+      playMicroClick(720, 0.012);
+    });
+
+    satelliteThemeOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        applySatelliteTheme(option.dataset.satelliteTheme);
+        satelliteThemeMenu.classList.add('hidden');
+        satelliteThemeBtn.setAttribute('aria-expanded', 'false');
+        playMicroClick(860, 0.012);
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!satelliteThemeMenu.contains(e.target) && e.target !== satelliteThemeBtn) {
+        satelliteThemeMenu.classList.add('hidden');
+        satelliteThemeBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    /* ========================================================
+       10. WORKSTATION COMMAND PALETTE (Ctrl / Cmd + K)
        ======================================================== */
     const cmdModal = document.getElementById('cmd-modal');
     const cmdBtn = document.getElementById('cmd-palette-btn');
@@ -1262,6 +1349,7 @@
 - <span class="text-accent-cyan">competencies</span>: View core technical capabilities
 - <span class="text-accent-cyan">contact</span>: Navigate to direct email dispatch
 - <span class="text-accent-cyan">audio</span>: Toggle subtle synthesized haptic sound
+- <span class="text-accent-cyan">theme leo|geo|lunar|deep-space</span>: Change satellite visual theme
 - <span class="text-accent-cyan">clear</span>: Clear log`);
           break;
         case 'projects':
@@ -1299,6 +1387,16 @@ Observations: Qualitative fracture surfaces and failure modes recorded.`, 'highl
           closePalette();
           location.hash = '#contact';
           break;
+        case 'theme': {
+          const themeName = raw.trim().split(/\s+/)[1] || 'leo';
+          if (satelliteThemeLabels[themeName]) {
+            applySatelliteTheme(themeName);
+            logTerminal(`Satellite theme: ${satelliteThemeLabels[themeName]}`, 'highlight');
+          } else {
+            logTerminal('Themes: leo, geo, lunar, deep-space');
+          }
+          break;
+        }
         case 'audio':
           audioToggle.click();
           logTerminal(`Synthesizer haptics: ${isSoundMuted ? 'Muted' : 'Active'}`, 'highlight');
